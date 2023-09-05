@@ -1,0 +1,6 @@
+windows_opstation - 192.168.65.10, 10.50.43.194
+linux-opstation - 192.168.65.20, 10.50.37.61
+
+##Python Scripts##
+chmod +x "filename"
+#!/usr/bin/env "filename"
