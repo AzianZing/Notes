@@ -7,7 +7,7 @@ https://cctc.cybbh.io/students/students/latest/Day_0_Setup
 
 Handbook
 ###########################################
-
+https://git.cybbh.space/programming/python/public/-/blob/master/activities/Python_Student_Handbook/PyStuHBK.adoc?ref_type=heads
 
 Email splitting activity
 ############################################
@@ -24,3 +24,17 @@ print(final)
 ##Python Scripts##
 chmod +x "filename"
 #!/usr/bin/env "filename"
+
+Branching
+###########################################
+#!/usr/bin/env python3 
+mewtwo == 150
+
+if mewtwo == 150:
+  print('This is a MewTwo!')
+elif mewtwo == 151:
+  print('This is NOT a Mew!')
+elif mewtwo < 150;
+  print('This might be a ditto.')
+else:
+  print('This is NOT a MewTwo!')
