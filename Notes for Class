@@ -1,6 +1,26 @@
 windows_opstation - 192.168.65.10, 10.50.43.194
 linux-opstation - 192.168.65.20, 10.50.37.61
 
+Day 0 Setup
+###########################################
+https://cctc.cybbh.io/students/students/latest/Day_0_Setup
+
+Handbook
+###########################################
+
+
+Email splitting activity
+############################################
+#!/usr/bin/env python3
+
+email = 'student@usmc.mil'
+splitted = email.split('@')
+joined = '.'.join(splitted)
+final = joined.split('.')
+print(final)
+
+############################################
+
 ##Python Scripts##
 chmod +x "filename"
 #!/usr/bin/env "filename"
