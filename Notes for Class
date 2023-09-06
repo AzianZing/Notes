@@ -137,6 +137,11 @@ use format(a, '0>8b') to show binary to show all 8 bits
 
 Inverting Activity
 ##########################################
+for n in range(0, len(l)):
+    l[n] = str(255 - int(l[n]))
+    print(l)
+Inverts a list in a range
+___________________________________________
 counter = 0
     for num in l:
         l[counter] = str(255-int(num))
@@ -146,8 +151,15 @@ counter = 0
         for count,num in enumerate(l):
             l[count] = str(255-int(num))
 '''
-
-
+Additional ways to invert a list in a range
+___________________________________________
+result = []
+    for n in range(0, len(l)):
+        result.append(str(255 - int(l[n])))
+    print(result)
+    return result
+Takes a list and inverts it, then prints it out
+___________________________________________
 
 
 
