@@ -90,3 +90,69 @@ while True:
 
 
 while True: is an infinite loop
+########################################
+For loops and Range
+########################################
+party = ['Mario', 'Luigi', 'Princess Peach', 'Bowser', 'Gumba', 'Big Chomp']
+for i in party:
+  print(i)
+
+Will print each 'word'(iterable) of the list 
+
+list(range(0,10,1))
+  [range(start, stop, step)
+  [stop stops after the number, for example stopping at 100 requires 101 to be in the stop place]
+
+for c in range(4, 32, 6)
+  print(c)
+[will print 4, 10, 16, 22, 28]
+
+Play Game while loop with actions
+#########################################
+#!/usr/bin/env python3
+
+def playGame():
+    while(True):
+        action=input("Action: ")
+        if action == 'help':
+            print ("N S E W help quit")
+            continue
+        elif action == 'quit'or action == 'exit':
+            print('Thanks for playing')
+            break
+        elif action =='North':
+            pass
+        else:
+            print('Please try help')
+playGame()
+##########################################
+
+
+Format Command
+##########################################
+use format(a, '0>8b') to show binary to show all 8 bits
+[00101010]
+##########################################
+
+
+Inverting Activity
+##########################################
+counter = 0
+    for num in l:
+        l[counter] = str(255-int(num))
+        counter += 1'''
+
+    '''enumerate()
+        for count,num in enumerate(l):
+            l[count] = str(255-int(num))
+'''
+
+
+
+
+
+
+
+
+
+
