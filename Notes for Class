@@ -161,6 +161,117 @@ result = []
 Takes a list and inverts it, then prints it out
 ___________________________________________
 
+TypeCasting
+###########################################
+list(string name) to change string into a list
+Ex. list(fish) will change fish to a string
+
+to change a list to a string stringname = list(fish)
+Ex. bigFish = list(fish) will make a new string that is the same as the original string named fish
+
+bigFish[0] = 's' changes the first item in a list to an 's'
+Ex. [f,l,o,u,n,d,e,r] now becomes [s,l,o,u,n,d,e,r]
+
+''.join(bigFish) will join a list back into a string that prints as slounder
+biggerFish = ''.join(bigFish) will create a variable that prints slounder
+
+For loops
+###########################################
+fish = 'flounder'
+for i in fish: \\Iterations can be any variable (i,x,c,e,etc.)//
+  print(x)
+f
+l
+o
+u
+n
+d
+e
+r
+
+fish = 'flounder'
+for i in fish: \\Iterations can be any variable (i,x,c,e,etc.)//
+  if i == 'f':
+    print(x)
+  elif i == 'e':
+    print(x)
+f
+e
+
+While statements
+###########################################
+fish = 'flounder'
+while False:
+  for x in fish:
+    if x == 'f':
+      print(x)
+    elif x == 'e':
+      print(x)
+\\Will not print anything//
+fish = 'flounder'
+while True:
+  for x in fish:
+    if x == 'f':
+      print(x)
+    elif x == 'e':
+      print(x)
+f
+e
+\\Will print infinitely until stopped//
+
+fish = 'flounder'
+while False:
+  for x in fish:
+    if x == 'f':
+      print(x)
+    elif x == 'e':
+      print(x)
+  break
+f
+e
+\\Stops loop after printing//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
