@@ -320,12 +320,58 @@ with open('test.txt') as fp:
   for line in fp:
     print(line, end='') \\Prints all lines with new line breaks (\n)//
 
+Activity
+------------------------------------------
+1.   with open('travel_plans.txt', 'r') as fp:
+        strings = fp.read()
+        num = len(strings)
+     with open('travel_plans.txt', 'r') as fp:
+        num = len(fp.read()) 
+2.   with open('emotion_words.txt', 'r') as fp:
+        num_read = fp.read()
+        num_split = num_read.split()
+        num_words = len(num_split)
+     with open('emotion_words.txt', 'r') as fp:
+        num_words = len(fp.read().split()) \\Reads, splits and checks length in one line//
+3.   with open('school_prompt.txt', 'r') as fp:
+        strings = fp.readlines()
+        num_lines = len(strings)
+     with open('school_prompt.txt', 'r') as fp:
+        num_lines = len(fp.readlines())
+4.   with open('school_prompt.txt', 'r') as fp: \\Returns the first 30 characters//
+        beginning_chars = fp.read(30)
+     with open('school_prompt.txt', 'r') as fp:
+        beginning_chars = fp.read()[:30]
+5.   three = []
+     with open('school_prompt.txt', 'r') \\Assigns the third word of every line to a list called three//
+        for i in fp.readlines():
+          three.append(i.split()[2])
+6.   with open('emotion_words.txt', 'r') as fp: \\Assigns the first word of every line to a string called emotions//
+        emotions = [line.split()[0] for line in fp]
+     emotions = []
+     with open('emotion_words.txt', 'r') as fp:
+        for line in fp.readlines():
+          emotions.append(line.split()[0])
+emotions = [line.split()[0] for line in open('emotion_words.txt')] \\List comprehension method for the same outcome//
+7.   with open('travel_plans.txt', 'r') as fp:
+        first_chars = fp.read(33)
+8.   p_words = []
+     with open('school_prompt.txt', 'r') as fp: \\If 'p' is in a word then it is added to a list called p_words//
+        lines = fp.read()
+        for i in line.split():
+          if 'p' in i:
+            p_words.append(i)
+     p_words = []
+     with open('school_prompt.txt', 'r') as fp: \\Nested for loop that adds words that have a 'p' to a list called p_words//
+        for line in fp:
+          for word in line.split():
+            if 'p' in word:
+              p_words.append(word)
 
-
-
-
-
-
+Args and Kwargs
+##########################################
+*args allows a variable amount of arguments in a function for example if you make a calculator you can add multiple values together
+*kwargs allows named keywords with arguments
 
 
 
