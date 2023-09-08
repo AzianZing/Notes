@@ -290,10 +290,37 @@ def steg_decode_char(stego):
     msgbits = []
     for b in stego:
         msgbits.append(bin(int(b))[-1]) \\Converts a list into integers for each item in the function as the last index of the selected item and then converts it back into binary//
-    return chr(int(''.join(msgbits),2)
+    return chr(int(''.join(msgbits),2))
 
 if __name__ == '__main__':
     pass
+
+File IO
+#########################################
+r = read
+w = write
+a = append
+x = creation only
+r+ = read and write
+t = text mode
+b = binary mode
+
+fp = open("test.txt) \\Opens an already created file//
+fp.close() \\Closes a file//
+
+with open('test.txt', 'w') as fp: \\Opens test.txt with write permissions//
+  fp.write('first line\n') \\Writes to test.txt when opened "first line"//
+  lines = ['Second line\n', 'Third line\n', 'Fourth line\n', Last line\n']
+  fp.writelines(lines) \\Writes the list of lines above into the file//
+
+with open('test.txt') as fp:
+  fp.read(10) \\Reads 10 bytes of data(characters)//\\When using fp.read() it returns the characters as strings//
+  fp.readlines() \\Reads all lines//\\Lists returned when using readlines vs a string returned when using read//
+
+  for line in fp:
+    print(line, end='') \\Prints all lines with new line breaks (\n)//
+
+
 
 
 
