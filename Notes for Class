@@ -481,6 +481,24 @@ def q6(catalog, order):
   return sum(total)
 
 
+
+  return sum(catalog[product] * quantity for product,quantity in order
+
+
+  total = 0
+  for product,quantity in order:
+    total += catalog[product] * quantity                      \\With tuples you can have 2 arguments in an iteration//
+  return total
+
+
+  total = []
+  for product,price in catalog.items():                       \\.items uses both values of a dictionary, assigning the first argument to the first value and the second argument to the second value//
+    for orderp,quantity in order:
+      if product == orderp:
+        total.append(quantity * price)
+  return sum(total)
+
+
 Question 7
 ---------------------------------------------
 def q7(filename):
