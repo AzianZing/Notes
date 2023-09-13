@@ -1,0 +1,247 @@
+Student Guide
+https://cted.cybbh.io/tech-college/pns/public/pns/latest/guides/bash_sg.html
+####################################
+
+Day 1
+------------------------------------
+TLOs:
+Be able to look at code and identify what the code does or what the output should be
+Be able to solve simple problems by creating code
+------------------------------------
+
+Processes and memory (ps, kill, killall, pkill, top)
+commands: cat, more, or less
+finding files and directories (locate, whereis, which, find) (Use find a lot)
+commands: grep and cut
+
+------------------------------------
+SHELL - A sell is a macro processor that executes commands.
+1. Command Interpreter
+2. Programming language
+Interactive vs non-interactive (Interactive is command input)(DCO mostly uses non-interactive)
+------------------------------------
+Linux commands and switches
+cat /etc/passwd ()
+
+ctrl-a - brings cursor to the beginnning
+ctrl-e - brings cursor to the end
+ctrl-u - erases the line
+ctrl-c - starts a new line
+ctrl-r - search bar for keywords of commands
+ctrl-l - creates a new screen that you can scroll back up from
+shift-G - will go to the last line of a man page
+shift-g - will go to the first line of a man page
+/ - searches in a man page
+n - brings you to the next search after searching a man page
+shift-n - brings you to the previous search in a a man page
+q - quits man page
+
+linux.die.net/man/ ----- Online man page for linux
+
+man pages - provide syntax and specifications for commands in the shell
+
+Commands
+######################################
+pwd - print working directory
+touch - create a file in linux (vim, nano, vi also work)
+touch -t -- changes time and date of files
+mkdir -p -- makes a directory inside of another directory (directory and subdirectory)
+rm - removes
+rmdir - removes directory (-p removes directories and subdirectories, -rf forces it to be removed)
+ls - lists the contents of a directory (-l shows in a list format, -a shows hidden files)
+* - wildcard character
+cp - copy (path:destination)
+mv - move
+ln - creates a link (-s symbolic)
+echo - print
+find - finds, pretty fucking self explanatory
+
+Find
+Very important command in linux
+find 'location of where to look' 'what you want to look for
+find $home -name new.sh (looks in the home directory for anything that has new.sh in it)
+-name is case sensitive
+-iname is not case sensitive
+find -size (finds the size of a file)
+find / -group root (looks in the root directory, everything that belongs to the root group)
+find $home -user student (looking for anything in the home directory that belongs to student)
+-maxdepth (max depth will define how many levels deep in the file system to search when using find)
+find / -type <d f p l> (searches the root directory for the type of file, d is directory, f is for files, p is for pipes, l is for symbolic links)
+-exec will run a command with the find command (example -exec ls -l will list out the contents)
+find / -type d -iname log -exec ls -l {} \; 2>/dev/null (\ is the termination point for the exec switch)(prints all of the name that have log)
+-exec ls -l {} \; (syntax purely for the above command that will cause the command to not work without that portion)
+find / -atime (looks at accessed time of files, by default will look according to days)
+find / -mmin (looks at files based on the timeframe, in minutes with this switch)
+find / -executable ! -type d (looks for all files that are executable and not directories)
+find /var/log -iname *.log 2>/dev/null -printf "%i %f\n" | more (looks in var/log for case insensitive files that end in .log, throws away all of the errors and prints inode number and filename)
+
+grep
+can utilize grep to compare files
+cat /etc/passwd | grep /bin/bash (shows the file where it was found)
+cat /etc/passwd | grep -C 3 student (-C is the context flag, shows the 3 lines before and 3 lines after the grep was found)
+cat /etc/passwd | grep -v /bin/bash (-v inverts the results, shows everything that does not have a match)
+-n shows the line number
+grep 'root' /etc/passwd (finds root in /etc/passwd)
+-A is a context flag, only shows after the hit was found
+-B is a context flag, shows before the hit was found
+egrep allows regex as strings
+egrep -o shows the result and after if specified but not before
+egrep "student|root|ROOT" /etc/passwd (looks for student, root, or ROOT and shows the whole line where it was found)
+
+Hard link vs symbolic link
+
+Symbolic link
+Acts like a dynamic link, gets deleted if the original file gets deleted, can exists across multiple devices
+
+Hard link
+A hard link is a more static link, only exists in the system it is created in, does not get deleted if the original gets deleted
+
+BRACE EXPANSION
+Do whatever command we want, multiple times
+
+touch file{1..5} (creates files 1-5 in the same location)
+touch log{1..5}.txt (creates log.txt 1-5)
+
+Processes
+ps aux(shows all processes that are running on the system and what user is using the process)
+  -u shows the processes being used by the specified user
+
+Cut command
+Changes standard output
+Relies on character deliminator, default is tab
+tail /etc/passwd | cut -d: -f1 (shows the first word (field) of each of the lines that would be diplayed on tail /etc/passwd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
