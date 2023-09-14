@@ -89,6 +89,7 @@ grep 'root' /etc/passwd (finds root in /etc/passwd)
 egrep allows regex as strings
 egrep -o shows the result and after if specified but not before
 egrep "student|root|ROOT" /etc/passwd (looks for student, root, or ROOT and shows the whole line where it was found)
+grep -E is the grep version of egrep
 
 Hard link vs symbolic link
 
@@ -112,6 +113,58 @@ Cut command
 Changes standard output
 Relies on character deliminator, default is tab
 tail /etc/passwd | cut -d: -f1 (shows the first word (field) of each of the lines that would be diplayed on tail /etc/passwd)
+
+Command Chaining operators
+& - background runs a process
+; - run multiple commands in one
+\ - type larger command in multiple lines
+&& - logical AND
+|| - logical OR
+! - NOT
+| - PIPE
+
+Day 2
+###############################################
+Aliases
+cp - copy
+mv - move
+set an alias by alias='nano' (everytime vim is run nano is run instead)
+alias x='cat /etc/passwd' (typing x will cat the file)
+alias -p (lists out all the aliases on the system)
+unalias vim (removes the alias for vim)
+
+Command Substitution
+cat $(find . -name "*.sh") (for every sh file found, cat it)
+a =$(cat /etc/passwd)
+$a (does not work)
+echo $a (cats the /etc/passwd file and prints it on the screen)
+
+Conditionals
+if [[ condition ]]; then
+      commands
+elif [[ condition ]]; then
+      commands
+else
+      commands
+fi
+
+-e (file exists ?)
+-f (file exists and is a regular file?)
+-d (file exists and is a directory?)
+-s (file exists and is NOT empty?)
+-x (file exists and is executable?)
+-w (ile exists, and IS writable by me?)
+-gt > (greater than)
+-lt < (less than)
+-ge (greater than or equal to)
+-le (less than or equal to)
+-eq (integers) == (strings) (is equal to)
+-ne != is NOT equal to)
+
+
+
+
+
 
 
 
