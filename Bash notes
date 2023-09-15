@@ -186,6 +186,67 @@ use uniq after using sort or it will not work properly
 sort -u (does the same as uniq but does not have a count like uniq)
 
 
+Parameter is the same thing as variable
+variabe_name = value
+$variable_name -- calls a variable
+expr -- does math
+c = $(expr $a - $b)
+echo $c
+
+$* -- The positional parameters, starting from one.
+
+$@ -- The positional parameters, starting from one.
+
+$# -- The number of positional parameters.
+
+$? -- The exit status of the previous command.
+
+$- -- The current option flags of the shell.
+
+$$ -- The process ID of the shell.
+
+$! -- The process ID of the most recent background job.
+
+$0 -- $0 is set to the name of the script.
+
+$_ -- First command in a script, is the path/name of the script as invoked.
+Otherwise, it is the last parameter passed to the most recent command.
+
+
+finctions
+myfunc() {
+    commands
+    more commands
+}
+#call the function
+myfunc
+
+demo 1 
+car1 = 'A'
+var2 = 'B'
+myfunc() {
+    local var1='c'
+    var2='D'
+    echo "Inside function car1: $var1 $var2: $var2" 
+}
+echo "Before executing function var1;$var1 var2:$var2"
+myfunc
+echo "after executing function var1:$var1 var2:$var2
+
+variable substitustion
+a='5'
+b='10'
+c='0'
+echo 'Bash is only $1 days long"
+echo "BASH should be $2 days long"
+echo 'I wish I spent $3 days in bash'
+./bash.sh 5 10 0 --outputs
+Bash is only 5 days long
+Bash should be 10 days long
+I wish I spent 0 days in bash
+
+md5sum exists and gets you the md5 hash
+
 
 
 
