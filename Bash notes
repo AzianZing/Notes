@@ -222,7 +222,7 @@ myfunc() {
 myfunc
 
 demo 1 
-car1 = 'A'
+var1 = 'A'
 var2 = 'B'
 myfunc() {
     local var1='c'
