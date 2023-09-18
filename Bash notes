@@ -185,6 +185,8 @@ cat password | awk -F: '{print$1}' | sort | uniq -c (-c will tell you amount of 
 use uniq after using sort or it will not work properly
 sort -u (does the same as uniq but does not have a count like uniq)
 
+Day 3
+---------------------------------------------------
 
 Parameter is the same thing as variable
 variabe_name = value
@@ -247,6 +249,54 @@ I wish I spent 0 days in bash
 
 md5sum exists and gets you the md5 hash
 
+Day 4
+-------------------------------------------
+variable callbacks ($variable name)
+
+Looping
+x=0 
+while [[ $x -le 10 ]] ; do
+    echo $x
+    x=$(($x+1)) (Double parenthesis means to execute arithmatically)
+done
+
+for x in {0..10}; do
+    echo $x    (Same code as above)
+done
+
+for x in {cosc, jcac, mct, 'san diego'}; do
+    echo $x
+done
+
+for x in $(cat list); do
+    echo $x    (Prints the list that was made)
+done
+
+#!/bin/bash
+for x in $(cat /etc/passwd | awk -F: '{print $1}')
+    do echo $x is a user on this computer
+done
+
+x=0
+while [[ $x -le 10 ]] ; do
+    echo $x
+    x=$(($x+1))
+done
+
+#!/bin/bash
+
+for a in 1 2 3 4 5 6 7 8 9 0
+do
+    #If a is equal to 5 then break the loop
+    if [ $a == 5 ]
+    then
+        break
+    fi
+    #Print the value
+    echo "Iteration no $a"
+done
+
+which, route OR ip route, tar, zip
 
 
 
@@ -256,6 +306,260 @@ md5sum exists and gets you the md5 hash
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CTFd Activities
+-------------------------------------------------
+1. Using Brace-Expansion, create the following directories within the $HOME directory:
+
+    1123
+    1134
+    1145
+    1156
+
+mkdir 11{23,34,45,56}
+
+1.2. Use Brace-Expansion to create the following files within the $HOME/1123 directory. You may need to create the $HOME/1123 directory. Make the following files, but utilze Brace Expansion to make all nine files with one touch command.
+
+Files to create:
+
+    1.txt
+    2.txt
+    3.txt
+    4.txt
+    5.txt
+    6~.txt
+    7~.txt
+    8~.txt
+    9~.txt
+
+cd 1123
+touch {1..5}.txt {6..9}~.txt
+
+1.3. Using the find command, list all files in $HOME/1123 that end in .txt
+
+find $HOME -name '*.txt'
+
+1.3b. List all files in $HOME/1123 that end in .txt. Omit the files containing a tilde (~) character.
+
+find $HOME/1123 -name '*.txt' | grep -v '~'
+
+2. Copy all files in the $HOME/1123 directory, that end in ".txt", and omit files containing a tilde "~" character, to directory $HOME/CUT.
+
+find $HOME/1123 -name *.txt -exec cp $HOME/1123/{1..5}.txt $HOME/CUT \;
+
+3. Using ONLY the find command, find all empty files/directories in directory /var and print out ONLY the filename (not absolute path), and the inode number, separated by newlines.
+
+find /var -empty -printf "%i %f\n" -type f,d
+
+4. Using ONLY the find command, find all files on the system with inode 4026532575 and print only the filename to the screen, not the absolute path to the file, separating each filename with a newline. Ensure unneeded output is not visible.
+
+find / -inum 4026532575 -printf '%f\n'
+
+5. 
+    Using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
+    Write those to a text file called names in $HOME/CUT directory.
+    Omit the names filename from your output.
+
+ls -l $HOME/CUT | cut -d' ' -f9 | cut -d'.' -f1- -s > $HOME/CUT/names
+
+6. Write a basic bash script that greps ONLY the IP addresses in the text file provided (named StoryHiddenIPs in the current directory); sort them uniquely by number of times they appear.
+
+cat StoryHiddenIPs | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | sort | uniq -c | sort -nr
+
+7. 
+    Using ONLY the awk command, write a BASH one-liner script that extracts ONLY the names of all the system and user accounts that are not UIDs 0-3.
+    Only display those that use /bin/bash as their default shell.
+    The input file is named $HOME/passwd and is located in the current directory.
+    Output the results to a file called $HOME/SED/names.txt
+
+awk -F: '($3 > 3)&&($NF=="/bin/bash"){print$1}' $HOME/passwd > $HOME/SED/names.txt
+
+8. 
+    Find all dmesg kernel messages that contain CPU or BIOS (uppercase) in the string, but not usable or reserved (case-insensitive)
+    Print only the msg itself, omitting the bracketed numerical expressions ie: [1.132775]
+
+dmesg | grep "CPU\|BIOS" | grep -i -v "usable\|reserved" | cut -d] -f2-
+
+9. 
+    Write a Bash script using "Command Substitution" to replace all passwords, using openssl, from the file $HOME/PASS/shadow.txt with the MD5 encrypted password: Password1234, with salt: bad4u
+    Output of this command should go to the screen/standard output.
+    You are not limited to a particular command, however you must use openssl. Type man openssl passwd for more information.
+
+a=$(openssl passwd -1 -salt bad4u Password1234)
+awk -F: -v "awka=$a" 'BEGIN{OFS=":"}{$2=awka}{print$0}' $HOME/PASS/shadow.txt
+
+10. Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt that do not end with either /bin/sh or /bin/false.
+
+cat $HOME/passwd | sed '\/bin\/sh\|\/bin\/false/d' > $HOME/PASS/passwd.txt
+
+11. 
+    Using find, find all files under the $HOME directory with a .bin extension ONLY.
+    Once the file(s) and their path(s) have been found, remove the file name from the absolute path output.
+    Ensure there is no trailing / at the end of the directory path when outputting to standard output.
+    You may need to sort the output depending on the command(s) you use. Have each path displayed only once.
+
+find $HOME -type f -name '*.bin' | awk -F/ 'BEGIN {OFS="/"} {$NF"";NF--; print}' | sort -u
+
+12. 
+    Write a script which will copy the last entry/line in the passwd-like file specified by the $1 positional parameter
+    Modify the copied line to change:
+        User name to the value specified by $2 positional parameter
+        Used id and group id to the value specified by $3 positional parameter
+        Home directory to a directory matching the user name specified by $2 positional parameter under the /home directory (i.e. if the $2 was 'Chris', the new line would have /home/Chris as its home directory)
+        The default shell to `/bin/bash'
+    Append the modified line to the end of the file
+
+#!/bin/bash
+user=$2
+ugid=$3
+default='/bin/bash'
+homedir="/home/"$2
+tail -1 $1 | awk -F: -v "awku=$user" -v "awkugid=$ugid" -v "awkhome=$homedir" -v "awkshell=$default" 'BEGIN {OFS=":"}  {$1=awku} {$3=awkugid} {$4=awkugid} {$6=awkhome} {$NF=awkshell} {print $0}' >> $1
+
+13. 
+    Find all executable files under the following four directories:
+        /bin
+        /sbin
+        /usr/bin
+        /usr/sbin
+    Sort the filenames with absolute path, and get the md5sum of the 10th file from the top of the list.
+
+command=$(find /bin /sbin /usr/sbin /usr/bin -type f -executable | sort | head -10 | tail -1)
+md5sum $command | cut -d/ -f1
+
+14. Using any BASH command complete the following:
+
+    Sort the /etc/passwd file numerically by the GID field.
+    For the 10th entry in the sorted passwd file, get an md5 hash of that entry’s home directory.
+    Output ONLY the MD5 hash of the directory's name to standard output.
+
+command=$(sort -n -t':' -k4 /etc/passwd | head -10 | tail -1 | cut -d: -f6)
+echo "$command" | md5sum | cut -d- -f1
+
+15. 
+    Write a script which will find and hash the contents 3 levels deep from each of these directories: /bin /etc /var
+    Your script should:
+        Exclude file type named pipes. These can break your script.
+        Redirect STDOUT and STDERR to separate files.
+        Determine the count of files hashed in the file with hashes.
+        Determine the count of unsuccessfully hashed directories.
+        Have both counts output to the screen with an appropriate title for each count.
+
+a=$(find /bin /etc /var -maxdepth 3 ! -type p 2>/dev/null)
+md5sum $a > success.txt 2>fails.txt
+hash=$(grep -c '/' success.txt)
+unhash=$(grep -c 'directory' fails.txt)
+echo 'Successfully Hashed Files:' $hash
+echo 'Unsuccessfully Hashed Directories:' $unhash
+
+alternate answer for 15
+
+mkdir $HOME/demo/demo2
+find /bin /etc /var -maxdepth 3 ! -type p -exec md5sum {} > $HOME/demo/demo2/success 2>$HOME/demo/demo2/fails \;
+a=$(wc -l $HOME/demo/demo2/success | awk '{print$1}')
+b=$(grep -c "Is a directory" $HOME/demo/demo2/fails)
+if [[ "$a" ]];
+    then
+          echo "Successfully hashed files: $a";
+          echo "Unsuccessfully hashed directories: $b";
+    else
+          echo "oops";-maxdepth 3
+fi
 
 
 
