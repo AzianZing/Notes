@@ -298,7 +298,52 @@ done
 
 which, route OR ip route, tar, zip
 
+Test Review
+----------------------------------------------
+cut command
+delimiters
+cat /etc/passwd | cut -d: -f1- (-f1- prints all fields, -f1 prints the first field)
 
+cut -d: -f1 /etc/passwd (does the same as cat and pipe)
+
+sort
+sort -nr -k4 (numeric and reversed sorting on the 4th column)
+
+grep
+grep -v -o -r -i -E (-v is for inverse -o is for only -r is recursively -i is or case insensitive -E is for regex)
+
+find
+find /home/student -name -iname -type f,p,d -mtime -exec COMMAND -OPTIONS {} \; (-name will find certain names -iname will find inode number -type finds by a type -mtime finds by modified time searching by days same for atime and ctime, accessed time and created time -exec executes COMMAND against every object)
+                                                   -exec COMMAND -OPTIONS {} + (executes COMMAND against everything all at once)
+
+tar
+tar -c (create)
+    -v (verbose)
+    -f (file)
+    -z (gzip)
+
+word count
+wc -l
+
+remove/delete
+rm (delete files)
+rmdir (delete directories)
+
+touch
+touch -d ("2020-09-19 09:00:00" FILE)
+      -t ( [[CC]YY]MMDDhhmm[.ss] FILE )
+
+killing
+kill -9
+pkill
+killall
+
+if statements
+if [[ <CONDITION> ]]; then
+      commands
+elif [[ <CONDITION> ]]; then
+      commands
+fi
 
 
 
@@ -639,6 +684,24 @@ cat high.txt | sort | uniq -c | sort -nr
 echo ''
 echo 'Files w/ OCTAL Perm Values 0-640:'
 cat low.txt | sort | uniq -c | sort -nr
+
+ALTERNATE SOLUTION
+find /etc -type f -exec stat -c '%a' {} \; > ./perms 2>/dev/null (%a is octal value)
+
+for x in $(cat ./perms); do
+      if [[ $x -le 640 ]]; then  
+            echo "$x" >> low.txt
+      elif [[ $x -ge 642 ]]; then
+            echo "$x" >> high.txt
+      fi
+done
+
+echo "Files w/ Octal Perm Values 642+:"
+cat high.txt | sort | uniq -c | sort -nr
+echo
+echo "FIles w/ Octal Perm Values 0-640:"
+cat low.txt | sort | uniq -c | sort -nr
+
 
 
 
