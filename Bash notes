@@ -346,6 +346,21 @@ elif [[ <CONDITION> ]]; then
 fi
 
 
+Practice Exam Questions
+------------------------------
+cat /etc/passwd | sort -t: -k3,3 -n | cut -d: -f1
+
+sed 's/cat/dog/g;s/Navy/Army/g' $infile > $outfile
+
+ls -l $dirname | wc -l
+
+cat $src | grep -v $match > $dst
+
+find $dir -type f -mtime -1 | sort
+
+
+
+
 
 
 
