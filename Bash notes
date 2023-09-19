@@ -17,7 +17,7 @@ finding files and directories (locate, whereis, which, find) (Use find a lot)
 commands: grep and cut
 
 ------------------------------------
-SHELL - A sell is a macro processor that executes commands.
+SHELL - A shell is a macro processor that executes commands.
 1. Command Interpreter
 2. Programming language
 Interactive vs non-interactive (Interactive is command input)(DCO mostly uses non-interactive)
