@@ -1,0 +1,624 @@
+PowerShell Notes
+##########################
+command to get into windows system
+xfreerdp /u:student /v:10.50.43.194 -dynamic-resolution +glyph-cache +clipboard
+
+STUDENT GUIDE
+#############################################################################
+
+Getting Help
+--------------------
+Command 	Description
+
+Get-help       Displays help
+
+man            Same as get-Help
+
+cmd /c help    Display cmd commands
+
+Cmdlet Syntax
+---------------------
+-          Indicates a parameter
+<>         Indicates Arguments
+[]         Argument accepts multiple values
+
+Aliases
+---------------------
+Command          Description
+Get-Alias        Display full list of aliases
+set-alias        Creates new alias
+del-alias        Deletes the alias
+
+Variables
+--------------------
+Command                    Result
+$var1 = <value>            $var1 = 10
+$var2 = <value>            $var2 = 20
+$var3 = $var1 + $var2      $var3 = 30
+Get-Variable               Lists automatic variables
+dir variable               same as Get-Variable
+dir env                    Lists environmental variables
+
+Automatic Variables
+--------------------
+Variable 	             Description
+
+$False                 False
+
+$True                  True
+
+$Null                  Empty value
+
+$$                     Last Token used
+
+$?                     Execution status of last operation
+
+$^                     First Token in last line received
+
+$_ or $PSItem          Object in current pipeline
+
+$Args                  Array of undeclared parameters and/or values
+
+$Error                 Most recent error
+
+$Home                  full path of user’s home directory
+
+$Host                  Current host application
+
+$Input                 Enumerator that enumerates all input passed to a function
+
+$LastExitCode          exit code of the last Windows-based program that was run
+
+$Matches               Hash Table of RegEx matches
+
+$PID                   PID of current PS session
+
+$Profile               Full path of current user and host application
+
+$PSVersionTable        Details about Windows PowerShell
+
+$PSHome                the full path of the installation directory for PowerShell
+
+$Pwd                   Full path of current directory
+
+Data Types
+-----------------------
+Data Type 	    Description
+
+[string]        Fixed-length string of unicode characters
+
+[char]          16-bit unicode character
+
+[byte]          8-bit unsigned character
+
+[int]           32-bit signed integer
+
+[long]          64-bit signed integer
+
+[single]        32-bit floating point number
+
+[double]        64-bit floating point number
+
+[datetime]      Date and Time
+
+[array]         array of values
+
+Getting Data Types
+-----------------------
+Command 	                   Result
+
+("Hello").gettype().name     String
+
+(77.564).gettype().name      Double
+
+(0xFF).gettype().name        Int32
+
+Casting
+------------------------
+Command 	      Result
+
+[int](5.5)      6
+
+[float](5.5)    5.5
+
+[int](0xFF)     255
+
+Arrays
+------------------------
+$myarray = 'Hello', 12, (Get-Date), $true, 77.65
+$myarry.count     5
+$myarray[0]    Hello
+$myarray[-1]    77.65
+$myarray += 'new element'
+
+Multidimensional Arrays
+------------------------
+$multiarray = @((1,2,3,4),(5,6,7,8))
+$multiarray[0][1]    2
+$multiarray[1][3]    8
+$nonjaggedarray = New-Object "int32[,]" 2,4
+$nonjaggedarray[0,1] = 2
+$nonjaggedarray[1,3] = 8
+$nonjaggedarray[0,1]    2
+$nonjaggedarray[1,3]    8
+$multiarray = @(); $multiarray += , @(1,2,3)
+
+The Pipeline
+-----------------------
+Cmdlet 	Description
+
+Compare-Object        Compares two objects and marks their differences
+
+ConvertTo-Html        Converts object into HTML
+
+Export-Csv            Saves object in a csv file
+
+ForEach-Object        Returns each pipeline object one after the other
+
+Format-List           Outputs results as a list
+
+Format-Table          Outputs result as a table
+
+Format-Wide           Outputs results in several columns
+
+Get-Unique            Removes duplicates from a list of values
+
+Group-Object          Groups results according to a criterion
+
+Measure-Object        Calculates the statistical frequency distribution of object values or texts
+
+Out-File              Writes results to a file
+
+Out-Host              Outputs results in the console
+
+Out-Null              Deletes results
+
+Out-String            Converts results to plain text
+
+Select-String         Filters properties of an object and limits number of results as requested
+
+Sort-Object           Sorts results
+
+Tee-Object            Copies the pipeline’s contents and saves it to a file or a variable
+
+Where-Object          Filters results according to a criterion
+
+Pipeline Examples
+------------------------
+gci *.txt | ?{$_.length -lt 100} | ft name
+ps | ft PSResources
+ps | gm -Membertype PropertySet
+gs | Group Status
+gci | Sort Length, Name -descending
+gs | ?{$_.status -eq "Running"}
+gci | Sort Length -descending | Select -first 5
+ps | Sort StartTime | Select -first 5 | ft ProcessName, StartTime
+1,2,3,1,2,3,1,2,3,1,2,3 | Sort | Get-Unique
+gci | Measure-Object Length
+gcm -Type Cmdlet | %{$_.Parameters} | %{$_.Keys} | group -NoElement | Sort Count, Name -Descending | Select -Skip 11 | ?{$_.Count -gt 1} | Out-Gridview
+
+Comparison Operators
+------------------------
+Operator 	Description
+
+-eq            Equals
+
+-ne            Not Equal
+
+-gt            Greater Than
+
+-lt            Less Than
+
+-ge            Greater Than or Equal To
+
+-le            Less Than or Equal To
+
+-contains      Contains (used for a collection of items)
+
+-match         Matches anywhere in the string
+
+-like          Both sides of expression are identical
+
+-in            Returns true when value is contained within a collection
+
+-replace       Replaces a string pattern
+
+-is            Returns true if both objects are the same type
+
+Loops
+-------------------------
+While Loop
+#########################
+$x = 0
+while($x -lt 10) {
+  Write-Host $x
+  $x++
+}
+
+Do While
+########################
+$x = 0
+Do {
+  Write-Host $x
+  $x++
+}while($x -lt 10)
+
+Do Until
+########################
+$x = 0
+Do {
+  Write-Host $x
+  $x++
+}until($x -gt 10)
+
+ForEach Loop
+########################
+$teams = "Lions", "Tigers", "Red Wings", "Pistons"
+ForEach($team in $teams){
+  $team.insert(0, "Detroit ")
+}
+
+ForEach-Object
+########################
+gci | % -process {$_.Length / 1024}
+
+Conditional Statements
+------------------------
+If/Else
+########################
+$x = 6
+if ($x -le 5) {
+  Write-Host "Less than 5"
+} else {
+  Write-Host "Greater than 5"
+}
+
+If/Elseif/Else
+#########################
+$x = 5
+if ($x -lt 5) {
+  Write-host "Less than 5"
+} elseif ($x -eq 5) {
+  Write-Host "It is 5"
+} else {
+  Write-Host "Greater then 5"
+}
+
+Switch
+#########################
+$time = 12
+Switch($time) {
+  6 {"Morning"; break}
+  12 {"Noon"; break}
+  18 {"Evening"; break}
+  22 {"Night"; break}
+}
+
+Flow Control
+--------------------------
+Break
+##########################
+$x = 0
+while($x -lt 10) {
+  $x += 1
+  if($x -eq 5) {break}
+  Write-Output $x
+}
+
+Continue
+##########################
+$x = 0
+while($x -lt 10) {
+  $x += 1
+  if ($x -eq 5) {continue}
+  Write-Output $x
+}
+
+RegEx
+-----------------------------
+Escape Sequence 	Special Characters
+
+`n                New Line
+
+`t                Tabulator (Tab)
+
+`b                Backspace
+
+`’                Single Quotation Mark
+
+`"                Double Quotation Mark
+
+`0                Null
+
+``                Backtick Character
+
+Placeholders
+-----------------------------
+Placeholder 	Description
+
+.              Any character except newline
+
+[^abc]         All characters except one specified
+
+[^a-z]         All characters expect ones in range specified
+
+[abc]          One of the characters
+
+[a-z]          One of the characters in range
+
+\d             Any number [0-9]
+
+\D             Any non-number
+
+\n             Line Break
+
+\r             Carriage return
+
+\s             Any whitespace (space, tab, new line)
+
+\S             Any non-whitespace
+
+\t             tab
+
+\w             Letter, number or underline
+
+\W              Non-letter, number, or underline
+
+Quantifiers
+---------------------------
+Quantifier 	Description
+
+*           Any
+
+?           None or one occurrence
+
+{n,}        At least n occurrences
+
+{n,m}       At least n occurrences, maximum m occurrences
+
+{n}         Exactly n occurrences
+
++           One or many occurrences
+
+Anchors
+------------------
+Anchor 	    Description
+
+$           End of text
+
+^           Start of Text
+
+\b          Word boundary
+
+\B          No word boundary
+
+\G          After last match
+
+String Operators
+-------------------------------
+Operator 	  Definition
+
+-f          Format String Expression
+
+-replace    replaces strings
+
+-split      Splits a string
+
+-join       Joins multiple strings
+
+String Methods
+------------------------------
+Method 	           Definition
+
+.Split()           splits strings
+
+.Replace()         replaces strings
+
+.StartsWith()      Determines whether this string instance starts with the specified character.
+
+.EndsWith          Determines whether the end of this string instance matches the specified character.
+
+.ToLower()         Convert string to lower case
+
+.ToUpper()         Convert String to upper case
+
+Functions
+-------------------------------
+Basic Function
+--------------
+function get-sum($num1, $num2) {
+  $num1 + $num2
+}
+get-sum 5 5
+
+Function with Optional Parameters
+--------------
+function get-test {
+  param($parm1='some value', $parm2='some value')
+  "The value $parm1 and $param2 are parameters"
+}
+
+Function with Mandatory Parameters
+--------------
+function get-test {
+  param (
+    [Parameter(Mandatory=$true)]
+    $name
+    )
+    "Hello, $name"
+}
+
+Function with Help Message
+--------------
+function get-test {
+  param(
+    [Parameter(Mandatory=$true, HelpMessage='Enter your name')]
+    $name
+    )
+    "Hello, $name"
+}
+
+Function with Strongly-Typed Mandatory Parameters
+--------------
+function get-conversion {
+  param(
+    [Parameter(Mandatory=$true, HelpMessage='Enter weight')]
+    [Double]
+    $pounds
+    )
+    $kilos = $pounds * (1/2.2)
+    $kilos
+}
+
+Function with Switch Parameter
+---------------
+function get-switch {
+  param(
+    [Switch]
+    $special
+    )
+    if ($special) {
+      'This is the switch'
+    } else {
+      'This is not the switch'
+    }
+}
+
+Advanced Function
+-----------------
+function Get-compinfo {
+  [CmdletBinding()]
+  BEGIN {
+    $name = $env:COMPUTERNAME
+  }
+  PROCESS {
+    Write-Verbose -Message "$name"
+    $system = gwmi -class Win32_ComputerSystem -ComputerName $name
+    $os = gwmi -class Win32_OperatingSystem -ComputerName $name
+    $bios = gwmi -class win32_BIOS -ComputerName $name
+    $properties = @{
+      ComputerName = $name
+      Model = $system.model
+      OS = $os.caption
+      SerialNumber = $bios.SerialNumber
+    }
+  }
+  END {
+    New-Object -TypeName PSobject -Property $properties
+  }
+}
+
+Filter
+------------------
+filter namedthis {
+  if )$_.name -match "file.txt") {$_}
+}
+gci | gc | ?{$_ | namedthis}
+
+NOTES
+##################################################################
+
+Powershell is a wrapper for System.Management.Automation.dll
+powershell is based on the .net framework
+everthing is processed through system.management.automation.dll and is based on C#
+Powershell is on Linux, MacOS, and Windows
+We will only be using powershell on Windows devices
+verb noun, tab complete, F8 to run highlighted
+Many ways to complete a problem in powershell
+Powershell is case insensitive
+Has the ability to reach outside of itself so some commands that should not work in Powershell work
+<CMDLET> <PARAMETERS> <ARGUMENTS>
+Help section is on of the most important parts of PowerShell
+
+Get-Help
+--------------------------
+Has all of the answers and examples of PowerShell
+Most important part of PowerShell
+Update-Help updates the help page
+The errors in PowerShell are very pointing
+PowerShell tells you what the problem is
+
+PRETEST IS EASIER THAN THE TEST
+
+get-help Get-Command gives help on Get-Command, goes a lot more in depth helps on any arguments and parameters
+Argument in [] means it is a mandatory argument, if not in [] then it is not a mandatory argument
+get-help get-command -showwindow will open a seperate window with the help page
+get-help get-command -onlne will take you to the online help page (Gunny's go to)
+get-help *net* (will give all help options that include net anywhere in the name)
+
+about pages
+get-help about_* provides more information about the specific thing clarified
+
+Aliases
+-----------------------------
+Get-ChildItem (gci, dir, ls)
+Get-Alias -Definition Get-ChildItem (will show all aliases for the command displayed)
+Set-Alias
+Remove-Item alias:edit (removes an alias)
+Aliases are not persistent
+
+Object based-programming
+-----------------------------
+Characteristics and methods
+what is it and what is it doing
+
+Properties and methods
+properties are what something is
+methods are what something can do
+
+(Get-Process -name noepad).kill()
+
+Get-Process | Get-Member shows methods and properties
+Get-Process | Get-Member -MemberType properties will only show properties
+Get-Process | Get-Member -MemberType methods will show only methods
+
+Get-Process | Format-Table name, id
+Get-Process | Format-List *
+Get-Process | Format-Table -Wrap
+
+function fruit-host {...}
+goes to the host for potential further manipulation
+
+function fruit-output {...}
+goes straight to the screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
