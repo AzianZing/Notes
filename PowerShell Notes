@@ -582,6 +582,155 @@ goes to the host for potential further manipulation
 function fruit-output {...}
 goes straight to the screen
 
+cls
+clears the screen
+an alias for clear-host
+
+variables
+--------------------------
+a variable is something that holds a value and can be changed
+system variables and user defined variables
+set by the system versus set by the user
+$var = value is the proper syntax to declare a variable
+user defined variables are not persistent
+system variables are persistent
+$true = True
+$false = False
+$_ or $PSItem = object in current pipeline ($PSItem is more consistent when used in functions)
+$ IS ALWAYS USED
+When scripting try to hard code as little as possible, variables will be your friend to help prevent hard coding
+$matches = Hash table of regex matches
+Call variables with a $ in front of the variables
+Get-ChildItem variable:x also sets variables but in a different syntax
+$x, $y, $z = "this", "that", "third" - how to set multiple variables at oncce
+Remove-variable x, y, z removes all three variables
+
+$name = "george"
+"Hello my name is $name" prints out Hello my name is george
+'Hello my name is $name' prints out Hello my name is $name
+$hour = (Get-date).hour will set the hour to the variable of hour
+The variables are not running the command that is set in the command every time, the variable is a snapshot of the command when it was last run
+
+Environmental variables
+$env:<variable> calls environmental variables
+
+Data Types
+----------------------------
+Integers
+Strings
+Arrays
+Floats
+Single
+Double
+Bytes
+Understand that you have different data types and have an understanding of what the data types are
+("Hello").gettype().name       String
+
+Gettype is useful if code is not working and youre not sure if it is reading it as the correct data type
+
+Arrays
+----------------------------
+$myarray = 'Hello', 12, (Get-Date), $true, 77.65
+#array = 1,2,3,4 or 1..4
+$array2 = "World", "hello", 5, 10, (Get-Date)
+$array3 = @()
+$array[1] calls on an array at the first index value call on the last item using -1
+$array[1..3] calls on an array on the range of index values
+
+Appending an array
+$a = 1..6
+$a += 7,8,9
+
+Jagged Arrays
+An array inside of an array
+$jagarray = "joe", "jim", "jan", (1, ('apple', 'pear'), 3), "jay"
+$jagarray[1] = jim
+$jagarray[3][0] = 1
+$jagarray[3][1][0] = apple
+
+Multidimensional array
+Array
+$TargetingArray = @(
+  (35.7219, 51.3347, "Tehran")
+  (39.9042, 116.4074, "Bejing")
+
+)
+
+Hash Tables
+----------------------
+Dictionary, has key and value pairs
+Arrays can go into hash tables
+$Mylist = @{First = "george"; last = "lucas"; mid = "yes"} creates an empty hash table
+$Mylist["first"] prints out george
+$Mylist.last prints out lucas
+$Mylist.Keys prints out all of the keys
+$Mylist.values prints out all of the values
+
+$Mylist will print the hash table
+$Mylist[$Mylist.keys] prints all of the values
+$mylist.date = Get-Date
+$mylist["Location"] = "Germany" will add the Location = Germany to the hash table
+$mylist.name() manipulates the name
+$mylist.remove() removes the key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
