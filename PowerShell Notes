@@ -806,6 +806,24 @@ Get-Process | Where-Object {$_.Company -like 'micro*'} | Format-Table Name, Desc
 Get-ChildItem | Measure-Object Length (shows the number of files)
 (Get-ChildItem).count (counts all objects in the search area, including directories)
 
+Create Custom Objects
+----------------------
+$MyTruck = New-Object Object
+()
+Add-Member -MemberType NoteProperty -Name Color -Value Red -InputObject $MyTruck
+Add-Member -MemberType Note Property -in $MyTruck -Name Make -Value Ford
+Add-Member -InputObject $MyTruck NoteProperty Model "F-150 Raptor"
+$MyTruck | Add-Member NoteProperty Cab SuperCrew
+()
+All of these do the same thing
+
+Add-Member -MemberType ScriptMethod -InputObject $MyTruck -Name Drive -Value { "Going on a roadtrip" }
+
+$Soldier = [PSCustomObject}@{
+  "FirstName"      = "Joe"
+  "LastName"       = "Snuffy"
+  "MilitaryRank"   = "SSG"
+  "MOS"            = "17C"
 
 
 
