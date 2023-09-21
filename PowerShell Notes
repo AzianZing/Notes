@@ -771,6 +771,41 @@ Use Get-Member to find properties and other shit
 
 Day 2
 ################################################
+Script Blocks
+--------------------
+Putting something that it will do everytime you call it, like a variable but can change on the fly
+$date = {(get-date).Second}
+& $date (call a script block)
+
+Script blocks do not work like variables, cannot add them due to no consistent value
+$a = 1
+$b = {1+1}
+$a += $b (will not run)
+$a += & $b (will run)
+
+alternate
+$a += invoke-command $b
+
+Sorting and grouping
+----------------------
+Get-ChildItem | Sort-Object -Property Extension | Format-Table -GroupBy Extension (sorts and gorups all of the items included in the search by what file extension they have attached)
+If sorting and then grouping all of them will be in the same long list but seperated by extension
+If grouped and not sorted then it will print out a bunch of groups of file extensions without sorting them
+
+Get-Service | Group-Object Extension | Sort-Object Count -Descending (counts the amount of the extensions and lists them and sorting them by the most extensions
+
+Where-Object
+----------------------
+Get-Service | Where-Object{$_.status -eq 'running'} (shows current running services) $_ = current pipeline 
+Get-ChildItem *.txt | Where-Object{$_.Length -gt 100} (checks for text documents with more than 100 bytes of data)
+Get-Process | Where-Object {$_.Company -like 'micro*'} | Format-Table Name, Description, Company (will get all processes that start with micro and format into Name - Description - Company)
+
+-like accepts wildcards when using comparison operators
+-match uses regex when using comparison operators
+
+Get-ChildItem | Measure-Object Length (shows the number of files)
+(Get-ChildItem).count (counts all objects in the search area, including directories)
+
 
 
 
