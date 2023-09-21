@@ -673,6 +673,151 @@ $mylist["Location"] = "Germany" will add the Location = Germany to the hash tabl
 $mylist.name() manipulates the name
 $mylist.remove() removes the key
 
+Practical Exercise Variables
+--------------------------------
+Create a variable called "var1" that holds a random number between 25-50.
+
+Create a variable called "var2" that holds a random number between 1-10.
+
+Create a variable called "sum" that holds the sum of var1 and var2.
+
+Create a variable called "sub" that holds the difference of var1 and var2.
+
+Create a variable called "prod" that holds the product of var1 and var2.
+
+Create a variable called "quo" that holds the quotient of var1 and var2.
+
+Replace the variables in text with their values in the following format:
+
+    "var1" + "var2" = "sum"
+
+Replace the variables in text with their values in the following format:
+
+    "var1" - "var2" = "sub"
+
+Replace the variables in text with their values in the following format:
+
+    "var1" * "var2" = "prod"
+
+Replace the variables in text with their values in the following format:
+
+    "var1" / "var2" = "quo"
+
+$var1 = Get-Random -Minimum 25 -Maximum 50
+$var2 = Get-Random -Minimum 1 -Maximum 10
+$sum = $var1 + $var2
+$sub = $var1 - $var2
+$prod = $var1 * $var2
+$quo = $var1 / $var2
+Write-Output "$var1 + $var2 = $sum"
+Write-Output "$var1 - $var2 = $sub"
+Write-Output "$var1 * $var2 = $prod"
+Write-Output "$var1 / $var2 = $quo"
+
+Alternate method
+Write-Host "$var1 + $var2 = $sum
+"{0} + {1} = {2}" -f $var1, $var2, $sum
+
+Practical Exercise Reverse Arrays
+---------------------------------
+Create an array containing a range with a random starting and stopping point. The starting point will be a random number from -10 through 0. The ending point will be a random number from 1 through 20.
+Create a variable that contains the contents of the array in reverse
+
+$min = Get-Random -minimum -10 -maximum 0
+$max = Get-Random -minimum 1 -maximum 20
+$array = @($min..$max)
+$array2 = @($max..$min)
+
+Alternate Method
+[array]::Reverse($array)
+
+
+Practical Exercise Arrays & Hash Tables
+--------------------------------
+Create two empty hash tables with the following names:
+    employee1
+    employee2
+
+Now add a new key called Username which holds a contraction of the employee’s first initial then last name then ID. (i.e. mhopper001).
+Mary got promoted to "Software Lead" so the job key for Mary needs to be changed to "Software Lead"
+Create a new hash table called "employee3" that contains the following values with the respective keys.
+
+Add a new key called "Status" that holds the values:
+
+$employee1 = @{First = "Mary"; Last = "Hopper"; ID = "001"; Job = "Software Developer"}
+$employee2 = @{First = "John"; Last = "Williams"; ID = "002"; Job = "Web Developer"}
+$employee1["Username"] = "mhopper001"
+$employee2["Username"] = "jwilliams002"
+$employee3 = @{First = "Alex"; Last = "Moran"; ID = "003"; Job = "Software Developer"}
+$employee1["Status"] = "Management"
+$employee2.add("Status", "Intermediate")
+
+To sort the items in the order that you input them in use $employee1=@{[ordered]}
+
+Practical Exercise The Pipeline
+-------------------------------
+Display the start time of the earliest and latest running processes
+Identify a cmdlet that returns the current date and time then using this cmdlet and Select-object, display only the current day of the week
+Identify a cmdlet that displays a list of installed hotfixes.
+Extend the expression to sort the list by install date, and display only the install date and hotfix ID.
+Extend the expression further, but this time sort by description, include description, hotfix ID, and install Date.
+
+$a = (Get-Process | select Name,StartTime | sort -Property Starttime | select -First 2 -Last 1)
+Write-Output $a
+$b = (Get-Date).DayOfWeek
+Get-HotFix | Sort-Object -Property Description | Select-Object -Property Description,InstalledOn,HotFixID
+
+Use Get-Member to find properties and other shit
+
+Day 2
+################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
