@@ -825,6 +825,21 @@ $Soldier = [PSCustomObject}@{
   "MilitaryRank"   = "SSG"
   "MOS"            = "17C"
 
+Practical Example Custom Object
+------------------------
+$compinfo = Get-WmiObject Win32_ComputerSystem
+$osinfo = Get-WmiObject Win32_OperatingSystem
+$biosinfo = Get-WmiObject Win32_BIOS
+$diskinfo = Get-WmiObject Win32_LogicalDisk
+
+$myobject = New-Object -TypeName psobject
+
+$myobject | Add-Member -MemberType NoteProperty -Name ComputerName -Value $compinfo.Name
+$myobject | Add-Member -MemberType NoteProperty -Name OperatingSystem -Value $osinfo.Caption
+$myobject | Add-Member -MemberType NoteProperty -Name Version -Value $osinfo.Version
+$myobject | Add-Member -MemberType NoteProperty -Name Manufacturer -Value $biosinfo.Manufacturer
+$myobject | Add-Member -MemberType NoteProperty -NameDisks -Value $diskinfo._path
+
 
 
 
