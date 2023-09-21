@@ -935,6 +935,47 @@ for(initialization; condition; increment)
     code block to be executed
 }
 
+Practical Exercise Comparison and Condition
+-----------------------
+Find and extract the model number from the provided lines of text. If there isn’t a model number then display to the user that a model number wasn’t found
+Check both lines for model numbers and report individually the line and model number if found.
+
+Use the following variables for your script:
+$line1 = "Do you have model number: MT5437 for john.doe@sharklasers.com?"
+$line2 = "What model number for john.doe@sharklasers.com?"
+
+Must use at least ONE comparison operator
+Must use at least ONE If Condition OR Switch Statement
+
+Practical Exercise Looping and Iteration
+----------------------
+Part 1
+  Use an array to iterate and open the following
+    Notepad
+    MS Edge
+    MSpaint
+  Query the processes
+    Kill the processes from PowerShell
+Part 2
+  Use an array to iterate and open the following
+    Notepad
+    MS Edge
+    MSpaint
+  Query the processes
+    Save the ProcessIDs to a text file called procs.txt
+    Iterate through the ProcessIDs in the text file and kill them
+Part 3
+   Use an array to iterate and open the following
+    Notepad
+    MS Edge
+    MSpaint
+  Query the processes and display only the following information in order by process ID
+    Process ID
+    Process Name
+    The time the process started
+    The amount of time the process has spent on the processor
+    The amount of memory assigned to the process
+
 
 
 
