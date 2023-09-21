@@ -827,6 +827,21 @@ $Soldier = [PSCustomObject}@{
 
 Practical Example Custom Object
 ------------------------
+Create a custom object that contains information about the host system using the following:
+    Win32_ComputerSystem
+    Win32_BIOS
+    Win32_OperatingSystem
+    Win32_LogicalDisk
+    Use the cmdlet Get-WmiObject to obtain the needed information
+
+The final output of this exercise should look like the following:
+ComputerName    : DESKTOP-5KJDVS2
+OperatingSystem : Microsoft Windows 10 Pro
+Version         : 10.0.17134
+Manufacturer    : Dell Inc.
+Disks           : {\\DESKTOP-                          5KJDVS2\root\cimv2:Win32_LogicalDisk.DeviceID="C:",
+                  \\DESKTOP-5KJDVS2\root\cimv2:Win32_LogicalDisk.DeviceID="D:"}
+
 $compinfo = Get-WmiObject Win32_ComputerSystem
 $osinfo = Get-WmiObject Win32_OperatingSystem
 $biosinfo = Get-WmiObject Win32_BIOS
@@ -839,6 +854,131 @@ $myobject | Add-Member -MemberType NoteProperty -Name OperatingSystem -Value $os
 $myobject | Add-Member -MemberType NoteProperty -Name Version -Value $osinfo.Version
 $myobject | Add-Member -MemberType NoteProperty -Name Manufacturer -Value $biosinfo.Manufacturer
 $myobject | Add-Member -MemberType NoteProperty -NameDisks -Value $diskinfo._path
+
+Comparison Operators
+--------------------------
+-contains - used for a collection of items
+-match - matches anywhere in the string (uses RegEx)
+-like - both sides of the expression are identical
+-in - returns true when value is contained within a collection
+-replace - replaces a string pattern
+-is - returns true if both objects are the same type
+-ne - not equal
+
+2 -eq 2 (returns True)
+1,2,3 -eq 2 (returns 2)
+1,2,3,2 -eq 2 (returns 2 2)
+2 -eq 1,2,3 (returns False)
+2 -ne 1,2,3 (returns True)
+
+"PowerShell" -like "*shell" (returns True)
+"PowerShell", "Server" -like "*shell" (returns PowerShell)
+"PowerShell", "Server" -notlike "*shell" (returns Server)
+
+$text = 'Here is the model number: MO5364'
+$pattern = 'MO(\d{3})'
+$text -match $pattern (returns True)
+
+$Matches (returns matches in the code)
+
+$fruit = 'apple', 'orange', 'pear', 'tomato'
+$fruit -contains 'tomato' (returns True)
+
+$num = 5
+(($num -gt 1) -and ($num -lt 10)) (returns True)
+
+Conditionals
+--------------------------
+if (condition) {
+
+}
+
+if($x -gt 10){"$x is larger than 10"}
+  else{
+    "$x is smaller than 10"
+      }
+
+$num = (Get-Random -Minimum 0 -Maximum 10)
+if($num -lt 5) {
+       "$num is less than 5"
+}
+elseif($num -eq 5) {
+        "$num is exactly 5"
+}
+else {
+        "$num is greater than 5"
+
+A switch is used like a main menu screen, whichever option you pick the results show
+
+Loops
+-------------------
+$nums = 1,2,3,4,5
+$num | ForEach-Object{$_*2} (returns 2,4,6,8,10)
+
+ForEach ($item in gci C:\ -recurse){$item.name}
+
+While loops
+------------------
+while $num -let 3)
+    $num
+    $num++
+    }
+
+do { 
+  code black
+code wile(conditoions)
+
+for loops
+-------------------
+for(initialization; condition; increment)
+{
+    code block to be executed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
