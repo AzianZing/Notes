@@ -1052,6 +1052,33 @@ function convert-todollars {
   $Dollar
 }
 
+Function Add-Soldier
+  [CmdletBinding()]
+  param {
+    [Parameter(Mandatory=$true)][string]$firstname,
+    [Paramter(mandatory=$true)][string]$lastname
+
+Return Soldier
+
+Advanced Functions
+-----------------
+function bare-bones{
+  [CmdletBinding()]
+  param(
+    <Define parameters>
+  )
+  Begin {
+    <code>
+  }
+  Process {
+    <code>
+  }
+  End { 
+    <code>
+  }
+}
+
+
 
 RegEx
 -----------------
@@ -1107,6 +1134,24 @@ Splitting
 Joining
 ---------
 Joins on whatever you make it join on
+
+Practical Exercise Create Functions
+-----------------------------
+Write a function that returns the Ordinal date of the current date.
+Example
+PS> Get-OrdinalDate
+2020-36
+
+Create a function that takes a number(n) as an argument and returns the square(n^2) of the number.
+Example
+PS> Get-SquareNum 10
+100
+
+Create a function that takes three (3) arguments and returns the product of the arguments.
+Example
+PS> Get-Product 5 5 5
+125
+
 
 
 
