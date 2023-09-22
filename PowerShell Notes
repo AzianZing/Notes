@@ -1020,9 +1020,83 @@ Functions
 
 RegEx
 -----------------
+used with match, replace, split
+
 
 String Manipulation
 -----------------
+You want to get your information in a format that you want to use it in
+"text '"quotation marks'""
+text "quotation marks"
+
+$text1 = "One Terabyte is $(1TB / 1GB) Gigabytes"
+
+"Here is '"quotes'""
+"here is another `nline of text" (`n is newline) (` is the escape character)
+
+Here Strings
+----------------
+Defined with @" and ends with "@
+
+$text = @"
+Here is some text with '"quotes'".
+1TB equals $(1TB / 1GB) GB.
+Variables are resolved
+"$PWD" is your current path
+"@
+
+Prints
+Here is some text with '"quotes'".
+1TB equals 1024 GB
+Variables are resolved
+C"\windows\system32 is your current path
+
+Get-Service | Select-Object -First 10 | ForEach-Object{"The service {0} is call '{1}': {2}" -f $_.Name, $_.DisplayName, $_.Status} (prints out the first 10 services and the display name and status of each)
+
+"{0:n3}" - f 123.45678 (rounds to the 3rd character)
+"{0:d5}" -f 123 (prints up to the 5th character)
+
+Replacing
+---------
+"Hello John" -replace "John", "World" (replaces John with World)
+'Server1,Server2,Server3' -replace ',', ':' (replaces the , with the :)
+
+'[    Jon    Bon    Doe    ]' -replace '\s+', ' ' (replaces large spaces with a single space)
+
+'192.168.0.1' -replace '\d{1,3}$', '255' (replaces the last octet with 255)
+
+Splitting
+---------
+(?=\.) will split at the period and keep the period (Either a look ahead or look behind)
+
+Joining
+---------
+Joins on whatever you make it join on
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
