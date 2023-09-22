@@ -1016,6 +1016,41 @@ Day 3
 ##########################
 Functions
 -----------------
+function <name> {
+  code to execute
+}
+
+function test-it {
+  "Hello World"
+test-it
+}
+
+function test-func { 
+  param(
+    $param1='Default value 1', $param2='default value2'
+    )
+    "you entered $param1 and $param2
+}
+
+function test-me {
+  param(
+    [Parameter(Mandatory=$true, HelpMessage='Enter a name please')]
+    $var
+  )
+  "Your name is $var"
+}
+test-message
+
+function convert-todollars { 
+  param(
+    [parameter(mandatory, helpmessage='Enter number of Euros.')]
+    [Double]
+    $Euro
+  )
+
+  $Dollar = $Euro *1.07
+  $Dollar
+}
 
 
 RegEx
