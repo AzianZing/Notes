@@ -947,6 +947,19 @@ $line2 = "What model number for john.doe@sharklasers.com?"
 Must use at least ONE comparison operator
 Must use at least ONE If Condition OR Switch Statement
 
+$line1 = "Do you have model number: MT5437 for john.doe@sharklasers.com?"
+$line2 = "What model number for john.doe@sharklasers.com?"
+$pattern = '[A-Za-z]{2}\d{2,5}' \\RegEx example//
+
+$line1, $line2 | foreach-object {
+  if ($_ -match $pattern){
+    write-host $matches[0]": $_"
+  }
+  else{
+    write-host "No matches found on: $_"
+    }
+}
+
 Practical Exercise Looping and Iteration
 ----------------------
 Part 1
@@ -976,7 +989,40 @@ Part 3
     The amount of time the process has spent on the processor
     The amount of memory assigned to the process
 
+$procs = "notepad", "msedge", "mspaint"
 
+$procs | % {start-process $_}
+
+Get-Process
+
+foreach($proc in $procs){
+  get-process | where-object{$_.Name -like $proc} | 
+  Foreach-object{Add-content $file $_.Id} }
+
+foreach($proc in $procs){
+  get-process | where-object{$_.name -like $proc}  | 
+  Format-Table -property id, name, starttime, totalprocessortime, virtualmemorysize, workingset64 }
+
+Get-Content .\procs.txt | ForEach-Object{Stop-Process $_}
+
+
+$procs | ForEach-Object { Stop-Process -name $_ }
+
+
+
+
+
+Day 3
+##########################
+Functions
+-----------------
+
+
+RegEx
+-----------------
+
+String Manipulation
+-----------------
 
 
 
