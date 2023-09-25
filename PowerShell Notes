@@ -1427,7 +1427,6 @@ Day 3 Review
 
 
 
-
 <# 1 #>
 function q1($var1,$var2,$var3,$var4) {
     <# Return the product of the arguments #>
@@ -1438,8 +1437,14 @@ function q2($arr,$rows,$cols,$key) {
        and return the value at column index 9 of the same row.
        Return -1 if the key is not found.
     #>
-    if ($arr -contains $key){
-        $index = $arr.IndexOf(9)
+    $ar = @()
+    ForEach($i in $arr){
+        $ar += $i
+    }    
+    if ($ar[9] -eq $key) {
+        return $key
+    } else {
+        return -1
     }
 }
 function q3 {
@@ -1447,15 +1452,16 @@ function q3 {
        Stop when the user enters a -1. Return the maximum positive
        value that was entered."
 	#>
-    $numbers=@()
+$numbers=0
+    $inp=0
         while ($inp -ne -1) {
-        $inp = Read-Host
-
+            $inp = Read-Host
         if ($inp -gt $numbers) {
             $numbers = $inp
         }
-    $numbers
+    
     }
+    $numbers
 }
 function q4($filename,$whichline) {
     <# Return the line of text from the file given by the `$filename
@@ -1495,25 +1501,25 @@ function q9($addr) {
 	   addresses where all octets are in the range 0-255 inclusive to
 	   be valid.
 	#>
-    $pattern = '((\d{1,3}\.){3}\d{1,3})'
+    $pattern = '^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
     while ($addr -notmatch $pattern){
         return $false
-    else{
-        return $true
-        }
     }
+    return $true
 }
+
 function q10 ($filepath,$lasthash) {
     <# Return `$true if the contents of the file given in the
        `$filepath argument have changed since `$lasthash was
        computed. `$lasthash is the previously computed SHA256
        hash (as a string) of the contents of the file. #>
        $check = (Get-FileHash -Algorithm SHA256 $filepath)
-       if ($check = $lasthash) {
-            return $true
-       else
-            return $false
-       }     
+       if ($check -match $lasthash) {
+            $false
+       } else {
+            $true
+            
+}
 }
 
 
