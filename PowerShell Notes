@@ -1406,7 +1406,7 @@ Sgt Woods Solution
 			$vals += $val
 		}
 	} until ($val -eq -1)
-	return $($vals | Measure-Object -Maximum).Maximum
+	return $($vals | Measure-Object -Maximum).Maximum (dot notation for just the maximum value and not weird formatting with it)
 }
 My solution
 -------
