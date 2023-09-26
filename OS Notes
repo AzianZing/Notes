@@ -2,6 +2,8 @@ Student Guide
 https://os.cybbh.io/public/os/latest/index.html
 Get into Windows system
 xfreerdp /u:student /v:10.50.43.194 -dynamic-resolution +glyph-cache +clipboard
+Ops Machines
+https://vta.cybbh.space/
 
 Day 1 Notes (PowerShell)
 -----------------------
