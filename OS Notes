@@ -21,6 +21,38 @@ get-process | get-member | where-object {$_.membertype -eq "property"} \\Gets al
 get-process | select-object name, id, path | Where-object {$_.id -lt '1000'} \\Gets all processes, names, ids, and paths that have IDs less than 1000//
 (get-process | select-object name, id, path | Where-object {$_.id -lt '1000'}).count \\Prints how many the command will show when run//
 
+CIM (Common Information Modules) Classes
+---------------------
+Grouping like or similar things, high level database that interacts with the system, groups together different parts of the system, hardware components get grouped together into the same groups
+Instances are the individual objects of the class, 5 different hard drives attached, instances are the C: D:, etc. drives
+
+get-ciminstance -classname win32_logicaldisk \\Gets the instance information for the hard drives, in this case only the C: drive is shown//
+get-cimclass * \\Shows all//
+get-ciminstance -classname win32_logicaldisk -filter "drivetype=3" \\Filters the instances and only shows the instances with a drive type of 3//
+get-ciminstance -class win32_bios \\Shows the bios information for the device//
+get-wmiobject -class win32_bios \\Exact same output as the line above but using a different command// \\WMI is only on windows, CIM is on almost all types of operating systems//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
