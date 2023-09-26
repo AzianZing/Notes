@@ -5,6 +5,8 @@ xfreerdp /u:student /v:10.50.43.194 -dynamic-resolution +glyph-cache +clipboard
 Ops Machines
 https://vta.cybbh.space/
 
+Stack #2 (10.50.21.203)
+
 Day 1 Notes (PowerShell)
 -----------------------
 Find version using PowerShell
@@ -92,7 +94,6 @@ $start_time = Get-Date
 $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
 (New-Object System.Net.WebClient).DownloadFile($url, $output)
-
 
 
 
