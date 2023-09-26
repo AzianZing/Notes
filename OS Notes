@@ -1,7 +1,12 @@
 Student Guide - https://os.cybbh.io/public/os/latest/index.html
 Get into Windows system - xfreerdp /u:student /v:10.50.43.194 -dynamic-resolution +glyph-cache +clipboard
 Ops Machines - https://vta.cybbh.space/
+CTFd Domain - http://10.50.24.129:8000
+CTFd Credentials - CRWA-M-507
+Stack Login - xfreerdp /u:andy.dwyer /v:10.50.21.203 -dynamic-resolution +glyph-cache +clipboard
 Stack Information - Stack #2 (10.50.21.203)
+Workstations - Replace XXs with stack number (2)
+Credential Information - Admin(andy.dwyer:BurtMacklinFBI), Workstation1(student:password)
 
 Day 1 Notes (PowerShell)
 -----------------------
@@ -91,7 +96,10 @@ $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
 (New-Object System.Net.WebClient).DownloadFile($url, $output)
 
-
+Windows Powershell Flag
+start2347
+Powershell Profiles Flag
+start85678
 
 
 
