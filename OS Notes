@@ -1,4 +1,9 @@
+Student Guide
 https://os.cybbh.io/public/os/latest/index.html
 
+Day 1 Notes (PowerShell)
+-----------------------
+Find version using PowerShell
+get-host | select-object Version
 
 
