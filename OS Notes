@@ -1,11 +1,7 @@
-Student Guide
-https://os.cybbh.io/public/os/latest/index.html
-Get into Windows system
-xfreerdp /u:student /v:10.50.43.194 -dynamic-resolution +glyph-cache +clipboard
-Ops Machines
-https://vta.cybbh.space/
-
-Stack #2 (10.50.21.203)
+Student Guide - https://os.cybbh.io/public/os/latest/index.html
+Get into Windows system - xfreerdp /u:student /v:10.50.43.194 -dynamic-resolution +glyph-cache +clipboard
+Ops Machines - https://vta.cybbh.space/
+Stack Information - Stack #2 (10.50.21.203)
 
 Day 1 Notes (PowerShell)
 -----------------------
