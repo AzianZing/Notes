@@ -32,14 +32,66 @@ get-ciminstance -classname win32_logicaldisk -filter "drivetype=3" \\Filters the
 get-ciminstance -class win32_bios \\Shows the bios information for the device//
 get-wmiobject -class win32_bios \\Exact same output as the line above but using a different command// \\WMI is only on windows, CIM is on almost all types of operating systems//
 
+Execution Policy
+----------------
+get-executionpolicy -List \\Lists all of the Execution policies of the users of the machines// \\Unrestricted, undefined, etc.//
+Different execution policies are AllSigned, Bypass, Default, RemoteSigned, Restricted, Undefined, Unrestricted
+set-executionpolicy -ExecutionPolicy <policy> -Scope <user> \\Changes the execution policy of the user that is defined and sets it to the policy named//
 
+Persistence \\If persistence is mentioned write it down//
+-------------------
+Profiles
+-----------
+$Profile \\Location of the profile variable// \\Current User, Current Host//
 
+All Users, All Hosts                $PsHome\Profile.ps1
+All Users, Current Host             $PsHome\Microsoft.PowerShell_profile.ps1
+Current User, All Hosts             $Home\[My]Documents\Profile.ps1
+Current User, Current Host          $Home\[My ]Documents\WindowsPowerShell\Profile.ps1
 
+All of these files are scripts, must be set in order to be run
 
+test-path -Path $profile.currentusercurrenthost \\Returns true if it has been set and false if it has not//
+test-path -Path $profile.currentuserallhosts    \\||//
+test-path -Path $profile.allusersallhosts       \\||//
+test-path -Path $profile.alluserscurrenthost     \\//
 
+new-item -ItemType file -Path $profile -Force \\Forcefully creates the $profile .ps1 file in C:\users\<user>\Documents\WindowsPowerShell
 
+set-alias -name ip -value get-nettcpconnection \\Putting this into $profile .ps1 will make the alias persistent to the profile, everytime the user logs in the alias command is run//
+A known target for the adversary to try and access to gain access to our infrastructure
+PERSISTENCE LOCATION
 
+Windows Remoting
+-------------------------
+Get-PSSessionConfiguration \\Displays permissions//
 
+get-item wsman:\localhost\Client\TrustedHosts \\Query configuration for wsman which is used for remoting//
+set-item WSman:\localhost\Client\TrustedHosts -value "file-server"
+get-item WSman:\localhost\Client\TrustedHosts \\Checks to ensure that file-server was set//
+set-item WSman:\localhost\Client\TrustedHosts -value "domain-controll" -Concatenate \\Gives access to the domain controller//
+
+invoke-command -ComputerName file-server {get-service} \\Using an ip address in this location, the command will not authenticate properly with Kerberos// \\Does not directly remote into the system, sends a command to the system and securely gives the results back to the machine that is invoking the command to the third party machine//
+Can use the above command with multiple systems by putting a comma between the computernames when using the command
+
+invoke-command -ComputerName file-server, domain-controll {get-service} -asjob \\Runs command in the background so it does not hold the powershell application hostage and allows for other work to be done while the command is acquiring the results//
+receive-job <ID> \\Gives results of the job that was set in the background//
+
+Remotes into the system
+----------------
+$sess=New-PSSession -ComputerName file-server -Credential <username>
+enter-pssession $sess \\Allows for us to directly access the machine//
+
+Interactive logon versus the invoke-command being non-interactive
+
+Download a File with PowerShell
+-------------------
+$url = "http://downloads.volatilityfoundation.org/releases/2.6/volatility_2.6_win64_standalone.zip"
+$output = "$PSScriptRoot\volatility_2.6_win64_standalone.zip"
+$start_time = Get-Date
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url, $output)
+(New-Object System.Net.WebClient).DownloadFile($url, $output)
 
 
 
