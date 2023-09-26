@@ -10,4 +10,91 @@ Day 1 Notes (PowerShell)
 Find version using PowerShell
 get-host | select-object Version
 
+Processes details
+----------------------
+start-process <name>
+(get-process <name>).kill() \\Kills the specified process//
+stop-process -name <name> \\Kills the specified process//
+get-process | get-member | where-object {$_.membertype -match "method"} \\Gets all processes and member types that are methods//
+get-process | get-member | where-object {$_.membertype -match "property"} \\Gets all processes and member types that are properties//
+get-process | get-member | where-object {$_.membertype -eq "property"} \\Gets all processes and member types that are only properties//
+get-process | select-object name, id, path | Where-object {$_.id -lt '1000'} \\Gets all processes, names, ids, and paths that have IDs less than 1000//
+(get-process | select-object name, id, path | Where-object {$_.id -lt '1000'}).count \\Prints how many the command will show when run//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
