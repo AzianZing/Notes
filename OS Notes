@@ -8,6 +8,18 @@ Stack Information - Stack #2 (10.50.21.203)
 Workstations - Replace XXs with stack number (2)
 Credential Information - Admin(andy.dwyer:BurtMacklinFBI)
 
+Windows Persistence Mechanisms
+-----------------------
+Profiles
+Run keys
+
+
+
+Linux Persistence Mechanisms
+-----------------------
+
+
+
 Day 1 Notes (PowerShell)
 %%%%%%%%%%%%%%%%%%%%%%%
 Find version using PowerShell
@@ -153,8 +165,33 @@ New-Item HLKM:\SOFTWARE\Microsoft\Winows\CurrentVersion\Run\Gooditem -force
 New-ItemProperty HLKM:\SOFTWARE\Microsoft\Winows\CurrentVersion\Run\Gooditem -Name "%USERPROFILE%Downloads/test-document.doc" -PropertyType Binary -Value ([byte[]](0x30,0x31,0xFF)) (creates new calue in \TrustRecords key)
 New-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run -Name Test -PropertyType String -Value C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe (creates new value in \Run)
 
+Set-MpPreference -DisabledRealTimeMonitoring $TRUE (Disable Windows Defender Real Time Protection)
 
+new-item "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" (Creates a new registry key using New-Item)
+New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" -Name ddebugger -Type String -value C:\Windows\System32\cmd.exe
 
+Sysinternals
+-----------
+net use * http://live.sysinternals.com (creates a network share to sysinternals)
+
+./autoruns.exe
+Type *autoruns -accepteula*
+
+PSDrives
+-----------
+Data store location that you can access like a file system
+A PSDrive creates a temporary or permanent way for PowerShell to navigate the registry
+Get-PSDrive
+Creating a PSDrive requires 3 parameters (Name, PSProvider, and Root)
+
+gci Env: (shows all the environmental variables)
+
+new-psdrive -name HKU -PSProvider registry -root HKEY_Users
+cd HKU:
+Directly access HKey_Users
+
+new-psdrive -name Desktop -psprovider filesystem -root C:\users\andy.dwyer\Desktop
+new-psdrive -name FilerServer -PSProvider FileSystem -root "\\file-server\warrior share"
 
 
 
