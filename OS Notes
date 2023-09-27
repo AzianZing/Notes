@@ -8,6 +8,11 @@ Stack Information - Stack #2 (10.50.21.203)
 Workstations - Replace XXs with stack number (2)
 Credential Information - Admin(andy.dwyer:BurtMacklinFBI)
 
+Start Flags
+-----------
+Windows Registry - 
+Alternate Data Stream - 
+
 Windows Persistence Mechanisms
 -----------------------
 Profiles
@@ -192,6 +197,27 @@ Directly access HKey_Users
 
 new-psdrive -name Desktop -psprovider filesystem -root C:\users\andy.dwyer\Desktop
 new-psdrive -name FilerServer -PSProvider FileSystem -root "\\file-server\warrior share"
+
+Alternate Data Streams
+----------------
+Purpose of ADS is metadata for files
+Can be utilized to do malicious things
+If the ADS is changed the MD5 does not change
+
+PowerShell version of ADS
+---------
+echo <String> > <file>
+gci <file>
+get-content <file>
+set-content <file> -value <string> -stream secret.info
+
+get-content stays the same
+gci also stays the same
+
+Look at Data Streams
+--------
+get-item <file> -stream *
+get-content <file> -stream secret.info
 
 
 
