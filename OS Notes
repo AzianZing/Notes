@@ -9,7 +9,7 @@ Workstations - Replace XXs with stack number (2)
 Credential Information - Admin(andy.dwyer:BurtMacklinFBI)
 
 Day 1 Notes (PowerShell)
------------------------
+%%%%%%%%%%%%%%%%%%%%%%%
 Find version using PowerShell
 get-host | select-object Version
 
@@ -100,6 +100,106 @@ Windows Powershell Flag
 start2347
 Powershell Profiles Flag
 start85678
+
+Day 2
+%%%%%%%%%%%%%%%%%%%%%%
+Windows Registry and Windows Alternate Data Streams
+----------------------
+Constantly being used and referenced, includes location, information, settings, options, and other value for programs and hardware installed
+Allows easy access to persistence
+Programs are unable to start themselves, they must be told to be launched
+Things can hide in plain sight in the registry because people do not look at it a lot and are scared of it
+
+Get-Item and Get-ItemProperty are very similar
+Set-ItemProperty
+
+Persistence
+---------
+Run keys
+(persistence mechanisms, launch mechanisms)
+
+Registry Structure
+---------
+Keys - known as Registry Hives and can contian subkeys and values
+Subkeys - can contain subkeys and values
+Values - contain data in specific formats
+
+A registry hive is a group of keys and their associated values that are loaded when the system is started or specific user logs in
+5 Registry Hives
+-----
+HKEY_LOCAL_MACHINE - hardware, SAM, security, and system
+HKEY_USERS - environment settings, SIDs
+HKEY_CURRENT_USER - copy of current logged in user's SID
+
+(Not Important for class)
+HKEY_CURRENT_CONFIG - symbolic link to HKLM\SYSTEM\CurrentControlSet\HardwareProfiles\Current
+HKEY_CLASSES_ROOT - HKEY_LOCAL_MACHINE\Software\Classes
+
+Important Locations
+---------------
+HKLM\SAM                           SAM, SAM.LOG
+HKLM\SECURITY                      SECURITY, SECURITY.LOG
+HKLM\SOFTWARE                      software, software.LOG, software.sav
+HKLM\SYSTEM                        system, system.LOG, system.sav
+HKLM\HARDWARE                      (Dynamic/Volatile Hive)
+HKU\.DEFAULT                       default, default.LOG, default.sav
+HKU\SID                            NTUSER.DAT
+HKU\SID_CLASSES                    UsrClass.dat, UsrClass.dat.LOG
+
+To get registry 
+Get-ChildItem HLKM:\SOFTWARE\Microsoft\Winows\CurrentVersion
+Get-Item HLKM:\SOFTWARE\Microsoft\Winows\CurrentVersion\Run
+New-Item HLKM:\SOFTWARE\Microsoft\Winows\CurrentVersion\Run\Gooditem -force
+New-ItemProperty HLKM:\SOFTWARE\Microsoft\Winows\CurrentVersion\Run\Gooditem -Name "%USERPROFILE%Downloads/test-document.doc" -PropertyType Binary -Value ([byte[]](0x30,0x31,0xFF)) (creates new calue in \TrustRecords key)
+New-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run -Name Test -PropertyType String -Value C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe (creates new value in \Run)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
