@@ -6,7 +6,7 @@ CTFd Credentials - CRWA-M-507
 Stack Login - xfreerdp /u:andy.dwyer /v:10.50.21.203 -dynamic-resolution +glyph-cache +clipboard
 Stack Information - Stack #2 (10.50.21.203)
 Workstations - Replace XXs with stack number (2)
-Credential Information - Admin(andy.dwyer:BurtMacklinFBI), Workstation1(student:password)
+Credential Information - Admin(andy.dwyer:BurtMacklinFBI)
 
 Day 1 Notes (PowerShell)
 -----------------------
