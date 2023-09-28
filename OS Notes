@@ -221,6 +221,18 @@ get-content <file> -stream secret.info
 
 Day 3 Linux Essentials
 ------------
+Filesystems
+%%%%%%%%%
+Hierarchy
+root directory is /
+Essential user commands in /bin
+User directories in /home
+Host specific system configurations in /etc
+Variable data files in /var
+
+/etc/passwd - user information
+/etc/shadow - passwords
+/etc/group - group information
 
 
 
