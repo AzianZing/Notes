@@ -303,6 +303,10 @@ Deleting safeboot value
 -------
 bcdedit /deletevalue {current} safeboot
 
+Add minimal safeboot value
+-------
+bcdedit /set {current} safeboot minimal
+
 
 
 
