@@ -239,6 +239,43 @@ Variable data files in /var
 /etc/shadow - passwords
 /etc/group - group information
 
+Day 4 Boot Process
+-------------
+Windows Boot Process
+%%%%%%%%
+First step after power on is POST (Power on self test) (Checks to make sure hardware is all properly powered on)
+Second step is BIOS/UEFI (Basic Input Output System) (Unified Extensible Firmware Interface)
+Third Step MBR/Boot Manager (BIOS uses MBR)
+Fourth step is Winload.exe or winload.efi based on BIOS or UEFI (winresume.exe is what runs when computer is in sleep mode)
+Fifth is the ntoskrnl (ability to run all the kernels)
+Sixth is smss.exe (system manager subsystem)
+Seventh is csrss.exe (client/server runtime subsystem)
+
+BIOS and UEFI
+-------------
+Hard drive capacities (BIOS 2 TB, UEFI 9 ZB or 9 billion TB)
+RootKits
+--------
+Firmware, driver, bootkits, and kernel rootkits
+Firmware rootkit can replace the BIOS/UEFI on the system
+Bootkits replace bootloader 
+Kernel rootkits replaces kernel 
+Driver rootkit replaces the driver
+
+bcdedit | findstr /i winload (check if system is using BIOS or UEFI, BIOS has .exe, UEFI has .efi)
+
+LocalSystem is the high level non-interactive account on a computer
+Mitre Attack Framework
+
+User subsystem session 0
+------------------------
+Smss.exe - Installs the Win32 subsystem kernal and user mode components (win32.sys and csrss.exe
+csrss.exe - supports process/thread creation and management
+wininit.exe - marks itself as critical, initializes the Windows temp directory, loads the rest of the registry and starts user mode scheduling
+lsm.exe - Local Session Manager handls all session of a system (remote and local)
+lsass.exe - Local Security Authority Subsystem provides user authentication services, manages the local security policy, and generates access tokens
+services.exe - Services Control Manager loads AutoStart services, using LSASS to authenticate if they run as something other than System
+
 
 
 
