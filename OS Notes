@@ -276,6 +276,32 @@ lsm.exe - Local Session Manager handls all session of a system (remote and local
 lsass.exe - Local Security Authority Subsystem provides user authentication services, manages the local security policy, and generates access tokens
 services.exe - Services Control Manager loads AutoStart services, using LSASS to authenticate if they run as something other than System
 
+bcdedit good to have but will never use
+Identifier will tell bcd what data source to use
+
+Export to a file
+bcdedit /export C:\<File>
+
+Modify Description
+bcdedit /set {<identifier>} description "Description"
+
+Creating a Partition
+---------
+bcdedit /create {ntldr} /d "Windows XP Pro SP2"
+Specify the Partition
+bcdedit /set {ntldr} device partition=C:
+Specify path to ntldr
+bcdedit /set {ntldr} path \ntldr
+Specify the Display Order
+bcdedit /displayorder {ntldr} /addfirst
+
+Deleting a Partition
+------
+bcdedit /delete {ntldr} /f
+
+Deleting safeboot value
+-------
+bcdedit /deletevalue {current} safeboot
 
 
 
