@@ -29,7 +29,7 @@ Run keys
 Linux Persistence Mechanisms
 -----------------------
 /etc/profile
-
+~./bashrc
 
 Day 1 Notes (PowerShell)
 %%%%%%%%%%%%%%%%%%%%%%%
