@@ -308,7 +308,23 @@ Add minimal safeboot value
 -------
 bcdedit /set {current} safeboot minimal
 
+Linux Boot Process
+-------------------
+BIOS and UEFI
+BIOS - MBR
+UEFI - GPT
 
+Bootloaders
+----------
+Master Boot Record (MBR)
+GUID Partition Table (GPT)
+
+lsblk - show boot devices
+view mbr - sudo xxd -l 512 -g 1 /dev/vda
+
+sudo dd if=/dev/vda of=mbrcopy bs=512 count=1 - copy MBR
+
+GRUB - "boot selection screen" (decides what to boot and where from)
 
 
 
