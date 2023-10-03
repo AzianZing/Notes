@@ -326,6 +326,10 @@ sudo dd if=/dev/vda of=mbrcopy bs=512 count=1 - copy MBR
 
 GRUB - "boot selection screen" (decides what to boot and where from)
 
+ltrace -S cat /etc/passwd (shows all system calls in Linux)
+ltrace -S lsmod (shows modules in Linux)
+
+
 
 
 
