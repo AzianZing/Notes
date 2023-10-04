@@ -338,7 +338,15 @@ Why important?
 Protection and detection
 Also to prevent detection from our own side
 
+User Access Control
+--------------
+Administrator pop up when trying to execute escalated programs
+Red - Bad
+Yellow - Maybe bad
 
+Sysinternals
+----------
+net use * http://live.sysinternals.com
 
 
 
