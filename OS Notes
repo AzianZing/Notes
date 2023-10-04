@@ -23,7 +23,7 @@ Windows Persistence Mechanisms
 -----------------------
 Profiles
 Run keys
-
+Services
 
 
 Linux Persistence Mechanisms
@@ -329,7 +329,14 @@ GRUB - "boot selection screen" (decides what to boot and where from)
 ltrace -S cat /etc/passwd (shows all system calls in Linux)
 ltrace -S lsmod (shows modules in Linux)
 
+Windows Process Validity
+--------------------
+Validating a process or other files and system specifc components
 
+Why important?
+-----------
+Protection and detection
+Also to prevent detection from our own side
 
 
 
