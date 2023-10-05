@@ -33,6 +33,9 @@ Linux Persistence Mechanisms
 -----------------------
 /etc/profile
 ~./bashrc
+Linux Daemons
+Orphan processes
+Cronjobs - /var/spool/cron, /etc/cron.d, /etc/crontab
 
 Day 1 Notes (PowerShell)
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -351,10 +354,16 @@ Sysinternals
 ----------
 net use * http://live.sysinternals.com
 
+Linux Process Validity
+-------------------
+top - real time process listing command
+htop - better real time process listing command (F5 to make it a tree)
+ps -elf --forest (tree)
+systemctl list-units
 
-
-
-
+Crontab syntax/layout 
+Minute Hour Date Month Day
+mmhhDDMMdd
 
 
 
