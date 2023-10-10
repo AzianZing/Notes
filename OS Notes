@@ -365,6 +365,34 @@ Crontab syntax/layout
 Minute Hour Date Month Day
 mmhhDDMMdd
 
+Windows Auditing and Logging
+--------------
+Artifacts
+Get-LocalUser | select name,sid (Local Users)
+get-wmiobject win32_useraccount | select name,sid (All users)
+
+
+
+The GUID represents a particular file extension.
+CEBFF5CD-ACE2-4F4F-9178-9926F41749EA A list of applications, files, links, and other objects that have been accessed
+F4E57C4B-2036-45F0-A9AB-443BCFE33D9F Lists the Shortcut Links used to start programs
+
+Find Executable Executions
+Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\(GUID)\Count"
+Output is encoded in ROT13
+
+Find 
+Shortcut Execution
+Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\(GUID)\Count"
+Encoded in ROT13
+
+All Users
+Get-ItemProperty "Registry::Hkey_Users\*\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\(GUID)\Count"
+
+get-computerinfo | select osname,osversion (to find osversion and name)
+
+get-item HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\* (1809 and newer)
+get-item HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\UserSettings\* (1803 and below)
 
 
 
