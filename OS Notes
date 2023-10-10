@@ -394,6 +394,20 @@ get-computerinfo | select osname,osversion (to find osversion and name)
 get-item HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\* (1809 and newer)
 get-item HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\UserSettings\* (1803 and below)
 
+get-itemproperty HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam\State\UserSettings\(SID)
+
+Recycle Bin
+--------------------
+Get-ChildItem 'C:\$RECYCLE.BIN\' -Recurse -Verbose -Force | select FullName
+
+Get-Content 'C:\$Recycle.Bin\(SID)\(file)' (Shows content of the file)
+
+
+
+
+
+
+
 
 
 
