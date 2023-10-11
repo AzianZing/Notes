@@ -402,6 +402,27 @@ Get-ChildItem 'C:\$RECYCLE.BIN\' -Recurse -Verbose -Force | select FullName
 
 Get-Content 'C:\$Recycle.Bin\(SID)\(file)' (Shows content of the file)
 
+Linux Auditing and Logging
+--------------------
+Logging
+------
+A record of performance, events, or day-to-day activities
+Logging Daemons
+--
+syslogd or journald
+Syslogd - Standard System Logging Protocol
+Journald - unique to systemd distributions of Linux
+Both stored in /var/log
+
+Syslog Daemon
+------
+Stored in /var/log, configured using /etc/rsyslog/
+
+facility.severity  /path/to/log/location
+Facility is the source or event
+Severity is how urgent an event is, up to 7
+path is where the log is stored
+
 
 
 
