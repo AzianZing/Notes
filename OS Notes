@@ -420,8 +420,12 @@ Stored in /var/log, configured using /etc/rsyslog/
 
 facility.severity  /path/to/log/location
 Facility is the source or event
-Severity is how urgent an event is, up to 7
+Severity is how urgent an event is, up to 7, 0 being the the most urgent
 path is where the log is stored
+
+/var/log and /etc/rsyslog
+all logs are in /var
+
 
 
 
