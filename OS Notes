@@ -8,26 +8,13 @@ Stack Information - Stack #2 (10.50.21.203)
 Workstations - Replace XXs with stack number (2)
 Credential Information - Admin(andy.dwyer:BurtMacklinFBI)
 
-Start Flags
------------
-Windows Registry - start357
-Alternate Data Stream - start3486
-Linux Basics - 
-Windows Boot Process - 
-Process validity - start 10
-UAC - start0864
-Services - 
-
-start5309
-
-Linux - 
-
 Windows Persistence Mechanisms
 -----------------------
 Profiles
 Run keys
 Services
 Scheduled Tasks
+Registries
 
 Linux Persistence Mechanisms
 -----------------------
@@ -426,6 +413,11 @@ path is where the log is stored
 /var/log and /etc/rsyslog
 all logs are in /var
 
+Memory Analysis
+---------------
+mfind, mcat, mls
+
+Active Directory
 
 
 
