@@ -417,6 +417,82 @@ Memory Analysis
 ---------------
 mfind, mcat, mls
 
+Test Review
+--------------------------------------------------------------------------
+http://10.50.20.125:8000
+Username : CRWA-M-507
+
+All questions will have context clues so dont be a moron
+
+Windows
+####
+Network Connections
+----
+Get-NetTCPConnection
+netstat -ano (-anob)
+GUI Version (TCPView (TCPView))
+Suspicious ports - Consecutive numbers, Repeated numbers, patterns
+
+Registry
+----
+RunOnce
+Run
+RegEdit
+Reg Query
+
+Processes
+----
+Get-Process
+tasklist
+ProcMon
+Task Manager
+Suspicious Processes - programs not running out of the appropriate directory, slightly misspelled process names
+
+Powershell
+----
+Persistence - Powershell Profiles, Registry Run Keys, Scheduled Tasks
+SysInternals - Autoruns
+Artifacts - Evidence of activity left behind after, "bread crumbs"
+    BAM, user assist, jump list (windows auditing and logging)
+Commands - Get-ChildItem, Get-Item, Get-Property, Get-ItemProperty
+
+Scheduled Tasks
+----
+$profile
+$psprofile
+
+All Users, All Hosts
+
+
+Linux
+####
+Network Connections - netstat -ano (-anop) (-ltup)
+Suspicious Ports - Consecutive numbers, Repeated numbers, patterns
+Processes - ps -elf, top, htop
+Suspicious Processes - programs not running out of the appropriate directory, slightly misspelled process names
+
+Persistence 
+----
+/etc/profile
+/.bash_profile
+Cronjobs - System (/etc/crontab), User (/var/spool/cron/crontabs/)
+~/.bashrc
+/etc/inittab
+
+Escalation
+----
+sudo
+
+View Permissions
+----
+ls -l
+
+IANA Ports
+
+
+
+
+
 
 
 
