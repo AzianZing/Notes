@@ -88,6 +88,87 @@ IPv6 Address Auto-Configuration
 SLAAC (StateLess Address Auto-Configuration)
 RFC 4862
 
+Transport Layer
+^^^^^^
+Tells the system what kind of and what to open
+TCP states (SYN, SYN/ACK, ACK)
+Data is transfered using PSH/ACK
+Closes using FIN/ACK
+
+UDP Headers
+******
+Source Port, Destination Port, Length, and Checksum
+
+Session Layer
+^^^^^^
+Protocols
+******
+SOCKS (Socket Secure)
+NetBIOS
+PPTP/L2TP
+RPC
+
+SOCKS 4/5
+******
+Will be used a lot for tunneling in this module
+
+PPTP
+******
+Wireshark will break it down
+Very old
+Developed by Microsoft
+
+L2TP
+******
+Developed by Microsoft and Cisco
+Wireshark will read
+
+SMB/CIFS
+******
+SMB rides over NetBIOS
+NetBIOS ports
+----
+Dgram - UDP 138
+Session - TCP 139
+
+RPC
+******
+Request/response protocol
+Makes system calls to connected device
+
+Presentation Layer
+^^^^^^
+Translating
+Formating
+Encoding
+Encryption
+Compression
+
+Application Layer
+^^^^^^
+FTP (TCP 20/21)
+----
+Direct interaction happens in Layer 7
+2 modes - Active and Passive
+FTP Active is default - You ask for the data but if they do not have the rights to access you then they are unable to get to you so you have to reach out for it
+FTP Passive - the act of reaching out and grabbing the data that was requested by converging on a location (IP Address)
+
+Complications with tunneling when using FTP, SSH tunnels normally use one port, FTP uses 2 different ports making the simple way of tunneling not possible
+Uses a random high port to traverse
+
+If using Passive mode, PASV will be present
+retr <file>
+stor <file>
+<file> (10,10,10,10,128,4) 10.10.10.10:32772 ((128x256)+4) = 32772
+
+SSH
+----
+
+Telnet
+----
+Remote connection
+Unsecure
+Used for getting a shell
 
 
 Mathematics of Networking
