@@ -163,6 +163,16 @@ stor <file>
 
 SSH
 ----
+TCP 25
+Used for secure shell, scp, sftp, and a lot of other protocols
+Used for tunnels
+Asymmetric Difi-Helman Key Exchange
+Symmetric for the session
+Keys - User key, Host key, Session key
+Known-Hosts Database - collection of host keys that are used for mutual authentication
+Configuration file - settings that exist to configure ssh
+
+Possible to steal the key needed to login to the ssh to the server, which requires rotation of the keys in order to prevent theft which also leads to the issue of keys being forgotten or lost
 
 Telnet
 ----
@@ -174,6 +184,83 @@ SMTP
 ----
 Simple Mail Transfer Protocol
 Uses port 25 to communicate with servers
+
+TACACS
+----
+TCP 49
+CISCO Remote Login service for switches and routers
+Simple - Shows all data in the same section of the header
+Extended - Has multiple results in the header
+Wireshark will read most of it
+
+HTTP(S)
+----
+TCP 80 (443)
+GET/HEAD/POST/PUT
+Hyper Text Transfer Protocol (Secure)
+Status codes - 200 = good, 300 = it was moved, 400 = you did something wrong, 500 = server did something wrong
+
+POP
+----
+TCP 110
+You go to pick up your mail, downloading the mail
+
+IMAP 
+----
+TCP 143
+Able to read the information from the server
+
+RDP
+----
+TCP 3389
+Remote Desktop Protocol
+
+DNS (QUERY/RESPONSE)
+----
+TCP/UDP 53
+UDP is Query
+TCP is Zone Transfers
+
+DHCP
+----
+UDP 67/68
+Server uses port 67, client uses port 68 when sending and receiving
+Router Solicitation Multicast Address - FF02::2
+Used for IP addressing
+
+DHCPv4
+Discover
+Offers
+Request
+Acknowledge
+
+DHCPv6
+Solicit
+Advertise
+Request
+Reply
+
+TFTP 
+----
+UDP 69
+No terminal
+
+NTP 
+----
+UDP 123
+Network Time Protocol
+
+SNMP
+----
+UDP 161/162
+
+RADIUS
+----
+UDP 1645/1646 AND 1812/1813
+
+RTP 
+----
+UDP above 1023
 
 Mathematics of Networking
 ------------------
@@ -199,9 +286,34 @@ Layer2 = Ethernet Frame
 Layer3 = IP Packet
 Layer4 = TCP Segment
 
+Layer 2 Switching Technologies
+------------------
+Fast Forward - Only Destination MAC
+Fragment Free - First 64 Bytes
+Store and Forward - Entire Frame and FCS
 
+CAM Table
+----
+Learn - Source MAC
+Forward - Destination MAC
 
+IEEE 802.1AD "Q-IN-Q"
+----
+VLANs inside of VLANs
+0x88A8 or 0x9100
+Standard Double Tag or Non-standard Double Tag
 
+"Double Taggging" - Two VLAN IDs with the one in front of the other VLAN Tag being 0x8100
+
+STP
+----
+Spanning Tree Protocol
+
+Layer 2 Discovery Protocols
+----
+Cisco Discovery Protocol (CDP)
+Foundry Discovery Protocol (FDP)
+Link Layer Discovery Protocol (LLDP)
 
 
 
