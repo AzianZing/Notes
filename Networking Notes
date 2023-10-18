@@ -63,6 +63,9 @@ Firewalking - Traceroute command, sending a request to devices that you are conn
 Fragmentation
 !!!!!!
 If a packet is too big to send all at once it will fragment and send the data with different fragments so the receiver may receive the data properly
+Reserve, Dont Fragment, More Fragment Bits followed by 13 fragment bits
+MTU - (IHLx4) = Data Fragments
+Offset increments by the amount of 8 bit chunks that can fit into the receiving end MTU
 
 Mathematics of Networking
 ------------------
