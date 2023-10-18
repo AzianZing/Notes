@@ -308,6 +308,31 @@ Standard Double Tag or Non-standard Double Tag
 STP
 ----
 Spanning Tree Protocol
+Single point of failure
+Prevents Broadcast Storms which send ARP requests to every device connected even if not directly connected. Exhausts all of the resources on the network until it goes down
+Rapid Spanning Tree Protocol - surprisingly enough, it allows Spanning Tree Protocol only faster
+
+DTP
+----
+Dynamic Trunking Protocol
+Trunking - traffic for systems that need to know they are on a VLAN or are not on a VLAN, uses trunking ports
+
+VTP
+----
+VLAN Trunking Protocol
+Have a shit ton of VLANs and have a shit ton of switches, makes it so the administrator does not have to type in all of the VLAN information each time a switch or new VLAN is added
+Provides a centralized VLAN configuration
+Can be used against the network to cause chaos
+Bridge Priority 0 = centralized VLAN/Bridge
+Can very easily be taken down if given physical access, will take the plugged in switch's configuration and overwrite last configuration
+
+Port Security
+----
+shutdown
+restrict
+protect
+BPDU guard - when a new switch is plugged in the new switch will not connect to the old switch
+Sticky MAC - will not allow connection to new MAC address
 
 Layer 2 Discovery Protocols
 ----
@@ -315,6 +340,8 @@ Cisco Discovery Protocol (CDP)
 Foundry Discovery Protocol (FDP)
 Link Layer Discovery Protocol (LLDP)
 
+Layer 3 Routing Technologies
+------------------
 
 
 
