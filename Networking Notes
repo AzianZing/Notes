@@ -15,8 +15,10 @@ Presentation (Layer 6 File Formats - JPEG, PNG, etc)
 Application (Layer 7 Specific Protocols - FTP, IMAP, Telnet, etc)
 
 Physical Layer
+^^^^^^
 
 Data Link Layer
+^^^^^^
 MAC (Media Access Control) vs LLC (Logical Link Control)
 Ethernet Header
 ******
@@ -32,6 +34,29 @@ Ethertype
 0x0806 - ARP
 0x86DD - IPv6
 0x8100 - VLAN Tag
+
+VLAN Header
+******
+VLAN Tag between Source MAC Address and Ethertype
+Tag Protocol ID - 0x8100 (16 bits)
+PCP/DEI (4 bits)
+VLAN ID (12 bits)
+
+ARP Header
+******
+Hardware Type starts at Byte Offset 0, Protocol Type starts at Byte Offest 2
+Security Concerns
+++++
+Does not require an ARP request
+Host forcing an ARP reply until all hosts update ARP tables, creates a MitM attack
+
+
+Network Layer
+^^^^^^
+IPv4 Headers
+Default value of Version is 4
+Default value of Header Length is 5
+Header Length is number of words in IP Header
 
 
 Mathematics of Networking
