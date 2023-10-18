@@ -170,6 +170,10 @@ Remote connection
 Unsecure
 Used for getting a shell
 
+SMTP
+----
+Simple Mail Transfer Protocol
+Uses port 25 to communicate with servers
 
 Mathematics of Networking
 ------------------
