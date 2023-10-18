@@ -57,7 +57,12 @@ IPv4 Headers
 Default value of Version is 4
 Default value of Header Length is 5
 Header Length is number of words in IP Header
+TTL - Windows only uses ICMP, Linux uses TCP with ICMP
+Firewalking - Traceroute command, sending a request to devices that you are connected to, most are /30 subnets and are not accessible for the most part
 
+Fragmentation
+!!!!!!
+If a packet is too big to send all at once it will fragment and send the data with different fragments so the receiver may receive the data properly
 
 Mathematics of Networking
 ------------------
