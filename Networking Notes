@@ -67,6 +67,29 @@ Reserve, Dont Fragment, More Fragment Bits followed by 13 fragment bits
 MTU - (IHLx4) = Data Fragments
 Offset increments by the amount of 8 bit chunks that can fit into the receiving end MTU
 
+IPv6 Headers
+Much less complicated than IPv4 Headers
+No Fragmenting, no header checksum, no identification
+Flow Label
+Source Address and Destination Address are 128 bits long instead of 32 due to IPv6 being 128 bit long addressing
+If fragmentation is needed the sender reaches out to the receiver, the receiver says that it needs fragmented and the sender will fragment before sending the data to the receiver
+
+Fingerprinting
+TTLs and TCP window size
+
+ICMP Headers
+
+IPv4 Address Auto-Configuration
+APIPA
+RFC 3927
+APIPA Addresses are not routable and are 169.254.0.0/16 addresses
+
+IPv6 Address Auto-Configuration
+SLAAC (StateLess Address Auto-Configuration)
+RFC 4862
+
+
+
 Mathematics of Networking
 ------------------
 Bits = 1 bit
