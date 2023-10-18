@@ -1,0 +1,52 @@
+Facilitation Guide
+@@@@@@@@@@@@@@@@@@
+https://net.cybbh.io/public/networking/latest/index.html
+
+Network Fundamentals
+------------------
+OSI Model
+******
+Physical
+Data Link
+Network
+Transport
+Session
+Presentation
+Application
+
+Mathematics of Networking
+------------------
+Bits = 1 bit
+Nibbles = 4 bits (Hex character also)
+Bytes = 8 bits
+Half Words = 16 bits
+Words = 32 bits
+Double Words = 64 bits
+Quad Words = 128 bits
+
+Base2 = Binary
+Base10 = Decimal
+Base16 = Hex
+Base64 = Used for Encoding, +/.= are signs of Base64
+
+Encapsulation and Decapsulation
+------------------
+Layers
+******
+Layer1 = Bit
+Layer2 = Ethernet Frame
+Layer3 = IP Packet
+Layer4 = TCP Segment
+
+
+
+
+
+
+
+
+
+
+
+
+
