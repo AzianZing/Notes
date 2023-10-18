@@ -6,13 +6,33 @@ Network Fundamentals
 ------------------
 OSI Model
 ******
-Physical
-Data Link
-Network
-Transport
-Session
-Presentation
-Application
+Physical (Layer 1 Physical Connections - Ethernet, Fiber, Radio Waves, etc)
+Data Link (Layer 2 Communication - How the devices communicate, Internet version, etc)
+Network (Layer 3 Internet Protocol - IPv4, IPv6, etc)
+Transport (Layer 4 Protocols - TCP, UDP)
+Session (Layer 5 How a sesion is working - NetBIOS, RPC, etc)
+Presentation (Layer 6 File Formats - JPEG, PNG, etc)
+Application (Layer 7 Specific Protocols - FTP, IMAP, Telnet, etc)
+
+Physical Layer
+
+Data Link Layer
+MAC (Media Access Control) vs LLC (Logical Link Control)
+Ethernet Header
+******
+First 7 bytes, Preamble
+1 byte delimiter, SFD
+
+Ethernet Frame
+Destination MAC Address, Source MAC Address, Ethertype, Payload, CRC/FCS
+
+Ethertype
+******
+0x0800 - IPv4
+0x0806 - ARP
+0x86DD - IPv6
+0x8100 - VLAN Tag
+
 
 Mathematics of Networking
 ------------------
