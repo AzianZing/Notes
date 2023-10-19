@@ -1,6 +1,9 @@
 Facilitation Guide
 @@@@@@@@@@@@@@@@@@
 https://net.cybbh.io/public/networking/latest/index.html
+CTFds 1
+----
+http://networking-ctfd-1.server.vta:8000/
 
 Network Fundamentals
 ------------------
@@ -359,12 +362,26 @@ IP prefix filtering
 BGP hijacking detection using TTL tracking, increased Round Trip Time, and monitoring misdirected traffic
 BGPSec
 
+Traffic Sniffing/Capture
+------------------
+Need a capture library to capture network traffic
+Libpcap
+WinPcap
+NPCAP
+
 Wireshark
+------------------
+
+TShark
+------------------
+CLI version of wireshark
 
 TCPDump
+------------------
+
 
 BPFs
-
+------------------
 
 
 
