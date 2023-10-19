@@ -425,12 +425,15 @@ Least Exclusive
 At least one of the designated bits must be set to not equal 0; all other may be set
 tcp[13] & 0x11 != 0
 
-ip[6]&0x20 = 0x20 || ip[6:2]&0x1FFF > 0 || ip[12:4]&0xFFFFFF00=0x0A0A2800
+ip[6]&0x20 = 0x20||ip[6:2]&0x1FFF > 0||ip[12:4]&0xFFFFFF00=0x0A0A2800
 
 N3tw0rkFund3m3nt@ls
 P@cket_C@rv1ng
 Wh@t_P@load?
 N3tw0rkBPF
+
+Networking - 1 - Fundamentals - Task 1 - Frame and Packet Headers
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\////////////////////////////////////
 
 MAC of ARP Storm
 ----
@@ -531,6 +534,447 @@ How many Hops away is the 151.101.64.84 address?
 What is the IP ID of the fragmented ICMP packet? (starting at packet 6472)
 ----
 46544
+
+What is the offset value of the fragments?
+----
+122
+
+What is the possible OS of the system that sent this ICMP based on the message payload?
+----
+Windows
+
+What is the ICMPv6 type number of Echo Request?
+----
+128
+
+What is the ICMPv6 type number of Echo Reply?
+----
+129
+
+What is the ICMPv6 type number of the Router Advertisement message?
+----
+134
+
+What is the link-layer address of the advertising router?
+----
+fa:16:3e:35:21:5a
+
+What is the IPv6 prefix being advertised?
+----
+beef:4:f00d::
+
+What is the HSRP virtual IP?
+----
+192.168.0.1
+
+What is the HSRP multicast address used?
+----
+224.0.0.2
+
+What is the IP address of the HSRP Active forwarder (before the takeover)?
+----
+192.168.0.30
+
+What is the IP address of the HSRP Active forwarder (after the takeover)?
+----
+192.168.0.10
+
+What is the VRRP multicast address used?
+----
+224.0.0.18
+
+What is the VRRP virtual IP?
+----
+192.168.1.254
+
+How many total devices are communicating via VRRP?
+----
+3
+
+How many networks are being advertised via RIP?
+----
+2
+
+What are the networks being advertised (in numeric order separated by commas and no spaces)?
+----
+200.0.1.0,200.0.2.0
+
+What protocol and port is being used for RIP?
+----
+UDP 520
+
+What network is being advertised via EIGRPv4
+----
+192.168.4.0/24
+
+What is the IP protocol number used for EIGRP?
+----
+88
+
+What multicast address is used to send EIGRPv4 updates?
+----
+224.0.0.10
+
+What network is being advertised via EIGRPv6
+----
+2001:db8:0:400::/64
+
+What multicast address is used to send EIGRPv6 updates?
+----
+ff02::a
+
+What Autonomous system number is being used?
+----
+100
+
+What is the IP protocol number used for OSPF?
+----
+89
+
+What is the IP address of the OSPF designated router (DR)?
+----
+192.168.170.8
+
+What multicast address is used by the DR to send updates?
+----
+224.0.0.5
+
+How many networks are being advertised via BGP?
+----
+3
+
+What are the networks being advertised (in numeric order separated by commas and no spaces)?
+----
+10.0.0.0/8,172.16.0.0/16,192.168.4.0/22
+
+What Autonomous system number is the 192.168.0.10 peer in?
+----
+65210
+
+What Protocol and port is being used for BGP?
+----
+TCP 179
+
+Networking - 1 - Fundamentals - Task 2 - Packet Payloads
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\////////////////////////////////////
+What Protocol and port is being used for SMB?
+----
+TCP 445
+
+What is the name of the file accessed via SMB?
+----
+putty.exe
+
+What is the IP address of the DHCP server?
+----
+192.168.0.1
+
+What is the “offered” IP address?
+----
+192.168.0.10
+
+What is the DHCP lease time (in seconds)?
+----
+3600
+
+What ".com" webpage was the “A” record requested for?
+----
+microsoft.com
+
+What webpage was the “AAAA” record requested for?
+----
+wikipedia.org
+
+What mail server was the “MX” record requested for?
+----
+hotmail.com
+
+What domain was the Zone transfer requested for?
+----
+etas.com
+
+What is the username/password used for the FTP authentication?
+----
+student10/password10
+
+What was the filename requested via FTP?
+----
+DO_NOT_LOOK.txt
+
+What was the message in the file transferred via FTP?
+----
+Schrodinger's Cat
+
+What was the source and destination ports used for the Passive FTP (SPORT:DPORT)?
+----
+38591:42452
+
+What was the HTTP site reached (without any errors or redirects)?
+----
+www.faqs.org
+
+What was the HTTP site that was “Moved Temporarily”?
+----
+https://snippets.cdn.mozilla.net/us-west/bundles/bundle_6fdbf7e26c281d58ce9687293f922ec1607595bb.json
+
+What was the HTTP site that was “Moved Permanently”?
+----
+https://msn.com/
+
+What was the HTTPs (TLS) site that was reached?
+----
+twitter.com
+
+What is the SMTP domain name?
+----
+virginmedia.com
+
+Who sent the email to (cuizw@public.qd.sd.cn)?
+----
+owadomyi2897@virginmedia.com
+
+From the message, what are “self-explanatory”?
+----
+sizes
+
+What is the name of the SMTP server communicating over IPv6?
+----
+mx.google.com
+
+What is the username that signed-in via IMAP?
+----
+neulingern
+
+How many emails were "fetched"?
+----
+13
+
+Who is “reporting a similar situation” via the emails?
+----
+Jerry Hammons
+
+What is the POP mailbox address?
+----
+digitalinvestigator@networksims.com
+
+How many messages does this mailbox have?
+----
+3
+
+What is the name of the University in one of the email messages?
+----
+Edinburgh Napier University
+
+What is the IP of the NTP server?
+----
+192.168.50.50
+
+What is the Timestamp in the NTP messages (MONTH DAY, YEAR)?
+----
+Sep 27, 2004
+
+What is the NTP version number?
+----
+3
+
+What is the SSH server IP address?
+----
+172.16.40.10
+
+What is the SSH protocol version being used by both (copy entire field “as is” from Wireshark)?
+----
+SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u2
+
+Which asymmetric encryption protocol is being used?
+----
+Diffie-Hellman
+
+What is the MSS option set to for the SSH communication?
+----
+1410
+
+What is the windows scale shift option set to?
+----
+7
+
+What is the username/password of the account used via telnet?
+----
+fake/user
+
+What is the exact first command issued on the remote system over telnet?
+----
+/sbin/ping www.yahoo.com
+
+What was the second command issued?
+----
+ls
+
+What is the inital sequence number of the client?
+----
+2579865836
+
+What is the MSS of the server?
+----
+1448
+
+What was the username used to log in via RADIUS
+----
+John.McGuirk
+
+What is the RADIUS Request code?
+----
+1
+
+What is the RADIUS Accept code?
+----
+2
+
+What is the RADIUS Challenge code?
+----
+11
+
+What is the IP of the TACACS+ server?
+----
+192.168.1.5
+
+What is the Source port used for the communication?
+----
+59087
+
+What is the Maximum Segment Size (MSS) option set to for the TACACS+ communication?
+----
+1460
+
+What is the starting window size of the TACACS+ client?
+----
+4128
+
+What SNMP version is being used?
+----
+3
+
+What is the IPv4 address of the SNMP server?
+----
+10.0.0.150
+
+What is the IPv6 address of the SNMP server?
+----
+2001:470:e5bf:1001:1cc7:73ff:65f5:a2f7
+
+What Protocol and port is being used for SNMP communication?
+----
+UDP 161
+
+What is the IP address of the TFTP server?
+----
+192.168.0.13
+
+What is the name of the file uploaded to the TFTP server?
+----
+rfc1350.txt
+
+How many TFTP “Blocks” were used to send the file?
+----
+49
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
