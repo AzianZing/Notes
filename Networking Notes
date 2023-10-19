@@ -425,6 +425,7 @@ Least Exclusive
 At least one of the designated bits must be set to not equal 0; all other may be set
 tcp[13] & 0x11 != 0
 
+ip[6]&0x20 = 0x20 || ip[6:2]&0x1FFF > 0 || ip[12:4]&0xFFFFFF00=0x0A0A2800
 
 
 
