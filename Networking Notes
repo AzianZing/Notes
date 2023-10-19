@@ -378,10 +378,65 @@ CLI version of wireshark
 
 TCPDump
 ------------------
-
+sudp tcpdump -D (shows all available listening devices)
+sudo tcpdump -i etho0 (captures the traffic from eth0) -X (packet data with Hex and ASCII) -XX (packet data with Hex and ASCII with Ethernet Frame as well) -vv (verbose) -n (not relying on the system to convert IP to hostnames)
+sudo tcpdump -i etho0 -XXvvn 'not tcp port 22' (forces tcpdump to not show tcp port 22)
+sudo tcpdump -i eth0 -XXvvn '(not tcp port 22) && (udp port 68)' (forces tcpdump to show port 68 and not tcp port 22)
+sudo tcpdump -i eth0 -XXvvn '10.10.0.40 && not tcp port 22' (forces tcpdump to show all connections that are not on port 22 from 10.10.0.40)
+sudo tcpdump -XXvvnr (tells tcpdump to read from a file) /home/activity_resources/pcaps/Xtra.pcap
+sudo tcpdump -i eth0 -XXvvnw (tells tcpdump to write to a file) file.pcap
 
 BPFs
 ------------------
+Berkeley Packet Filters
+Allow for the filtering of traffic
+
+tcpdump {A} [B:C] {D} {E} {F} {G}
+
+A = Protocol (ether | arp | ip | ip6 | icmp | tcp | udp)
+B = Header Byte offset
+C = optional: Byte Length. Can be 1, 2 or 4 (default 1)
+D = optional: Bitwise mask (&)
+E = Operator (= | == | > | < | <= | >= | != | () | << | >>)
+F = Result of Expresion
+G = optional: Logical Operator (&& ||) to bridge expressions
+
+Example: 
+tcpdump 'ether[12:2] = 0x0800 && (tcp[2:2] != 22 && tcp[2:2] != 23)'
+
+Bitwise Masking
+Filter by bits and not just the bytes
+
+Most Exclusive
+0x11
+0x12 - SYN/ACK
+0x28 - PSH/URG
+Can also use decimal to represent the numbers needed to filter on
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
