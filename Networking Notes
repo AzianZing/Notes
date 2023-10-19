@@ -427,12 +427,110 @@ tcp[13] & 0x11 != 0
 
 ip[6]&0x20 = 0x20 || ip[6:2]&0x1FFF > 0 || ip[12:4]&0xFFFFFF00=0x0A0A2800
 
+N3tw0rkFund3m3nt@ls
+P@cket_C@rv1ng
+Wh@t_P@load?
+N3tw0rkBPF
 
+MAC of ARP Storm
+----
+00:07:0d:af:f4:54
 
+MAC of 10.10.10.1
+----
+00:1d:09:f0:92:ab
 
+MAC of 10.10.10.2
+----
+00:1a:6b:6c:0c:cc
 
+MAC of system trying to perform ARP MitM attack
+----
+fa:16:3e:35:21:5a
 
+What is the OP code of a RARP Request?
+----
+3
 
+What is the OP code of a RARP Response?
+----
+4
+
+What is the RARP Requestor's MAC?
+----
+00:0c:29:34:0b:de
+
+What was the RARP requestor’s resolved IP address?
+----
+10.1.1.100
+
+What is the MAC of the system spamming gratuitous ARP’s for 192.168.1.254?
+----
+00:00:5e:00:01:01
+
+What is the software version of the Cisco Switch IOS (copy entire field “as is” from Wireshark)?
+----
+IOS (tm) C2950 Software (C2950-I6K2L2Q4-M), Version 12.1(22)EA14, RELEASE SOFTWARE (fc1)
+
+What is the software version of the Cisco Router (copy entire field “as is” from Wireshark)?
+----
+IOS (tm) 1600 Software (C1600-NY-L), Version 11.2(12)P, RELEASE SOFTWARE (fc1)
+
+What is the System Name of one of the LLDP sending devices?
+----
+S2.cisco.com
+
+What is the Bridge Priority of the STP Root Bridge?
+----
+0
+
+What is the MAC address of the STP Root Bridge?
+----
+00:1f:27:b4:7d:80
+
+What is the VTP Management Domain Name?
+----
+cisco
+
+What is the latest configuration revision number?
+----
+11
+
+How many total VLANs are being advertised via VTP?
+----
+22
+
+What is the message contained within the single tagged VLAN traffic coming from 11.22.33.44?
+----
+I pitty the foo
+
+What is the VLAN ID of this traffic?
+----
+999
+
+What is the VLAN ID being attacked by 10.10.10.10 using Double Tagging?
+----
+250
+
+What is the combined message being sent via ICMP?
+----
+Wouldn't you like too be a Pepper Too!
+
+What is the OS of 192.168.1.1 host based off its Echo Request message to the Google DNS?
+----
+Linux
+
+What is the message that 192.168.65.20 sending to Google's DNS via ICMP?
+----
+Exsqueeze me?
+
+How many Hops away is the 151.101.64.84 address?
+----
+11
+
+What is the IP ID of the fragmented ICMP packet? (starting at packet 6472)
+----
+46544
 
 
 
