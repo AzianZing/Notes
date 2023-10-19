@@ -408,13 +408,22 @@ Bitwise Masking
 Filter by bits and not just the bytes
 
 Most Exclusive
+All designated bit values must be set; no others can be set
+tcp[13] = 0x11 or tcp[13] & 0xFF = 0x11
 0x11
 0x12 - SYN/ACK
 0x28 - PSH/URG
 Can also use decimal to represent the numbers needed to filter on
 
+DSCP x 4
 
+Less Exclusive
+All desginated bits must be set; all other may be set
+tcp[13] & 0x11 = 0x11
 
+Least Exclusive
+At least one of the designated bits must be set to not equal 0; all other may be set
+tcp[13] & 0x11 != 0
 
 
 
