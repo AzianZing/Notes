@@ -957,16 +957,15 @@ ip[8]=1&&(ip[9]=0x01||ip[9]=0x11)
 
 What is the Berkeley Packet Filter, using tcpdump, to capture all packets where the URG flag is not set and URG pointer has a value?
 ----
-tcp[13]!=0x20&&tcp[18:2]>0
+tcp[13]&0x20=0&&tcp[18:2]>0
 
+What is the Berkeley Packet Filter, using tcpdump, to capture a TCP null scan to the host 10.10.10.10?
+----
+tcp[13]=0&&ip[16:4]=0x0A0A0A0A
 
-
-
-
-
-
-
-
+What is the Berkeley Packet Filter, using tcpdump, to capture an attacker using vlan hopping to move from vlan 1 to vlan 10?
+----
+ether[12:4]&0xFFFF0FFF=0x81000001&&ether[16:4]&0xFFFF0FFF=0x8100000A
 
 
 
