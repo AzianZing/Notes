@@ -967,13 +967,74 @@ What is the Berkeley Packet Filter, using tcpdump, to capture an attacker using 
 ----
 ether[12:4]&0xFFFF0FFF=0x81000001&&ether[16:4]&0xFFFF0FFF=0x8100000A
 
+Packet Creation and Socket Programming
+%%%%%%%%%%%%%%%%%%%%%%%%%
+Socket Types
+-------------------
+Stream Sockets
+----
+Connection oriented and sequenced, methods for connection TCP, SCTP, and Bluetooth
+
+Datagram Sockets
+----
+Connectionless, UDP
+
+Raw Sockets
+----
+Direct sending and receiving of IP packets without protocol specific formatting
+
+User Space vs Kernel Space Sockets
+------------------
+User Space Sockets
+----
+Stream Sockets
+Datagram Sockets
+
+Kernel Space Sockets
+----
+Raw Sockets
+
+Socket Creation
+-----------------
+User Space Sockets - Most common sockets that do not require elevated privileges
+^^^^
+tcpdump or wireshark
+netcat above well known port range
+nmap with no switches
+
+Kernel Space Sockets - Attemps to access hardware directly on behalf of a user application
+^^^^
+tcpdump or wireshark
+nmap for OS identification
+netcat in well known port range
 
 
+Network Sockets primarily use the Python3 Socket library and socket.socket function
+-------------------
+Family
+****
+AF_INET = IPv4
+AF_INET6 = IPv6
+AF_UNIX = Program to program interaction
 
+Type
+****
+SOCK_STREAM = TCP
+SOCK_DATAGRAM = UDP
+SOCK_RAW = RAW
 
+Protocol
+****
+IPPROTO_RAW = RAW
 
+import socket
+  s = socket.socket(socket.<FAMILY>, socket.<TYPE>, socket.<PROTOCOL>)
 
-
+RAW IPv4 Sockets
+^^^^
+Raw Socket scripts must include the IP header and next headers
+Used for testing defenses such as triggering and IDS
+Used also to bypass firewalls
 
 
 
