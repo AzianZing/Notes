@@ -1,6 +1,10 @@
 Facilitation Guide
 @@@@@@@@@@@@@@@@@@
 https://net.cybbh.io/public/networking/latest/index.html
+credentials
+student:password
+vyos:password
+
 CTFds 1
 ----
 http://networking-ctfd-1.server.vta:8000/
