@@ -1112,12 +1112,58 @@ FIN scan
 XMAS scan
 UDP scan
 
+NMap options
+----------------
+-sU - UDP
+-sS - SYN
+-n - disable name resolution
+--min-rate <NUM> how many packets to send per second
+-vv - verbose
+-T4 - speed up scan without dropping packets
+-Pn - "treat this target as if its up
+-A - all information
+-p - ports scanned (1-1024, scans 1-1024, -1024m scans first available number)
+-p- - scans all ports
 
+Netcat
+----------------
+-nc -nzvw1
+-1 sec
+-no name resolution
+-verbose
+-wait
 
+nc <IP> 22 - if SSH shows, it is banner grabbig
+Trust but verify
 
+NETWORK SCAN SCRIPT 
+\\\\\\\\\\\\\\\\\\\\\\\\\\////////////////////////
+#!/bin/bash
+echo "Enter network address (e.g. 192.168.0): "
+read net
+echo "Enter starting host range (e.g. 1): "
+read start
+echo "Enter ending host range (e.g. 254): "
+read end
+echo "Enter ports space-delimited (e.g. 21-23 80): "
+read ports
+for ((i=$start; $i<=$end; i++))
+do
+    nc -nvzw1 $net.$i $ports 2>&1 | grep -E 'succ|open'
+done
+# (-v) running verbosely (-v on Linux, -vv on Windows),
+# (-n) not resolving names. numeric only IP(no D.S)
+# (-z) without sending any data. zero-I/O mode(used for scanning)
+#(-w1) waiting no more than 1second for a connection to occur
+# (2>&1) redirect STDERR to STDOUT. Results of scan are errors and need to redirect to output to grep
+# (-E) Interpret PATTERN as an extended regular expression
+# ( | grep open) for Debian to display only open connections
+# ( | grep succeeded) for Ubuntu to display only the open connections
 
-
-
+Make web requests with Linux
+------------------
+curl
+wget -r (-r for recursive)
 
 
 
