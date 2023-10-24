@@ -1036,7 +1036,81 @@ Raw Socket scripts must include the IP header and next headers
 Used for testing defenses such as triggering and IDS
 Used also to bypass firewalls
 
+Network Reconnaissance
+----------------------
+Active - Internal (DNS Queries, ARP Requests), External (Network Scanning)
+Passive - Internal (Packet Sniffers), External (DNS Lookups, Whois, Job Site Listings)
+Internal
+External
 
+Passive - Gathering information without direct interaction, lower risk
+----
+Involves identifying IP Addresses and sub-domains, external and 3rd party sites, people and technologies, content of interest, vulnerabilities
+Tools - WHOIS Queries, job site listings, phone numbers, google searches, passive OS fingerprinting
+
+Passive External Network Reconnaissance
+----
+Resolves hostnames to IP Addresses
+RFC 3912
+WHOIS queries
+
+Dig
+****
+Typically between primary and secondary DNS servers
+If allowed to transfer externally hostnames, IPs, and IP blocks can be determined
+
+AXFR = Zone Transfers
+
+Zone Transfers
+****
+Return DNS information
+supplements base queries
+
+WHOIS Queries
+****
+Can use the internet wayback machine if the domain is old, could reveal potential information that has since been removed but was captured
+
+Google Searches
+****
+Research
+
+SHODAN
+****
+Search engine for internet-connected devices
+Reveals information about technologies, remote access services, improperly configured services, and network infrastructure
+When selected can give additional information and applicable vulnerabilities
+
+Network Scanning
+-------------------
+Scanning Strategy
+----
+Remote to Local - Outside to In
+Local to Remote
+Local to Local
+Remote to Remote
+
+Scanning Approach
+----
+Aim
+****
+Wide range target scan
+Target specific scan
+
+Method
+****
+Single source scan
+Distributed scan
+
+Methods
+----
+Broadcast ping and ping sweep
+ARP scan
+SYN scan
+Full scan
+NUll scan
+FIN scan
+XMAS scan
+UDP scan
 
 
 
