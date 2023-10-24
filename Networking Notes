@@ -1163,8 +1163,26 @@ done
 Make web requests with Linux
 ------------------
 curl
-wget -r (-r for recursive)
+wget -r (-r for recursive) <Protocol>://<IP>:<Port>
 
+Situational Awareness Checklist
+------------------
+Hostname / uname -a
+Whoami, w
+Directory (pwd)
+sudo -l
+cat /etc/services, /etc/hosts
+ps -elf
+netstat -ano or -ntlpu (no resolution, tcp, listening, process id, udp) / ss -ntlpu
+ipconfig / ifconfig / ip addr or ip a
+arp -a / ip neighbor / ip n
+ip route / ip r / route
+check any other directories as directed / important directories
+
+Ruby Ping sweep
+for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+
+after 21-23,80 scan 1-9999
 
 
 
