@@ -1188,8 +1188,49 @@ for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
 
 after 21-23,80 scan 1-9999
 
+Data Transfer, Movement, and Redirection
+--------------------
+TFTP - Trivial File Transfer Protocol 
+  No shell
+FTP
+  Active
+    The data comes to you
+  Passive
+    You go get the data
+SFTP - SSH File Transfer Protocol
+  Uses port 22 using SSH, gives a terminal, encrypted and secure
 
+SCP - Secure Copy
+  uses port 22
+  uses SSH
+  noninteractive
+  Syntax:
+    scp <options> <source> <destination>
+    scp -P<port> -r(recursive) -3(3 way communication)
+    scp file.txt(relative path) <username>@<IP>:<directory>
+    scp <user>@<IP>:/etc/ssh/sshd_config . (saves sshd_config to current directory)
 
+FTPS - File Transport Protocol Secure
+  TCP transport port 443
+  SSL/TLS encryption to FTP
+  Interactive terminal access
+
+Traffic Redirection
+--------------------
+Netcat
+  Syntax:
+    Client to Listener
+      nc <IP> <port> < <file> (sending)
+      nc -lp <port> > <file> (receiving)
+    Listener to Client
+      nc -lp <port> < <file>
+      nc <IP> <port> > <file>
+
+mkfifo <pipe name>
+<command> > <pipe name>
+
+Host functioning as relay:
+<nc command> 0< mypipe | <nc command> 1> mypipe
 
 
 
