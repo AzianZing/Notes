@@ -1,6 +1,7 @@
 Facilitation Guide
 @@@@@@@@@@@@@@@@@@
 https://net.cybbh.io/public/networking/latest/index.html
+ssh student@10.50.27.42 -X (accessing necessary host in terminal)
 credentials
 student:password
 vyos:password
@@ -1231,6 +1232,53 @@ mkfifo <pipe name>
 
 Host functioning as relay:
 <nc command> 0< mypipe | <nc command> 1> mypipe
+
+SSH Tunneling
+---------------------
+creating new channels using SSH-CONN protocol
+allows for tunneling of other services through SSH
+provides insecure services encryption
+
+SSH Local Port Forwarding
+---------------------
+ssh -p <optional alt port> <user>@<pivot ip> -L <local bind port>:<target ip>:<target port>
+or
+ssh -L <local port>:<target ip>:<target port> -p <alt port> <user>@<pivot ip> -NT
+
+SSH Remote Port Forwarding
+---------------------
+ssh -p <optional alt port> <user>@<remote ip> -R <remote bind port>:<target ip>:<target port> -NT
+or
+ssh -R <remote bind port>:<target ip>:<target port> -p <optional alt port> <user>@<remote ip> -NT
+
+nmap <IP>
+nc <IP> <port> - shows what service is running on the port
+
+wget -r ftp://<IP>:22(alternate port)
+Creates a folder called <IP>:22 on the local host
+
+ssh <found username>@<IP> -p 25 -L 50200:127.0.0.1:80(open port on the example machine) -NT (terminal does not accept more input)
+ssh <user>@InternetHost -R 50299:127.0.0.1:80(open port on the example machine) -NT
+wget -r 127.0.0.1:50200 or 50299 (makes the directory 127.0.0.1:50200 on local machine)
+
+ssh <user>@<IP> -p 25 -D 9050 -NT
+proxychains <nmap> -Pn Jerry, Thomas (hostnames)
+Jerry - 21, 22, 23, 80 (open ports)
+Thomas - 23, 80 (open ports)
+Joe - 
+proxychains wget -r ftp://Jerry (sends through the tunnel created with 9050)
+Creates Jerry directory on local machine
+proxychains wget -r Jerry
+Sends information to Jerry directory
+proxychains wget -r Thomas
+Creates Thomas directory on local machine
+proxychains telnet Jerry (gives access to Jerry)
+
+ssh <user>@<IP>(first box accessed) -p 25 -R 50298:127.0.0.1:22 -NT
+
+50200-50299 - ports
+L ->    <-R
+
 
 
 
