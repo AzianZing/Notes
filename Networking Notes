@@ -1265,7 +1265,7 @@ ssh <user>@<IP> -p 25 -D 9050 -NT
 proxychains <nmap> -Pn Jerry, Thomas (hostnames)
 Jerry - 21, 22, 23, 80 (open ports)
 Thomas - 23, 80 (open ports)
-Joe - 
+Joe - 22, 80, 443
 proxychains wget -r ftp://Jerry (sends through the tunnel created with 9050)
 Creates Jerry directory on local machine
 proxychains wget -r Jerry
@@ -1275,6 +1275,17 @@ Creates Thomas directory on local machine
 proxychains telnet Jerry (gives access to Jerry)
 
 ssh <user>@<IP>(first box accessed) -p 25 -R 50298:127.0.0.1:22 -NT
+ssh <user>@<IP>(Bob) -p 25 -L 50201:127.0.0.1:50298 -NT
+nc 127.0.0.1 50201 (to check tunnels)
+ssh <user>@127.0.0.1 -pp 50201 (gives access to Jerry) -D 9050 (close old connection) -NT
+ssh <user>@Bob -p 25 -L 50202:Jerry:23 -NT
+telnet 127.0.0.1 50202
+ssh <user>@Bob -p 25 -R 50298:127.0.0.1:22 -NT
+ssh <user>@127.0.0.1 -p 50201 (gives access to Jerry) -D 9050 -NT
+proxychains <nmap -Pn Joe or ./scan.sh>
+proxychains nc Joe (22)(80)(443) (22 - SSH, 80 - Telnet, 443 - FTP)
+proxychains wget -r ftp://Joe:443 (Creates Joe:443 directory on local machine)
+
 
 50200-50299 - ports
 L ->    <-R
