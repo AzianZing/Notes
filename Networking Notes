@@ -1290,6 +1290,29 @@ proxychains wget -r ftp://Joe:443 (Creates Joe:443 directory on local machine)
 50200-50299 - ports
 L ->    <-R
 
+Network Analysis
+------------------------
+Fingerprinting
+----
+Passive OS Fingerprinting
+  /etc/p0f/p0f.fp
+p0f -i eth0 (command)
+tcpdump port 80 -w wget.pcap - write tcpdump port 80 results to a file named wget.pcap
+p0f -r wget.pcap - read command for file that was created
+p0f -r wget.pcap -o /var/log/p0f.log - reads results and sends them to p0f.log
+cat /var/log/p0f.log | grep "mod=syn" - grep for SYN packets
+cat /var/log/p0f.log | grep "mod=syn" | grep "subj=cli" - grep for SYN packets from the client
+
+Baselining
+----
+Snapshot of what the network looks like during a time frame
+No industry standard
+7 days is the baseline - shows what is supposed to happen on a work day and what is supposed to happen on a non-work day
+
+
+
+
+
 
 
 
