@@ -1309,6 +1309,16 @@ Snapshot of what the network looks like during a time frame
 No industry standard
 7 days is the baseline - shows what is supposed to happen on a work day and what is supposed to happen on a non-work day
 
+Network Data Types
+----
+Full Packet capture data - PCAPS
+Session Data
+Statistical Data
+Packet String Data
+Alert Data
+Log Data
+
+MitM attacks are caused by gratuitous replies
 
 
 
