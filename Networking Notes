@@ -2,6 +2,8 @@ Facilitation Guide
 @@@@@@@@@@@@@@@@@@
 https://net.cybbh.io/public/networking/latest/index.html
 Lewis - 10.50.45.241
+Bage - 10.50.39.51
+Joey - 10.50.32.146
 ssh student@10.50.27.42 -X (accessing necessary host in terminal)
 credentials
 student:password
