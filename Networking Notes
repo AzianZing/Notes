@@ -1402,7 +1402,37 @@ raw - used to configure exemptions from connection tracking.
 security - used for Mandatory Access Control (MAC) networking rules.
     INPUT, FORWARD, and OUTPUT
 
+-A - append
+-I - Insert
+-D - delete
+-L - list
+-P - changes the default policy
+-p - list a protocol
+--sport or --dport - address a specfic port number
+-d - destination address
+-s - source address
+-j - jump to target action
+-n - displays port number
+-t - specifies a table
+--line numbers - prints the rule number
 
+Table Flush
+iptables -t [table] -F
+
+Default policy change
+iptables -t [table] -P [chain][action]
+
+List rules with rule numbers
+iptables -t [table] -L --line-numbers
+
+Lists rules as commands interpreted by the system
+iptables -t [table] -S
+
+Inserts rule before Rule number
+iptables -t [table] -I [chain] [rule num] [rules] -j [action]
+
+Deletes rule at number
+iptables -t [table] -D [chain] [rule num]
 
 
 
