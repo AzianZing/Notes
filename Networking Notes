@@ -1260,7 +1260,11 @@ Creates a folder called <IP>:22 on the local host
 ssh <found username>@<IP> -p 25 -L 50200:127.0.0.1:80(open port on the example machine) -NT (terminal does not accept more input)
 ssh <user>@InternetHost -R 50299:127.0.0.1:80(open port on the example machine) -NT
 wget -r 127.0.0.1:50200 or 50299 (makes the directory 127.0.0.1:50200 on local machine)
-
+#####################################################
+###                                               ###
+###                  TUNNELING                    ###
+###                                               ###
+#####################################################
 ssh <user>@<IP> -p 25 -D 9050 -NT
 proxychains <nmap> -Pn Jerry, Thomas (hostnames)
 Jerry - 21, 22, 23, 80 (open ports)
@@ -1285,7 +1289,11 @@ ssh <user>@127.0.0.1 -p 50201 (gives access to Jerry) -D 9050 -NT
 proxychains <nmap -Pn Joe or ./scan.sh>
 proxychains nc Joe (22)(80)(443) (22 - SSH, 80 - Telnet, 443 - FTP)
 proxychains wget -r ftp://Joe:443 (Creates Joe:443 directory on local machine)
-
+#####################################################
+###                                               ###
+###                END OF TUNNELING               ###
+###                                               ###
+#####################################################
 
 50200-50299 - ports
 L ->    <-R
@@ -1319,6 +1327,90 @@ Alert Data
 Log Data
 
 MitM attacks are caused by gratuitous replies
+
+Network Filtering
+----------------------
+Practical applications for filtering
+----
+email addresses - to block unwanted email and increase productivity
+computer applications in an organization environment - for security from vulnerable software
+MAC filtering - also for security
+Network traffic
+
+Devices used to filter traffic
+----
+Firewall
+IDS (Intrustion Detection Systems)
+
+Filtering Concepts
+----
+Whitelist vs Blacklist (Allowed vs disallowed)
+
+Network Device Operations
+----
+Routed - specific firewall IP
+Transparent - 
+
+Filtering Device Placement - as close to where the packets will be coming from as possible
+
+                ##############
+              ##              ##
+            ##                  ##
+          ##      #         #     ##
+          ##                      ##
+          ##           >          ##
+          ##                      ##
+            ##     #########     ##
+              ##              ##
+                ##############
+
+
+
+
+                      #####
+                    #  -  - #
+                   #     >   #
+                    #  ---- #
+                      #####
+                   \    |    /
+                     \  |  /
+                       \|/
+                        |
+                        |
+                        |
+                      /   \
+                    /      \
+                  /          \
+
+iptables - IPv4 packet administration
+ip6tables - IPv6 packet administration
+ebtables - Ethernet Bridge frame table administration
+arptables - arp packet administration
+
+filter - default table. Provides packet filtering.
+    INPUT, FORWARD, and OUTPUT
+
+nat - used to translate private ←→ public address and ports.
+    PREROUTING, POSTROUTING, and OUTPUT
+
+mangle - provides special packet alteration. Can modify various fields header fields.
+    All Chains: PREROUTING, POSTROUTING, INPUT, 
+
+raw - used to configure exemptions from connection tracking.
+    PREROUTING and OUTPUT
+
+security - used for Mandatory Access Control (MAC) networking rules.
+    INPUT, FORWARD, and OUTPUT
+
+
+
+
+
+
+
+
+
+
 
 
 
