@@ -1,12 +1,13 @@
 Facilitation Guide
 @@@@@@@@@@@@@@@@@@
 https://net.cybbh.io/public/networking/latest/index.html
-Lewis - 10.50.45.241
-Bage - 10.50.39.51
-Joey - 10.50.32.146
+Lewis(10) - 10.50.45.241
+Bage(2) - 10.50.39.51
+Joey(8) - 10.50.32.146
 Siercke - 10.50.32.224
 Crane - 10.50.40.141
 McKee - 10.50.39.27
+My stack - 10.50.27.42
 ssh student@10.50.27.42 -X (accessing necessary host in terminal)
 credentials
 student:password
@@ -1613,6 +1614,8 @@ Thresholding and Suppression Options
     count [#] - number of rule matching in [s] seconds that will cause event_filter limit to be exceeded
     seconds [seconds] - time period over which count is accrued. [s] must be nonzero value
 
+Under 100 - No
+Over 1000000 - yes
 
 
 
