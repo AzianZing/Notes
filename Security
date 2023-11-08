@@ -1,0 +1,193 @@
+https://sec.cybbh.io/public/security/latest/index.html
+CTF address (http://10.50.20.250:8000)
+-------------------
+Username - CRWA-M-507
+Password - qDRhLlXvXTqUjP5
+IP - 10.50.37.139
+
+Bonestroo - 10.50.26.30
+Johannsen - 10.50.47.112
+Bage - 10.50.40.200
+
+
+Lewis
+Username - GALE-M-507
+Password - iv4CRgEPySw8bJM
+IP - 10.50.44.245
+
+##################################################################################
+##################################################################################
+#####                                                                        #####
+#####                           Lesson Resources                             #####
+#####                                                                        #####
+##################################################################################
+##################################################################################
+
+
+Penetration Testing
+---------------------
+Report Example 1 - https://www.offsec.com/reports/sample-penetration-testing-report.pdf
+Report Example 2 - https://tbgsecurity.com/wordpress/wp-content/uploads/2016/11/Sample-Penetration-Test-Report.pdf
+
+
+Network Reconnaissance
+--------------------
+Nmap NSE - https://nmap.org/book/nse.html
+Nmap NSE Scripts (Github) - https://github.com/nmap/nmap/tree/master/scripts
+Scrapin gwith Python lxml - https://blog.datahut.co/beginners-guide-to-web-scraping-with-python-lxml/
+Scraping with Python - https://docs.python-guide.org/scenarios/scrape/
+Wireshark Display Filters - http://packetlife.net/media/library/13/Wireshark_Display_Filters.pdf
+
+Exploit Research
+--------------------
+Exploit Research Report Template - https://git.cybbh.space/sec/public/raw/master/security/activities/03-activity-exploit-pairing/Exploit_research-report-template.docx
+Exploit-DB - https://www.exploit-db.com/
+
+Web Exploitation
+-------------------
+W3schools SQL UNION - https://www.w3schools.com/sql/sql_union.asp
+SQLbolt Practice - https://sqlbolt.com/
+OWASP XSS Attacks - https://owasp.org/www-community/attacks/xss/
+Amolnaik blog INSERT Injection - http://amolnaik4.blogspot.com/2012/02/sql-injection-in-insert-query.html
+Pentestmonkey SQL cheat sheet - http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
+Netsparker SQL cheat sheet - https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/
+Mozilla Developer Console - https://developer.mozilla.org/en-US/docs/Tools/Browser_Console
+Chrome Developer Console - https://developers.google.com/web/tools/chrome-devtools/console/
+HTTP - https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+AJAX Security - https://www.owasp.org/index.php/AJAX_Security_Cheat_Sheet
+Cross-Site Scripting-PHP & Cookies - https://null-byte.wonderhowto.com/how-to/write-xss-cookie-stealer-javascript-steal-passwords-0180833/
+Filter Evasion - https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
+XSS Prevention - https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+XSS PreventionFile Upload Vulnerability - https://www.owasp.org/index.php/Unrestricted_File_Upload
+Arbitrary File Upload - https://teambi0s.gitlab.io/bi0s-wiki/web/file-upload/
+Command Injection - https://www.owasp.org/index.php/Command_Injection
+PHP web shell introduction - https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/
+Comprehensive tutorial on cross-site scripting - https://excess-xss.com/
+
+Reverse Engineering
+--------------------
+Reverse Engineering Workflow - https://git.cybbh.space/sec/public/-/jobs/artifacts/master/raw/guides/Reverse_engineering_workflow.pdf?job=genpdf
+x86 Student Guide - https://git.cybbh.space/sec/public/-/jobs/artifacts/master/raw/guides/x86_guide.pdf?job=genpdf
+GDB Student Guide - http://10.50.20.250:8000/files/4590e117a1dc6559af667eaf509fb91c/GDB_student_guide.pdf
+Ghidra Guide - http://10.50.20.250:8000/files/0c8520ac1e713e98f1881d73e5ac50a2/Ghidra_student_guide.pdf
+IDA Overview - http://10.50.20.250:8000/files/619b9381e3d4fb1613a417f521a930ef/IDA_Overview.pdf
+Memory Diagram - http://10.50.20.250:8000/files/8311b059c4dd857affccd47f6d89758a/memoryLayoutC.jpg
+Registers Diagram - http://10.50.20.250:8000/files/fileimports/RegistersDiagram.pdf
+Stack Practice - http://10.50.20.250:8000/files/fileimports/Stack_practice.pdf
+Intel Manual - https://software.intel.com/sites/default/files/managed/39/c5/325462-sdm-vol-1-2abcd-3abcd.pdf
+The Stack - https://eli.thegreenplace.net/2011/02/04/where-the-top-of-the-stack-is-on-x86/
+OpenJDK11 - https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip
+Demo1.c - http://10.50.20.250:8000/files/5f7396c7ef355a19d99d94fbe178de04/demo_new.c
+Demo1.exe - http://10.50.20.250:8000/files/d95014f62a0e81270f07cf170c70ddf7/demo1_new.exe
+Demo2.c - http://10.50.20.250:8000/files/a5a8c6a38aaa65c7c76357311f32b470/demo2_new.c
+Demo2.exe - http://10.50.20.250:8000/files/f93306b3b1e5fac8c8836536070d3ca5/demo2_new.exe
+Demo3.c - http://10.50.20.250:8000/files/8781fd7d5b631217c4e35fbceee2ffae/demo10.c
+Demo3.exe - http://10.50.20.250:8000/files/7d6cf3098d7230a69be668bf6674f24a/demo10.exe
+Hmmm - http://10.50.20.250:8000/files/c5a854fe82abc7c56010cd12e090292d/Hmmm
+Hmmm.exe - http://10.50.20.250:8000/files/adfe4af3511da055a4833ba05c304923/Hmmm.exe
+HotCold - http://10.50.20.250:8000/files/948da94ea348a43cf44be4201a06dd33/HotCold
+
+Exploit Development
+---------------------
+func demo - http://10.50.20.250:8000/files/b685b81a95c3eb3cf83f211416b63156/func
+ASM Geometry - https://hovav.net/ucsd/dist/geometry.pdf
+POC||GTFO - https://www.alchemistowl.org/pocorgtfo/
+Phrack - http://www.phrack.org/
+ROP FTW - https://www.exploit-db.com/docs/english/28479-return-oriented-programming-(rop-ftw).pdf
+Remote Buffer Overflor Methodology - http://10.50.20.250:8000/files/6698b44bd64f8c21874e4dd609952375/Remote_Overflow.py
+Pattern_manager.py - http://10.50.20.250:8000/files/4df6b211b91f1aed2154b54bace0726d/patternmanager.py
+Local Buffer OVerflow Methodology - http://10.50.20.250:8000/files/a0498670d52c5544f616cc14657c07e5/Local_Overflow.py
+cibo - http://10.50.20.250:8000/files/42e8530f5fe6ccea3d077541682f28df/cibo
+figureitout - http://10.50.20.250:8000/files/b14c5a9c825de98951160f491ea244ad/figureitout
+build-exploit-linu-traditional.sh - http://10.50.20.250:8000/files/acb185c7b0c660916581ff768323ca4d/build-exploit-linux-traditional.sh
+IamVulnerable.exe - http://10.50.20.250:8000/files/8b825a963e5422928c4c5fd666cde5c4/IamVulnerable.exe
+libgcc_s_dw2-1.dll - http://10.50.20.250:8000/files/8ac3cfd1d1f536422b92942163a52448/libgcc_s_dw2-1.dll
+Windows Buffer OVerflow - https://z3r0th.medium.com/a-simple-buffer-overflow-using-vulnserver-86b011eb673b
+
+Post Exploitation
+---------------------
+Multiplexing - https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing
+Tunneling - https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Tunnels
+Explain Shell - https://explainshell.com/
+
+Windows Specific Topics
+---------------------
+User vs. Kernel - https://en.wikibooks.org/wiki/Windows_Programming/User_Mode_vs_Kernel_Mode
+Access Control Module - https://docs.microsoft.com/en-us/windows/desktop/secauthz/access-control-components
+UAC Bypass - https://www.greyhathacker.net/?p=796
+MITRE Persistence - https://attack.mitre.org/tactics/TA0003/
+PowerSploit - https://github.com/PowerShellMafia/PowerSploit
+UAC Information - https://blog.cobaltstrike.com/2014/03/20/user-account-control-what-penetration-testers-should-know/
+Windows Security Log Events - https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/default.aspx
+Windows DLL hijacking walkthrough - https://medium.com/techzap/dll-hijacking-part-1-basics-b6dfb8260cf1
+Windows Putty.exe - http://10.50.20.250:8000/files/1fe32d79e64bfad384d8f6f4ae6cd5cf/putty.exe
+
+Linux Specific Topics
+--------------------
+Linux Priv Esc Repo - https://gtfobins.github.io/
+Rsyslog Wiki - https://wiki.gentoo.org/wiki/Rsyslog
+Rsyslog Additional Help - https://www.the-art-of-web.com/system/rsyslog-config/
+
+##################################################################################
+##################################################################################
+#####                                                                        #####
+#####                           Lesson Resources                             #####
+#####                                                                        #####
+##################################################################################
+##################################################################################
+
+Penetration Testing
+-------------------
+Phase 1 - Mission Definition
+Employer will set up the guidelines for the mission (what is off limits and what is not, how to get to the objective if given the information)
+
+Phase 2 - Recon
+Passive Reconnaissance about the target (Google Dorking, tcpdump, nslookup)
+
+Phase 3 - Footprinting
+Gathering data about the target through scanning
+
+Phase 4 - Exploitation and Initial Access
+
+Phase 5 - Post-Exploitation
+Establishing persistence (runkeys, accounts, services)
+Escalate privileges (root, most times not root and using sudo instead)
+Cover your tracks
+Exfiltrate target data
+
+Phase 6 - Document Mission
+Document and report mission details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
