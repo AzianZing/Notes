@@ -168,20 +168,131 @@ Reasons to report - report when access is gained and when access is denied
 What to report - report the good and bad, everything
 Screen captures - describe screen captures
 
+Scanning and Reconnaisance
+-------------------
+If a port is open verify the service
+Using nmap and nc for banner grabbing
 
+Open Source Intelligence
+----
+Appropriate Documentation Practices
+Use of Collected Data
+Collection Methods
 
+Documentation
+----
+Why is it important?
+What should we include in documentation?
 
+Collection and Use
+----
+What do we want to collect?
+How can it be used in operations?
 
+Limitations on Collection
+----
+Are there rules that guide our operations and collection parameters?
+What are important factors when collection data about a target?
 
+Data to Collect
+----
+Web Data
+  Cached Content, Analytics, Proxy Web Application, Command Line Interrogation
+Sensitive Data
+  Business Data, Profiles, Non-Profits/Charities, Business Filings, Hostorical and Public Listings
+Publicly Accessible
+  Physical Addresses, Phone Numbers, Email Addresses, User Names, Search Engine Data, Web and Traffic Cameras, Wireless Access Point Data
+Social Media
+  Twitter, Facebook, Instagram, People Searches, Registry and Wish Lists
+Domain and IP Data
+  DNS Registration, IP Address Assignments, Geolocation Data, Whois
 
+Hyper-Text Markup Language (HTML)
+----
+Standardized markup language for browser interpretation of webpages
+  Client-side interpretation (web browser)
+  Utilizes elements (identified by tags)
+  Typically redirects to another page for server-side interaction
+  Cascading Sytlesheets (CSS) for page themeing
 
+DOCTYPE declares what type of document
 
+Scraping
+----
+Data prep
+(pip install lxml requests)
 
+#!/usr/bin/python
+import lxml.html
+import requests
+                            ##Webpage
+page = requests.get('http://quotes.toscrape.com') ##<- webpage goes here ->
+tree = lxml.html.fromstring(page.content)      ##Library for processing SML and HTML in the Python language
 
+authors = tree.xpath('//small[@class="author"]/text()')    ## Xpath Query filter for Small Tags, where class is authors
 
+print ('Authors: ',authors)
 
+Advanced Scanning techniques
+-----------------------
+Host Discovery
+  Find hosts that are online
+Port Enumeration
+  Find ports for each host that is online
+Port Interrogation
+  Find what service is running on each open/available port
 
+Host discovery methods
+----
+Ping sweep, nmap
 
+Port Enumeration
+----
+nc or nmap
+
+Port Interrogation
+----
+nc or nmap
+
+nikto -h <IP> -p <port>
+
+NMAP Scripting Engine
+-------------------
+Benefits of scanning with scripts
+Script management and Utilization
+Usage and Examples
+
+/usr/share/nmap/scripts
+
+Good scripts for class
+----
+banner.nse
+http-enum.nse
+
+nmap --script=http.enum.nse <IP>
+
+Main benefits
+----
+Network discovery
+Sophisticated Version Detection
+Vulnerability Detection
+Backdoor detection
+Vulnerability Exploitation
+
+Master Sockets
+------------------
+ssh -MS /tmp/<filename> student@<IP> -O cancel (-M master -S socket/slave)
+
+ssh -S /tmp/<same file> <random words> -O forward -L<RHP>:<IP>:22
+
+ssh student@127.0.0.1 -p 2222
+
+ssh -S /tmp/<file> <random text> -O forward -D9050
+
+1. ssh -MS /tmp/<file> student@<initial jump>
+2. ssh -S /tmp/<file> <random text> -O forward -L2222:<IP>:22 -L2223:<additional IP>:<port> -L2224:<additional IP>:<port> (can set up all tunnels in one command)
+3. ssh -MS /tmp/<target file> <username>@127.0.0.1 -p 2222(travels through the first Master Socket through the socket to the next box creating a master socket on the next box)
+4. ssh -S /tmp/<target file> <random text> -O forward -D9050 (proxychains will now work on the second hop, the final target computer)
 
 
 
