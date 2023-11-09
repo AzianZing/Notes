@@ -366,7 +366,9 @@ Capturing sensitive data
 
 /var/www/html
 
-
+Command injection
+----
+can use search boxes on server sites to run commands that the server should not allow you to run
 
 
 
