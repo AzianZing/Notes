@@ -294,6 +294,85 @@ ssh -S /tmp/<file> <random text> -O forward -D9050
 3. ssh -MS /tmp/<target file> <username>@127.0.0.1 -p 2222(travels through the first Master Socket through the socket to the next box creating a master socket on the next box)
 4. ssh -S /tmp/<target file> <random text> -O forward -D9050 (proxychains will now work on the second hop, the final target computer)
 
+Day 2 
+##############################################################
+##############################################################
+##############################################################
+##############################################################
+Exploitation and Vulnerability Research
+---------------------
+Vulnerability Research
+----
+Offensive
+--
+Used to find known exploits so that you dont have to come up with your own exploit for something that has already been exploited
+
+Defensive
+--
+Used to defend your network from exploits that are known
+
+When researching vulnerabilities, make sure that a reputable website/source is being used for the research
+
+Initial access
+----
+The first time a system is accessed and how it was accessed
+
+Web Exploitation
+-----------------
+HTTP Response Codes
+----
+10X==Informational
+2XX==Success
+30X==Redirection
+4XX==Client Error
+5XX==Server Error
+
+Enumeration
+----
+Legitimate surfing
+Tools:
+  NSE Scripts
+  Nikto
+  Burp suite (outside of class)
+
+--script=http-enum.nse
+
+Robots.txt will tell what pages are available to you and which are not accessible
+
+ROBOTS.TXT WILL HELP WITH TEST
+
+Cross-Site Scripting(XSS)
+----
+For Cross-Site Scripting you need a secure server that will send a false request back to the client
+
+Reflected XSS
+----
+Most common form
+Trasnient, occurs in error messages or search results
+Delivered through intermediate media, such as a link in an email
+Characters that are normally illegal in URLs can be Base64 encoded
+
+Stored XSS
+----
+Resides on vulnerable site
+Only requires user to visit page
+
+Useful JavaScript Components
+----
+Proof of concept
+Capturing cookies
+Capturing keystrokes
+Capturing sensitive data
+
+/var/www/html
+
+
+
+
+
+
+
+
 
 
 
