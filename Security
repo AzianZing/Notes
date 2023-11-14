@@ -389,18 +389,41 @@ ssh -i id_rsa <username>@<IP> of server that just added workstation to the serve
 
 10.100.28.40 potential password - YourTempPassword
 
-SQL
---------------
+Day 2 Web Exploitation
+-------------------
 
+SQL Injection
+----
+database - repository that holds information, similar to an excel document
 
+Structured Query Language - ANSI Standard
 
+Standard Commands
+----
+SELECT    Extracts data from a database
+UNION    Used to combine the result-set of two or more SELECT statements
+USE    Selects the DB to use
+UPDATE    Updates data in a database
+DELETE    Deletes data from a database
+INSERT INTO    Inserts new data into a database
+CREATE DATABASE    Creates a new database
+ALTER DATABASE    Modifies a database
+CREATE TABLE    Creates a new table
+ALTER TABLE    Modifies a table
+DROP TABLE    Deletes a table
+CREATE INDEX    Creates an index (search key)
+DROP INDEX    Deletes an index
 
-
-
-
-
-
-
+End commands with a ;
+Examples commands
+----
+SHOW tables;
+SHOW TABLES FROM session; (session is database)
+SHOW COLUMNS FROM session.Tires; (Tires is table inside database)
+SELECT tireid,name,size,cost FROM session.Tires (output is put into the order set up in the command)
+***************SELECT column,column,column FROM Database.Table;***************
+SELECT color,year,name FROM session.car UNION SELECT name,size,cost FROM session.Tires (puts the information from both tables and adds them into the same table)
+UNION must have the same amount of columns selected in order for the commands to work
 
 
 
