@@ -387,6 +387,8 @@ Verification
 cat /var/www/.ssh/authorized_keys
 ssh -i id_rsa <username>@<IP> of server that just added workstation to the server
 
+10.100.28.40 potential password - YourTempPassword
+
 SQL
 --------------
 
