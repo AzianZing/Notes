@@ -1,6 +1,8 @@
 https://sec.cybbh.io/public/security/latest/index.html
 CTF address (http://10.50.20.250:8000)
 Occupational field resources
+WIN-OPS - 10.50.43.194
+LIN-OPS - 10.50.37.61
 ----
 DarkNetDiaries - Podcast
 Operation Glowing Symphony
@@ -512,6 +514,70 @@ http://10.50.35.75/uniondemo.php?Selection=2 UNION select 1,3,@@version# (shows 
 #####                                                                        #####
 ##################################################################################
 ##################################################################################
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$    Day 4    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Reverse Engineering
+----------------------
+%rax    the first return register
+
+%rbp    the base pointer that keeps track of the base of the stack
+
+%rsp    the stack pointer that points to the top of the stack
+
+[%ebp-0x8] = 16 bit base pointer
+
+HEAP - Memory that can be allocated and deallocated
+STACK - A contiguous section of memory used for passing arguments
+GENERAL REGISTER - A multipurpose register that can be used by either programmer or user to store data or a memory location address
+CONTROL REGISTER - A processor register that changes or controls the behavior of a CPU
+FLAGS REGISTER - Contains the current state of the processor
+
+LEA = MOV
+MOV - move
+PUSH - push
+POP - pop the top
+CMP - compare
+JMP- jump
+JLE - jump if less than or equal
+JE - Jump if equal
+JNZ - jump if not zero
+
+Malware Analysis Software
+-------------------------
+Static - strings
+Behavorial - launch the malware
+Dynamic - gdb
+Disassembly - ghidra
+Document Findings - make a document of what you have done
+
+Patching/Software Analysis
+--------------------------
+Chainging the assembly instructions to do what you want
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
