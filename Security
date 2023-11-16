@@ -567,7 +567,9 @@ Chainging the assembly instructions to do what you want
 
 Param_1 in Ghidra almost always means that it is user input
 
-92+138+184+230+276+322++368+414+460+506
+Patching
+---------------------------
+Making the program say success no matter what
 
 
 
