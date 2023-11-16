@@ -571,15 +571,93 @@ Patching
 ---------------------------
 Making the program say success no matter what
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^     Part 2   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$    Day 5    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Exploit Development
+---------------------------------
+Buffer Overflow
+----
+IP - instruction pointer contains the address of next instruction
+EIP - 32-bit instruction pointer
+Stack Pointer - next available space on the stack
+Base Pointer - base of the stack
+Shellcode - code written in byte format to ideally get a shell
+
+Defending Buffer Overflow
+-----------
+Non executable stack (NX)
+Address Space Layout Randomization (ASLR) - randomizes stack pointers and all addresses to prevent overflowing
+Data Execution Prevention (DEP) - read only and write only code will never execute
+Stack Canaries - there are bytes of data somewhere on the stack and if the canary is no longer in the stack because it has been overwritten then the program will not execute
+Position Independent Executable (PIE) - 
+
+Stack Canaries and ASLR are only needed for class (Stack canaries is only for the bonus question)
+
+Tools
+----
+IDA, GHIDRA
+GDB, MONA, IMMUNITY
+BASH, PYTHON
+
+Buffer overflow - GDB
+
+10.50.20.250:8000
+
+2 ways of input in bash
+----
+User input (hangs on the screen)
+Parameter
+
+to overflow a user input feed a lot of information
+
+Getting a valid memory space for code to execute
+----
+after verifying control of the eip
+load environmentless gdb - (env - gdb)
+!!!show env
+!!!unset all envs
+run program and manually overflow
+once a SIGSEGV is achieved then continue
+!!!info proc map
+search inside the heap for valid addresses
+jumpesp - jump to the next available portion of the stack
+!!!find /b <start address under the heap>,<end address before stack>,0xff,0xe4 (opcodes for jumpesp)
+the results are the IPs, grab a few to use for the buffer overflow
+endianess needs to be reversed, OS and Python use opposite endians
+reverse byte order (easiest way is \x43\x53\xf6\xf7 [0xf7f65343])
+create shellcode
+!!!msfvenom -p linux/x86/exec CMD="whoami" -b '\x00' -f python (the only section that will change is the CMD section)
+nop = "\x90" * 15 (added before the buf in the script)
+print all of the script
+if it works then you should see the command that you ran
+!!!which gdb
+if there is a gdb then you will have to run a buffer overflow on that machine
+in order to do it on the machine you are targeting you will have to find the EIPs on the target machine
 
 
-
-
-
-
-
-
-
+((((((((((LINUX/X86/EXEC))))))))))
 
 
 
