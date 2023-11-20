@@ -783,7 +783,8 @@ Valuable Directories to search in
 ----------------
 /tmp, /var/tmp, /etc, /home, /
 
-
+192.168.28.100 Comrade SSH key
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgP2uXYcb+W40AxfGwjsfFlA6jR1/zL711bXQAjvAuEv5L6tNVkdDyNNdD66Q8Jwsh8DzLPDqeOTmQr7FDMAO5sCD7z+R+kEpvoVzBsgKXL22l2ipxGtCxJzhI1HT16fYB1BZPqmZpJylBdym3KN0yZvgFMs7B0jb9SFkh/+Jp1OxzohX88Xc2j+Dk1URkY0xZOTvOgYafFjbFINaeuVMqb+YeEyj9jxxNFo69F4selrftFmaf5AupSiW+P8GjOReArWBxEgvcLqshl+gTuf817jxb2terzW8f/qVK09XsepMPPZ5elfUqSzK1N3a4sTu1+0EsGALGjB/iSXbeCmcD comrade@extranet.site.donovia
 
 
 
