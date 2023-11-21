@@ -809,7 +809,17 @@ find / -perm * (SUID/SGID also gtfobins)
 unset HISTFILE
 syslog and rsyslog (rsyslog.conf)
 
-
+Situational Awareness
+---------------------
+cat /etc/hosts
+crontab
+sudo -l (put binary file into gtfobins)
+find / -type f -perm /4000 -ls 2>/dev/null (2000 is SGID, 4000 is SUID, 6000 is both)
+can write to /tmp
+ls -a (hidden files)
+cat /etc/crontab
+echo $PATH (locate echo, shows where a command is at)
+PATH=.:$PATH (adds a "." to the path)
 
 
 
