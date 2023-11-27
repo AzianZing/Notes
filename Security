@@ -319,6 +319,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 Exploitation and Vulnerability Research
 ---------------------
 Vulnerability Research
@@ -970,8 +971,99 @@ questions more along the lines of inferring what to do
 test question formatting is similar to CTF
 
 
+##################################################################################
+##################################################################################
+#####                                                                        #####
+#####                               Tunnels                                  #####
+#####                                                                        #####
+##################################################################################
+##################################################################################
 
 
+student@lin-ops:~$ ssh -MS /tmp/jumper student@10.50.37.139
+student@lin-ops:~$ ssh -S /tmp/jumper dummy -O forward -L6534:192.168.28.105:2222
+student@lin-ops:~$ ssh -MS /tmp/jumping comrade@127.0.0.1 -p 6534
+student@lin-ops:~$ ssh -S /tmp/jumping dummy -O forward -L8746:192.168.28.27:22
+student@lin-ops:~$ ssh -S /tmp/jumping dummy -O forward -L7890:192.168.28.5:3389
+
+
+##################################################################################
+##################################################################################
+#####                                                                        #####
+#####                               Tunnels                                  #####
+#####                                                                        #####
+##################################################################################
+##################################################################################
+
+CTF Focusing
+---------------------
+
+!!!!!! /ETC/HOSTS !!!!!!
+
+Binary
+--
+
+Exploit
+--
+LINUX
+
+Exploit research
+--
+Google
+
+Linux Exploit
+--
+GTFOBINS
+EXPLOIT DEV
+IMPORTANT FILES
+USER ACCOUNTS IN /etc/passwd
+CRON
+
+Linux Post Exploitation
+--
+TEMP DIRECTORY
+RSYSLOG
+/home
+USERS HOME DIRECTORIES
+
+Windows Post Exploitation
+--
+USERS HOME DIRECTORIES
+DOWNLOADS
+SYSTEM32
+
+Priv Esc
+--
+RUNKEYS
+SCHTASKS
+SERVICES
+
+Recon
+--
+USE EYEBALLS READ THE TEXT
+VIEW PAGE SOURCE
+
+SQL Injection
+--
+BETTER KNOW HOW TO USE IT, OR WILL NOT PASS
+KNOW HOW TO DO ALL OF THE PROCESS
+PULL INFORMATION OUT OF THE TABLES
+ONLY POTENTIAL USERNAMES AND PASSWORDS OUT OF LOGIN FIELDS
+GET AND POST
+
+Web Exploit
+--
+SSH KEYGEN
+CODE INJECTION
+CODE INJECTION VS DIRECTORY TRAVERSAL
+AFTER GETTING CODE INJECTION SEE WHO AND WHERE YOU ARE AND THEN SSH KEYGEN
+
+Windows Exploitation
+--
+SERVICES
+SCHTASKS
+IF ABLE TO RENAME EXE THEN EXE REPLACEMENT
+IF NOT THEN DLL HIJACK
 
 
 
