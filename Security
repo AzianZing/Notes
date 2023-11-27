@@ -646,7 +646,7 @@ LINUX BUFFER OVERFLOW
 Getting a valid memory space for code to execute
 ----
 after verifying control of the eip
-load environmentless gdb - (env - gdb)
+!!!load environmentless gdb - (env - gdb)
 !!!show env
 !!!unset all envs
 run program and manually overflow
@@ -1074,6 +1074,14 @@ IF NOT THEN DLL HIJACK
 
 
 
+
+
+DRYRUN
+-----------------------
+10.50.50.85
+
+--script http-robots.txt.nse
+--script http-sql-injection.nse
 
 
 
