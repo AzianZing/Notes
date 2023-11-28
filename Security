@@ -1197,10 +1197,63 @@ buffer overflow will not be its own category it will be in the exploitation of w
 questions are named after the system needed
 check what system you are on before attempting the question
 /root is linux user root's home directory
+3 hours part 1
+1 hour lunch between the 2
+3 hours part 2
+
+100% part 1 and cruise through part 2
+SQL injection seems to be the biggest part of part 1
+
+Exam Review
+-----------------------
+always look for robots.txt on websites
+command injection
+path
+uploads
+
+command injection
+----
+; whoami (testing for command injection)
+;(ends first command and runs the next command regardless)
+need home directory for ssh keygen, authorized keys goes into the home directory
+; cat /etc/passwd (can inspect page source if the output is ugly)
+
+*********************************************************************************
+*********************************************************************************
+***********************             SSH-KEYGEN              *********************
+*********************************************************************************
+*********************************************************************************
+
+ssh-keygen -b 4096
+upload public key, do not upload private key
+; verify that the .ssh directory exists in their home directory
+if not
+; mkdir /<home directory>/.ssh
+; echo "<INSERT PUBLIC KEY HERE>" >> /<home directory>/.ssh/authorized_keys
+ssh <user>@<IP> (if it asks for a password then you did it wrong)
+if it asks for a password then try all of the steps again
+
+*********************************************************************************
+*********************************************************************************
+***********************             SSH-KEYGEN              *********************
+*********************************************************************************
+*********************************************************************************
+
+copy and paste the malicious file upload from the guide into a file called "webshell.php"
+find where the file uploads to
+check to make sure file uploads
+click on the file that was uploaded to the website
+limited shell
+ssh keygen steps
 
 
 
-
+                  ___________________
+                 /                    \
+                /                      \ 
+               /                        \
+              /                          \
+_____________/                            \____________________
 
 
 
