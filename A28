@@ -27,5 +27,11 @@ Wildcards
   {} - options
   {un,ack}* - files with names starting with un or ack
 
+Text Editors
+  vi
+  vim
+  nano
+  gedit
+
 
 
