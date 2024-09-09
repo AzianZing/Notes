@@ -67,6 +67,25 @@ d  rwx  r-x  r-x
 │   └─────────── 2. User ｜7 (4+2+1)
 └─────────────── 1. File Type | directory
 
+Find and Grep
+find '/etc' -type f -iname '*.conf'
+find ` -size +100M
+sudo find '/opt/usr/var' -name 'foo2oak.1.gz' -type f
+find . -type d
+find ` -mtime -100 (days)
+find ` -cmin -60 (min)
+find ` -amin -10
+find ` -type f -name '*.mp3'
+find . -type f -name '*.mp3' -exec rm -f {} \
+
+(' = variable)
+
+
+
+
+
+
+
 
 
 
