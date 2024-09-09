@@ -77,6 +77,7 @@ find ` -cmin -60 (min)
 find ` -amin -10
 find ` -type f -name '*.mp3'
 find . -type f -name '*.mp3' -exec rm -f {} \
+2>/dev/null
 
 (' = variable)
 
