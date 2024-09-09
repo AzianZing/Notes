@@ -89,8 +89,8 @@ find 'fonty' -name '*.doc' -exec grep 'first' {} \:
 
 (' = variable)
 
-
-
+OverTheWire Password for 6:
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
 
 
