@@ -76,8 +76,16 @@ find ` -mtime -100 (days)
 find ` -cmin -60 (min)
 find ` -amin -10
 find ` -type f -name '*.mp3'
-find . -type f -name '*.mp3' -exec rm -f {} \
+find . -type f -name '*.mp3' -exec rm -f {} \:
 2>/dev/null
+
+grep 'root' /etc/password
+grep 'hello' /usr/share/dict/american-english
+grep -w -c 'hello' /usr/share/dict/american-english
+grep '^cat' /usr/share/dict/american-english (^ = begins with)
+grep -x 'c.t' /usr/share/dict/american-english
+
+find 'fonty' -name '*.doc' -exec grep 'first' {} \:
 
 (' = variable)
 
