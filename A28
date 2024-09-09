@@ -10,8 +10,22 @@ password - @lpha28User
 
 Linux
 ########
+tar -xvzf Field-Expedient-Linux-Exercises.tar.gz
+  -x (extract)
+  -v (verbose)
+  -z (gzip file)
+  -f (use archive file)
 
+Wildcards
 
+  * - any sequence
+
+  ? - any single haracter
+
+  [] - range
+
+  {} - options
+  {un,ack}* - files with names starting with un or ack
 
 
 
