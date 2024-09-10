@@ -10,3 +10,17 @@ After identifying the IP of the pi, ssh into the pi (ssh pi@IPADDRESS)
 password = raspberry (or what you set in the imager)
 Update and upgrade software from Raspbian
 sudo apt update ; sudo apt upgrade -y
+
+Configure the Operating System
+sudo raspi-config
+1-S3 Change Password
+1-S4 Change Hostname
+3-I1 Enable SSH
+5-L1 Set Locale (set US for both)
+5-L2 Change Timezone 
+5-L4 Set WiFi Country (Japan)
+6-A1 Expand Filesystem
+6-A2 Interface Names (No)
+
+Finish
+Reboot
