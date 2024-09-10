@@ -71,5 +71,22 @@ Install LTE hat software on pi by first downloading a SixFab installer script fr
 sudo apt install git
 git clone https://github.com/sixfab/SixFab_PPP_Installer.git
 cd SixFab_PPP_Installer
+make the installer executable and run it
+chmod +x ppp_install.sh
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED(Bookworm specific)
+sudo ./ppp_install.sh
+
+Configure the cellular modem
+Select option 6
+Input the APN for your cellular provider:
+  fast.t-mobile.com (for t-mobile)
+  broadband (for AT&T)
+  h2g2 (for GoogleFi)
+
+
+
+
+
+
 
 
