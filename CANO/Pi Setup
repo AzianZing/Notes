@@ -82,7 +82,10 @@ Input the APN for your cellular provider:
   fast.t-mobile.com (for t-mobile)
   broadband (for AT&T)
   h2g2 (for GoogleFi)
-
+Select no for username
+enter ttyUSB3 for device serial port
+select Yes for autoconnect
+press Enter for reboot
 
 
 
