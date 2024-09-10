@@ -1,0 +1,7 @@
+rpi-imager
+sudo apt install rpi-imager
+Debian Bookworm (the first one that appears on the list)
+When done imaging, insert SD into the pi
+Use USB-C to hook up the pi to the battery power
+Connect pi to GLiNet router via ethernet
+Go to web browser and type 192.168.8.1
