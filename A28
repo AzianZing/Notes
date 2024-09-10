@@ -170,6 +170,10 @@ From the laptop (pull the conf files from the vps to the laptop)
 
 sudo scp -i ~/.ssh/aws5.pem(FILENAME) ubuntu@44.222.89.215(IPADDRESS):~/*.conf /etc/wireguard
 
+birng up the wireguard interface (sudo wg-quick up laptop-wg0)
+test the connection (10.0.0.1)
+ssh into the VPN server via its wireguard ip (ssh -i ~/.ssh/aws5.pem ubuntu@10.0.0.1)
+
 
 
 
