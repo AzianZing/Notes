@@ -148,6 +148,8 @@ Choose 2 on Unbound option
   Choose 1 - Cloudflare
 Name the configuration 'phone'
 
+Add a firewall rule to AWS for Custom - UDP - 51820
+
 
 
 
