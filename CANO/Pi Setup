@@ -93,7 +93,21 @@ if no ppp0, disable the ModemManager and reboot
 sudo systemctl disable ModemManager.service
 sudo reboot
 
+Test the modem by pinging google through the ppp0 interface
+ping -I ppp0 8.8.8.8
 
+Finish configuring cellular modem via minicom program
+sudo apt install minicom
+sudo minicom --baudrate 115200 --device /dev/ttyUSB2
+
+Run the following AT commands in minicom:
+at+cops? - provides network information
+at+csq - Provides RSSI value for network
+at+qgps? - Provides GPS state
+at+qgps=1 - Turns on GPS
+at+qgpscfg="autogps",1 - Turns on GPS at boot
+
+'CTRL+a' and then 'x' - Exits minicom
 
 
 
