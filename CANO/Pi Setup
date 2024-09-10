@@ -100,7 +100,7 @@ Finish configuring cellular modem via minicom program
 sudo apt install minicom
 sudo minicom --baudrate 115200 --device /dev/ttyUSB2
 
-Run the following AT commands in minicom:
+Run the following AT commands in minicom: ('CTRL-A' then 'z' then 'e' will show text as it is typed)
 at+cops? - provides network information
 at+csq - Provides RSSI value for network
 at+qgps? - Provides GPS state
@@ -109,6 +109,19 @@ at+qgpscfg="autogps",1 - Turns on GPS at boot
 
 'CTRL+a' and then 'x' - Exits minicom
 
+On pi
+----
+Install GPS Software
+sudo apt install gpsd gpsd-clients
+
+Edit gpsd config file so the Pi can listen to the GPS stream which is pushed over ttyUSB1
+sudo vim /etc/default/gpsd
+
+Define the serial port that is providing GPS to the operating system
+Devices="/dev/ttyUSB1"
+
+After saving, restart the GPS Daemon
+sudo systemctl restart gpsd
 
 
 
