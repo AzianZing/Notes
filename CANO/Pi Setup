@@ -5,3 +5,8 @@ When done imaging, insert SD into the pi
 Use USB-C to hook up the pi to the battery power
 Connect pi to GLiNet router via ethernet
 Go to web browser and type 192.168.8.1
+Identify the IP of the pi using the clients tab
+After identifying the IP of the pi, ssh into the pi (ssh pi@IPADDRESS)
+password = raspberry (or what you set in the imager)
+Update and upgrade software from Raspbian
+sudo apt update ; sudo apt upgrade -y
