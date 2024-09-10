@@ -54,4 +54,13 @@ On laptop
 send the wireguard config that you created to the pi
 sudo scp -i ~/.ssh/id_rsa(PREVIOUSFILENAME(keygenfile)) /etc/wireguard/pi-wg0.conf pi@192.168.8.196(IPADDRESS):~
 
+On pi
+Move the wireguard config to the correct loaction on the pi
+sudo cp pi-wg0.conf /etc/wireguard
+
+on pi
+manually bring up the wireguard and test the connection by pinging the VPN server
+sudo wg-quick up pi-wg0
+ping 10.0.0.1
+
 
