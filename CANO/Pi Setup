@@ -123,6 +123,15 @@ Devices="/dev/ttyUSB1"
 After saving, restart the GPS Daemon
 sudo systemctl restart gpsd
 
+On laptop
+Modify the ssh config to create and SSH alias
+sudo vim ~/.ssh/config
+
+On pi
+Turn the on-board wifi off at boot
+sudo vim /boot/firmware/config.txt
+Add the following at the bottom
+dtoverlay=disable-wifi
 
 
 
