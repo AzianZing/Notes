@@ -92,8 +92,51 @@ find 'fonty' -name '*.doc' -exec grep 'first' {} \:
 OverTheWire Password for 10:
 FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
+Virtual Private Networks/Virtual Private Servers
+#############
+Endstate
+-----
+Create secure remote connection to collection device using available infrastructure
+-----
+aws server
+--
+717165911434
+student_5 
+p@$$W0rd5678
 
+amazon web server
+services
+lightsail
+create instance
+change location and availability
+can contact amazon and let them know that you need more instances for an exercise or any sort of training
+operating system only (ubuntu 22.04)
+change ssh key pair
+copy ssh key pair into ~/.ssh folder (cp FILENAME ~/.ssh)
+select plan
+name the VPS
+Create
 
+Installing the VPN software (one for phone, one for laptop, one for Pi)
+------
+Using Wireguard
+move to ~/.ssh directory and locate AWS file
+modify permissions chmod 400 FILENAME
+use the key file to ssh into VPS (ssh -i FILENAME ubuntu@IPADDRESS) (current IPADDRESS - 44.222.89.215)
+update ubuntu 22.04 vps and select defaults (sudo apt update && sudo apt upgrade -y)
+keep all local versions of software
+install wireguard and it's dependency jq (sudo apt install wireguard jq -y)
+when popup appears for restarting services, spacebar to select, arrow down, tab and enter when all are selected
+sudo modprobe wireguard - ensure that wireguard is functioning properly on the VPS, nothing should appear
+
+From Workstation
+----
+move 'wireguard-manager.sh' file to VPS (scp -i ~/.ssh/aws5.pem wireguard-manager.sh ubuntu@44.222.89.215:~)
+----
+From VPS
+----
+make script executable (sudo chmod 700 wireguard-manager.sh)
+move script into the /etc/wireguard directory (sudo cp wireguard-manager.sh /etc/wireguard)
 
 
 
