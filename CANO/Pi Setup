@@ -24,3 +24,24 @@ sudo raspi-config
 
 Finish
 Reboot
+
+On laptop Create SSH keys that can be used for secure login to the pi (ensure that the path to the file created matches the filepath in the prompt)
+ssh-keygen -b 4096
+Transfer the keys to the pi:
+ssh-copy-id pi@192.168.8.196(IPADDRESS)
+Test the ssh key to ensure you can now ssh without being prompted for a password
+ssh pi@192.168.8.196(IPADDRESS)
+make a backup of the key in case you accidentally delete the original
+cp ~/.ssh/id_rsa(FILENAME) id_rsa.bak(FILENAME.bak)
+
+on the pi
+we can modify the ssh configuration to harden it and make the remote more secure
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+sudo vim /etc/ssh/sshd_config
+make the following modifications: (delete the # that comments the lines out)
+AddressFamily inet
+PermitRootLogin no
+PasswordAuthentication no
+
+restart the ssh Daemon to read the changes you just made:
+sudo systemctl restart sshd
