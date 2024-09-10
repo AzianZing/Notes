@@ -45,3 +45,13 @@ PasswordAuthentication no
 
 restart the ssh Daemon to read the changes you just made:
 sudo systemctl restart sshd
+
+On pi
+Install wireguard program
+sudo apt install wireguard resolvconf -y
+
+On laptop 
+send the wireguard config that you created to the pi
+sudo scp -i ~/.ssh/id_rsa(PREVIOUSFILENAME(keygenfile)) /etc/wireguard/pi-wg0.conf pi@192.168.8.196(IPADDRESS):~
+
+
