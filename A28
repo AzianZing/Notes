@@ -150,6 +150,30 @@ Name the configuration 'phone'
 
 Add a firewall rule to AWS for Custom - UDP - 51820
 
+Configurations are saved in /etc/wireguard/clients
+
+To add cients
+--
+Run script again (sudo bash /etc/wireguard/wireguard-manager.sh), press 5
+Name the new client whatever is necessary (laptop in this case)
+
+From the laptop
+install wireguard and dependencies on the laptop (sudo apt install wireguard jq resolvconf)
+
+From the VPS (pull the conf files out of the protected files to transfer to laptop)
+cd
+sudo su
+cp /etc/wireguard/clients/*.conf /home/ubuntu
+exit
+
+From the laptop (pull the conf files from the vps to the laptop)
+
+sudo scp -i ~/.ssh/aws5.pem(FILENAME) ubuntu@44.222.89.215(IPADDRESS):~/*.conf /etc/wireguard
+
+
+
+
+
 
 
 
