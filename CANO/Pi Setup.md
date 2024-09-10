@@ -63,4 +63,5 @@ manually bring up the wireguard and test the connection by pinging the VPN serve
 sudo wg-quick up pi-wg0
 ping 10.0.0.1
 
-
+set the wireguard to automatically start on the Pi on boot
+sudo systemctl enable wg-quick@pi-wg0
