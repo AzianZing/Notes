@@ -87,6 +87,16 @@ enter ttyUSB3 for device serial port
 select Yes for autoconnect
 press Enter for reboot
 
+Ensure that you have a ppp0 interface once your modem sees the internet
+ifconfig
+if no ppp0, disable the ModemManager and reboot
+sudo systemctl disable ModemManager.service
+sudo reboot
+
+
+
+
+
 
 
 
