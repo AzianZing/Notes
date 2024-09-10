@@ -89,8 +89,8 @@ find 'fonty' -name '*.doc' -exec grep 'first' {} \:
 
 (' = variable)
 
-OverTheWire Password for 10:
-FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+OverTheWire Password for 12:
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 
 Virtual Private Networks/Virtual Private Servers
 #############
@@ -173,6 +173,24 @@ sudo scp -i ~/.ssh/aws5.pem(FILENAME) ubuntu@44.222.89.215(IPADDRESS):~/*.conf /
 birng up the wireguard interface (sudo wg-quick up laptop-wg0)
 test the connection (10.0.0.1)
 ssh into the VPN server via its wireguard ip (ssh -i ~/.ssh/aws5.pem ubuntu@10.0.0.1)
+
+setting an alias to shortcut commands
+----------
+(sudo vim ~/.bashrc)
+enter the following aliases:
+  alias wg_up='sudo wg_quick up laptop-wg0'
+  alias wg_down='sudo wg_quick down laptop-wg0'
+save and quit
+
+tell the computer to read the edits you just made
+  (source ~/.bashrc)
+
+Editing the SSH Config file
+(sudo vim ~/.ssh/config)
+HOST = what you name the alias
+hostname = IP of the computer or server you want to connect to
+user = username of the computer or server
+identityfile = the keyfile to that computer or server
 
 
 
