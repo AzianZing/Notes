@@ -143,7 +143,7 @@ execute the bash script (sudo bash /etc/wireguard/wireguard-manager.sh)
 Choose 2 for subnet IPv4
   change to 10.0.0.0/24
 Choose 2 for subnet IPv6
-  change to fd:00:00:00::00/24
+  change to fd00:00:00::0/24
 Choose 2 on Unbound option
   Choose 1 - Cloudflare
 Name the configuration 'phone'
