@@ -65,3 +65,11 @@ ping 10.0.0.1
 
 set the wireguard to automatically start on the Pi on boot
 sudo systemctl enable wg-quick@pi-wg0
+
+Configure Cellular Modem
+Install LTE hat software on pi by first downloading a SixFab installer script from github
+sudo apt install git
+git clone https://github.com/sixfab/SixFab_PPP_Installer.git
+cd SixFab_PPP_Installer
+
+
