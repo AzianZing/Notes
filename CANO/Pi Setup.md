@@ -1,22 +1,22 @@
 rpi-imager
-sudo apt install rpi-imager\n
-Debian Bookworm (the first one that appears on the list)\n
-When done imaging, insert SD into the pi\n
-Use USB-C to hook up the pi to the battery power\n
-Connect pi to GLiNet router via ethernet\n
-Go to web browser and type 192.168.8.1\n
-Identify the IP of the pi using the clients tab\n
-After identifying the IP of the pi, ssh into the pi (ssh pi@IPADDRESS)\n
-password = raspberry (or what you set in the imager)\n
-Update and upgrade software from Raspbian\n
-sudo apt update ; sudo apt upgrade -y\n
+sudo apt install rpi-imager
+Debian Bookworm (the first one that appears on the list)
+When done imaging, insert SD into the pi
+Use USB-C to hook up the pi to the battery power
+Connect pi to GLiNet router via ethernet
+Go to web browser and type 192.168.8.1
+Identify the IP of the pi using the clients tab
+After identifying the IP of the pi, ssh into the pi (ssh pi@IPADDRESS)
+password = raspberry (or what you set in the imager)
+Update and upgrade software from Raspbian
+sudo apt update ; sudo apt upgrade -y
 
-Configure the Operating System\n
-sudo raspi-config\n
-1-S3 Change Password\n
-1-S4 Change Hostname\n
-3-I1 Enable SSH\n
-5-L1 Set Locale (set US for both)\n
+Configure the Operating System
+sudo raspi-config
+1-S3 Change Password
+1-S4 Change Hostname
+3-I1 Enable SSH
+5-L1 Set Locale (set US for both)
 5-L2 Change Timezone 
 5-L4 Set WiFi Country (Japan)
 6-A1 Expand Filesystem
