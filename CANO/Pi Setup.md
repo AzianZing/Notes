@@ -25,7 +25,7 @@ sudo raspi-config
 Finish
 Reboot
 
-On laptop Create SSH keys that can be used for secure login to the pi (ensure that the path to the file created matches the filepath in the prompt)
+On laptop Create SSH keys that can be used for secure login to the pi (ensure that the path to the file created matches the filepath in the prompt) ***DONT INPUT A FILENAME***
 ssh-keygen -b 4096
 Transfer the keys to the pi:
 ssh-copy-id pi@192.168.8.196(IPADDRESS)
