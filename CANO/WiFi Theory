@@ -72,7 +72,34 @@ Gain between the top of the spread signal and the peak of the narrowband signal 
 2.sharing of a single channel among multiple users
 3.reduced signal/background-noise level hampers interception
 
+# Orthogonal Frequency Division Multiplexing (OFDM) #
+Sub-carriers are orthogonal to each other, meaning that cross-talk between the sub-channles is eliminated
+Large number of closely-spaced sub-carriers are used to carry data; divided into seversal parallel data streams or channels, 1 per sub-carrier
+Number of orthogonal sub-carriers is 52 with a sub-carrier spacing of 312.5 KHz, giving a total bandwidth of 16.25 MHz.
 
+Orthogonal means that sub-carriers will not collide, the bands have "guards" on them that prevent the signals from crossing
+
+# Orthogonal Frequency Division Multiple Access (OFDMA)
+Orthogonal frequency-division multiple access (OFDMA) is a multi-user version of OFDM
+Multiple access is achieved by assigning subcarriers to multiple users
+This allows simultaneous transmission to/from several users
+
+# WLAN Architecture #
+Stations (STA)
+  All components in a wireless LAN
+Categories
+  Access Points
+  Clients
+
+# WLAN Identifiers #
+Media Access Control (MAC) Address:
+  48-bit unique identifier
+  Assigned to every Network Interface Card (NIC)
+  Serves as a physical address within a network
+  First three octets are known as the OUI or Organizationally Unique Identifier
+    Denoted the vendor or manufacturer
+
+(Routers that are multi-band will have multiple different MAC addresses, the 2.4GHz band will have a MAC and so will the 5GHz band, most times they are only one bit off)
 
 
 
