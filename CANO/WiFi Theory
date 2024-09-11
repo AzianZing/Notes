@@ -143,7 +143,21 @@ Control frames
 Data Frames
   Used to transfer information
   Do not always contain a payload
-  Trigger events (device entering power save mode)
+  Trigger events (device entering power save mode) 
+
+Management Frames
+  Beacon Frames
+    Transmitted periodically by access points
+    Announces the presence of a WLAN
+  Key components
+    SSID
+    Channel
+    Standards supported (802.11g,n,ac,ax,etc)
+    Encryption Type (WEP, WPA, WPA2, WPA3)
+    Timestamp
+    Capabilities Information
+
+
 
 
 
