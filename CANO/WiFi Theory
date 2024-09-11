@@ -104,13 +104,20 @@ OUI lookup tool, wireshark OUI lookup tool: https://www.wireshark.org/tools/oui-
 
 MAC Address Types
 Unicast Address
-  Second Character, 1st Octet is 0, 4, 8, C (*Locally Administered*)
+  Second Character, 1st Octet is 0, 4, 8, C
   OUI bytes issed by IEEE + Unique Bytes
 Multicast Address
-  Second character, 1st octet is 1, 3, 5, 7, 9, B, D, F (*Globally Unique*)
+  Second character, 1st octet is 1, 3, 5, 7, 9, B, D, F
   Multicast OUI bytes reserved by IEEE + Unique bytes set by multicast application
 Broadcast MAC Address
   FF:FF:FF:FF:FF:FF
+** 2,6,A,E as the second character, 1st octet signified a locally administered (or randomized) MAC address **
+
+
+
+
+
+
 
 
 
