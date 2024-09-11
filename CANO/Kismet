@@ -67,6 +67,25 @@ sudo usermod -aG kismet a28 (username)
 sudo usermod -aG kismet pi (username)
 if opening kismet and there are no interfaces, you probably skipped this step
 
+On laptop and pi
+kismet_site.conf is the all powerful file that can overwrite all of the below files
+  sudo vim /etc/ksimet/kismet_logging.conf
+    Log_title: allows for customizing the name of the file (default name will be very hard to read and specific about the time that it was collected)
+    Log_types=kismet,pcapppi
+
+sudo vim /etc/kismet/kismet_filter.conf
+  Kismet can filter packets that are logged to the kismetdb log file. This can be used to exclude known devices, to include only specified devices, etc. Works by PASS or BLOCK rules
+  GROUP MATCHES: MAC can be specified as single addresses (AA:BB:CC:DD:EE:FF) or as a masked group (AA:BB:CC:00:00:00)
+  DEVICE FILTERS: Filtering devices from the DB does not prevent kismet from displaying the device, but does prevent kismet from saving them.
+
+sudo vim /etc/kismet/kismet_alerts.conf
+  Kismet_alerts.conf can be configured to alert you when devices are identified, lost, or when spoofed SSIDs appear nearby
+  The 'alert' will appear in the kismet GUI at the top right, and in the alerts tab
+
+sudo vim /etc/kismet/kismet.conf
+  Ensure that your GPS is working
+    cgps or gpsmon
+  gps=gpsd:host=localhost,port2947,reconnect=true
 
 Data management
 ----------------------------
