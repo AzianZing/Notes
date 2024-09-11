@@ -15,6 +15,26 @@ On your laptop and pi
 sudo hostnamectl set-hostname (whatever hostname you would like to use)
 sudo vim /etc/hosts (change the hostname)
 
+Drivers are specific to the chipset used by the wireless NIC.
+Common chipsets are
+  Atheros
+  Mediatek 
+  Broadcom
+  Realtek
+  use the command lsusb to see if your operating system recognize the WNIC
+
+sudo ethtool -i wlan1 (interface name)
+
+GPS On Laptop
+---------
+Configure your GPS (BU-353S4) by editing the /etc/default/gpsd file and add:
+(sudo apt install gpsd)
+  START_DAEMON="true" (startsthe gpsd on boot)
+  USBAUTO="true" (allows hot plugging)
+  DEVICES="/dev/ttyUSB0" (tells where to find the GPS)
+  GPSD_OPTIONS="-n -G -b"
+  GPSD_SOCKET="/var/run/gpsd.sock"
+
 Aircrack-NG software
 ----------------------------
 
