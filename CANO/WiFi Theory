@@ -99,6 +99,7 @@ Media Access Control (MAC) Address:
   First three octets are known as the OUI or Organizationally Unique Identifier
     Denoted the vendor or manufacturer
 
+OUI lookup tool, wireshark OUI lookup tool: https://www.wireshark.org/tools/oui-lookup.html
 (Routers that are multi-band will have multiple different MAC addresses, the 2.4GHz band will have a MAC and so will the 5GHz band, most times they are only one bit off)
 
 
