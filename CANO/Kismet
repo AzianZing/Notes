@@ -89,6 +89,7 @@ sudo vim /etc/kismet/kismet.conf
 
 To launch kismet
 sudo kismet
+login will be stored in .kismet/kismet_httpd.conf  (used to change the username and password)
 
 Data management
 ----------------------------
