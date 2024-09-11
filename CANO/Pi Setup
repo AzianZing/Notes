@@ -133,6 +133,12 @@ sudo vim /boot/firmware/config.txt
 Add the following at the bottom
 dtoverlay=disable-wifi
 
+on pi
+gpsmon or cpgs, terminal based gps
+should see traffic at the bottom of the interface
+if no traffic is being shown run (sudo systemctl restart gpsd)
+if still nothing, restart pi and check connections
+if still nothing, check position of pi and gps device (could be in a bad area with no proper coverage)
 
 
 
