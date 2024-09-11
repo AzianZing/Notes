@@ -91,6 +91,27 @@ To launch kismet
 sudo kismet
 login will be stored in .kismet/kismet_httpd.conf  (used to change the username and password)
 
+Kismet RSSI toolbar
+-----------------
+The kismet RSSi toolbar script integrated with a running kismet instance and allows you ontrol of the WNICs, and to display rssi values of targets.
+
+Move the Kismet-RSSI-Bar-Master.zip
+  mv ~/Downloads/Kismet-RSSI-Bar-Master.zip
+  cd /opt
+
+unzip the Kismet-RSSI-Bar-Master.zip
+  unzip Kismet-RSSI-Bar-Master.zip
+  cd Kismet-RSSI-Bar-Master
+
+KISMET-RSSI-BAR (https://github.com/GrokkedBandwidth/kismet_web_rssi-bar.git)
+
+Install dependencies:
+  sudo apt install xclip python-tk libportaudio2
+  pip3 install -r requirements.txt
+
+To run, start an instance of kismet
+  python3 main.py
+
 Data management
 ----------------------------
 
