@@ -52,6 +52,21 @@ WiFi collection devices are reverse polarity
 
 Bandwidth channels of WiFi (20/22/40/60/80)
 
+# 2.4 GHz Spectrum #
+1, 6, 11 non-overlapping
+DSSS vs OFDM
+Channel bonding
+ISM (industrial, scientific, medical) Band
+  -Interference Heavy
+
+# 5 GHz Spectrum #
+Unlicensed National Information Infrastructure (UNII) Bands - Power restrictions
+25 non-overlapping channels (channel 144 was added later on for...)
+Channel bonding
+Dynamic Frequency Selection (DFS) (checks for radar signals and if radar signals are detected, the new equipment must switch)
+
+
+
 
 
 
