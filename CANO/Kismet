@@ -11,6 +11,10 @@ sudo update-grub
 sudo update-initramfs -u
 reboot
 
+On your laptop and pi
+sudo hostnamectl set-hostname (whatever hostname you would like to use)
+sudo vim /etc/hosts (change the hostname)
+
 Aircrack-NG software
 ----------------------------
 
