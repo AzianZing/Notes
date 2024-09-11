@@ -38,8 +38,8 @@ WiFi Signal Strengths
 Signal Strength
 ----
 -30dBm  Amazing  Max achievable strength, few feet away
--67 dBm  Very Good  Minimum strength for applications that require reliable, timely delivery of packets
--70 dBm  Okay  minimum signal strength for reliable packet delivery
+-67 dBm  Very Good  Minimum strength for applications that require reliable, timely delivery of packets   required for VOiP/WiFi/streaming video
+-70 dBm  Okay  minimum signal strength for reliable packet delivery  required for email, web
 -80 dBm   Not Good  Minimum for basic connections, packet delivery may be unreliable
 -90 dBm  unusable  Approaching or drowning in the noise floor, functionality highly unlikely
 
