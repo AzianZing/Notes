@@ -156,6 +156,25 @@ Management Frames
     Encryption Type (WEP, WPA, WPA2, WPA3)
     Timestamp
     Capabilities Information
+  Probe Requests
+    Sent by the client station
+    Requests information from nearby APs
+    Provides the client stations capabilites to nearby APs
+(If going after Probe Requests specifically, consider camping on one channel to capture the probe request, if hopping channels at the same time as target device, you might miss the frame)
+
+  Probe Responses
+    Sent back to a client station in response to a probe request
+    Contains similar information to a beacon frame
+(Sometimes a Probe Response will give more information that could be critical to the collection, can give make and model or even WPS PIN)
+
+Connectionn states
+State 1: station is not authenticated and not associated
+State 2: station is authenticated but not associated
+State 3: station is authenticated and associated
+
+
+
+
 
 
 
