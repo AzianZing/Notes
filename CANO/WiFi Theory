@@ -168,12 +168,33 @@ Management Frames
 (Sometimes a Probe Response will give more information that could be critical to the collection, can give make and model or even WPS PIN)
 
 Connectionn states
-State 1: station is not authenticated and not associated
-State 2: station is authenticated but not associated
-State 3: station is authenticated and associated
+State 1: client is not authenticated and not associated
+State 2: client is authenticated but not associated
+State 3: client is authenticated and associated
 
+802.11 Encryption
+open/none
 
+Wire Equivalent Privacy (WEP)
+  Original wireless encryption for 802.11
+  based on 40-bit shared key
+  unsecure
 
+WiFi Protected Access (WPA)/WPA2
+  256-bit key (TKIP or AES)
+  Relies on pre-shared key
+  WPA2 + AES is the strongest wireless encryption widely implemented
+  WPA2 = mandatory AES + CCMP (integrity)
+  Major vulnerability through "WPS" functionality
+
+WiFi Protected Access (WPA)/WPA3
+  Released 2018 / Widespread implementation starting now
+  Uses a more secure handshake mechanism
+    Simultaneous Authentication of Equals (SAE) handshake
+    In addition to 4-way handshake
+  WiFi Device Provisioning Protocol (QR Code instead of WPS)
+  Opportunistic Wireless Encryption (OWE) for open networks
+  256-bit key (AES + GCM)
 
 
 
