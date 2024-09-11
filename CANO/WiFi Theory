@@ -195,9 +195,10 @@ WiFi Protected Access (WPA)/WPA3
   WiFi Device Provisioning Protocol (QR Code instead of WPS)
   Opportunistic Wireless Encryption (OWE) for open networks
   256-bit key (AES + GCM)
+(Currently have transition mode and it used as the current vulnerability for WPA3 (downgrade attack))
+WPA3 SAE is only WPA3 and not able to go down to WPA2
 
-
-
+OSI MODEL
 
 
 
