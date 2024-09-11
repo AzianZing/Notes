@@ -1,0 +1,31 @@
+Overview
+########
+RF Theory
+802.11 Protocols
+WLAN Architecture
+Key 802.11 Frames
+OSI Model
+
+RF Theory
+####
+RF Behaviors
+----
+Scattering - Scattering of signals as they bounce off of a surface
+Diffraction - RF path changing as the signal hits a surface and forms a 'gravitational pull' around the object
+Reflection - Directly bouncing off of a target
+Refraction
+Absorption - Signal being absorbed by a surface
+
+RF Key Terms
+----
+TX Power (typically ~20 dBm)
+Cable Loss (greater at high freqs)
+Gain
+Path Loss/multipath
+RSSI
+
+ALFA Cards are reverse polarity and regular coax cables are not reverse polarity and will screw up the ALFA card
+WiFi collection devices are reverse polarity
+
+
+
