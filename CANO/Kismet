@@ -1,7 +1,23 @@
-Wireless NIC preparation
-Aircrack-NG software
-Kismet software
-Data management
+# Wireless NIC preparation #
+----------------------------
+On your laptop
+sudo vim /etc/udev/rules.d/70-persistent-net.rules
+  SUBSYSTEM=="net",ACTION=="add",DRIVERS=="?",ATTR{address}=="00:c0:ca:b4:88:6d",NAME="wlan1"
 
+sudo vim /etc/default/grub
+  GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+
+sudo update-grub
+sudo update-initramfs -u
+reboot
+
+Aircrack-NG software
+----------------------------
+
+Kismet software
+----------------------------
+
+Data management
+----------------------------
 
 
