@@ -65,6 +65,13 @@ Unlicensed National Information Infrastructure (UNII) Bands - Power restrictions
 Channel bonding
 Dynamic Frequency Selection (DFS) (checks for radar signals and if radar signals are detected, the new equipment must switch)
 
+# 802.11 Modulation Types #
+802.11b Direct Sequence Speed Spectrum
+Gain between the top of the spread signal and the peak of the narrowband signal is known as "processing gain"
+1.Resistance to intended or unintended jamming
+2.sharing of a single channel among multiple users
+3.reduced signal/background-noise level hampers interception
+
 
 
 
