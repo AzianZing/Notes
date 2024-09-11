@@ -1,18 +1,18 @@
-MISSION PREP
+# MISSION PREP #
 GATHERING ALL OF THE RIGHT MATERIALS SO THAT YOU DO NOT INSTALL INCORRECT EQUIPMENT/CABLES/ANTENNAS AND CAUSE A MISSION FAILURE, CHECKS CAN PREVENT FUTURE ISSUES AND POTENTIAL FAILURES
 IF NOT RECEIVING ANY SORT OF SIGNALS DEFAULT TO THE MOST BASIC ASPECTS OF SIGINT/INTEL TO POTENTIALLY GET RESULTS
 
-Overview
+# Overview #
 ########
-RF Theory
+# RF Theory #
 802.11 Protocols
 WLAN Architecture
 Key 802.11 Frames
 OSI Model
 
-RF Theory
+# RF Theory #
 ####
-RF Behaviors
+# RF Behaviors #
 ----
 Scattering - Scattering of signals as they bounce off of a surface
 Diffraction - RF path changing as the signal hits a surface and forms a 'gravitational pull' around the object
@@ -20,7 +20,7 @@ Reflection - Directly bouncing off of a target
 Refraction - Bouncing of a signal resulting in the signal going in multiple different directions rather than in one direction
 Absorption - Signal being absorbed by a surface
 
-RF Key Terms
+# RF Key Terms #
 ----
 TX Power (typically ~20 dBm)
 Cable Loss (greater at high freqs)
@@ -32,10 +32,10 @@ ALFA Cards are reverse polarity and regular coax cables are not reverse polarity
 WiFi collection devices are reverse polarity
 ####
 
-WiFi Signal Strengths
+# WiFi Signal Strengths #
 ####
 
-Signal Strength
+# Signal Strength #
 ----
 -30dBm  Amazing  Max achievable strength, few feet away
 -67 dBm  Very Good  Minimum strength for applications that require reliable, timely delivery of packets   required for VOiP/WiFi/streaming video
