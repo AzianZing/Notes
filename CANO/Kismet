@@ -35,6 +35,10 @@ Configure your GPS (BU-353S4) by editing the /etc/default/gpsd file and add:
   GPSD_OPTIONS="-n -G -b"
   GPSD_SOCKET="/var/run/gpsd.sock"
 
+sudo systemctl restart gpsd
+
+Test your GPS feed by plugging the BU-353 into your laptop and running cpgs or gpsmon command
+
 Aircrack-NG software
 ----------------------------
 
