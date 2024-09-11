@@ -113,6 +113,38 @@ Broadcast MAC Address
   FF:FF:FF:FF:FF:FF
 ** 2,6,A,E as the second character, 1st octet signified a locally administered (or randomized) MAC address **
 
+Basic Service Set (BSS)
+  Identified by the BSSID (MAC Address) of the access point
+  Identified by the service set identifier (SSID)
+Extended Service Set (ESS) (Example: Hotels that have free wifi, normally have a bunch of different access points that push out the same SSID, providing the same network through different access points, have different BSSIDs but the same SSID)
+  A group of interconnected WLANs that appear as a single BSS
+  Identified by the SSID of the APs
+  One Distribution System
+Mesh Basic Service Set (MBSS)
+  Identified by the BSSID (MAC Address) of the access points
+  Identified by the service set identifier (SSID)
+  Multiple redistribution nodes
+  Traffic routing is done between all nodes
+  Nodes communicate with one another
+  Self-healing
+Idependent Basic Service Set (IBSS)
+  Also called an ad-hoc network
+  Access point is not involved
+  All clients communicate directly to one another
+
+# 802.11 Frame Types #
+Management Frames
+  Used to manage a BSS
+  Beacons, probes (request and response), authentication, deauthentication
+  Handle connecting and disconnecting clients
+Control frames
+  Coordinate access to the network medium
+  Handles acknowledgements, RTS (request-to-send), CTS (clear-to-send)
+Data Frames
+  Used to transfer information
+  Do not always contain a payload
+  Trigger events (device entering power save mode)
+
 
 
 
