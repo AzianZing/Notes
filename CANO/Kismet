@@ -44,6 +44,21 @@ Aircrack-NG software
 
 Kismet software
 ----------------------------
+Open-source wireless network and device detector, sniffer, and wardriving tool.
+https://kismetwireless.net/packages/
+
+While the Aircrack-ng suite of tools has active attack software, kismet is entirely passive.
+
+On pi
+----
+wget -O - https://www.kismetwireless.net/repos/kismet-release.gpg.key --quiet | gpg --dearmor | sudo tee /usr/share/keyrings/kismet-archive-keyring.gpg >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/kismet-archive-keyring.gpg] https://www.kismetwireless.net/repos/apt/release/kali kali main' | sudo tee /etc/apt/sources.list.d/kismet.list >/dev/null
+sudo apt update
+sudo apt install kismet
+
+On laptop
+----
+
 
 Data management
 ----------------------------
