@@ -87,6 +87,9 @@ sudo vim /etc/kismet/kismet.conf
     cgps or gpsmon
   gps=gpsd:host=localhost,port2947,reconnect=true
 
+To launch kismet
+sudo kismet
+
 Data management
 ----------------------------
 
