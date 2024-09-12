@@ -12,6 +12,10 @@ ctrl+a  k               Terminates screen, only while attached
 
 If unsure of what screen youre in (screen -list) (whichever screen says that you're attached to is the screen you are currently in)
 
+rover.maxar.com (will need username and password from unit)
+Go to downloads and the passphrase will appear
+Download the program from this area
+
 Installing Rover
 ##########
 Download linux installation file for rover
@@ -24,5 +28,23 @@ sudo cp ~/Downloads/linux-64-x86_64-ROVER-4.24.1-gcc1050-hf1-25jun2024.tar.bz2.g
 
 Decrypt the file
 sudo gpg -o linux-64-x86_64-ROVER-4.24.1-gcc1050-hf1-25jun2024.tar.bz2 linux-64-x86_64-ROVER-4.24.1-gcc1050-hf1-25jun2024.tar.bz2.gpg
+
+Passphrase
+8004189701
+
+Unpack the file
+sudo tar -xvjf (FILE NAME)
+
+symlink the launcher to somehwere in your PATH
+sudo ln -s /opt/rover/ROVER64-4.24.1-gcc1050-hf1/bin/ROVER-launcher /usr/local/bin/rover
+
+Launch
+rover
+
+If you get a 'Qt platform plugin error' run the following command
+sudo apt install libxcb-cursor0
+
+to generate new access keys, use the access key request strings into the access key generator on rover.maxar.com to gain access for 1096 days
+
 
 
