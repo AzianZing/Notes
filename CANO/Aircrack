@@ -65,7 +65,11 @@ Converting kismet to csv
 
 Converting airodump to .rns
 -----
-place the kismet_xml_to_rns_
+place the kismet_xml_to_rns.py into a processing folder
+sudo chmod u+x kismet_xml_to_rns.py
+copy your airodump.kismet.netxml the same processing folder
+  sudo apt install python3-xmltodict
+to run: python3 kismet_xml_to_rns.py --xml <airodump.kismet.xml>
 
 
 
