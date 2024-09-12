@@ -1,2 +1,12 @@
 Rover and Post Processing
 ########################
+Screen
+----
+screen is a very useful command when conducting survey
+screen will multiplex a terminal window between processes. you can then detach from that screen and the process will continue to run until you kill it
+screen -R ksimet        creates a new screen called "kismet"
+ctrl+a  d               Detach
+screen -list            List out your active names
+screen -R kismet        Reattach to your "kismet" screen
+ctrl+a  k               Terminates screen, only while attached
+
