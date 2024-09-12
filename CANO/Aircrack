@@ -7,3 +7,17 @@ Installing Aircrack-ng on laptop and pi
 Adding GPS functionality to laptop
   sudo apt install gpsd gpsd-clients
 
+Aircrack basic usage
+  sudo airodump-ng wlan1
+  sudo airodump-ng --band a wlan1
+  sudo airodump-ng -w capture -c 1 --bssid <MAC> --gpsd wlan1
+  sudo airodump-ng -w capture -c 1,6,11 --gpsd wlan1
+
+other useful flags:
+  --uptime
+  --manufacturer
+  --wps
+  -b specify the band
+  -f speed of channel stepping
+  200 = driving (.2 seconds)
+  2000 = slow walking (2 seconds)
