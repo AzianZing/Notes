@@ -21,3 +21,15 @@ other useful flags:
   -f speed of channel stepping
   200 = driving (.2 seconds)
   2000 = slow walking (2 seconds)
+
+Real-time filtering
+  q - quit
+  r - real-time sorting
+  i - invert sorting order
+  o - enable color for APs with associated Stations
+  p - disable AP/STA coloring
+  a - change display (AP+STA, AP+STA+ACK, AP only, STA only)
+  s - change sorted column
+  d - reset sorting to defaults
+
+
