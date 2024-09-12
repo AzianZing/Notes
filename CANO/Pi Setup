@@ -118,6 +118,7 @@ Edit gpsd config file so the Pi can listen to the GPS stream which is pushed ove
 sudo vim /etc/default/gpsd
 
 Define the serial port that is providing GPS to the operating system
+START_DAEMON="true"
 Devices="/dev/ttyUSB1"
 
 After saving, restart the GPS Daemon
