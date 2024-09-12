@@ -32,4 +32,13 @@ Real-time filtering
   s - change sorted column
   d - reset sorting to defaults
 
-
+Important Options for Airodump
+  --bssid - only viewing activity on a specific BSSID
+  --essid - only viewing activity on a specific SSID
+  --gpsd - include GPS in the capture
+  -c - camp on a specific channel
+  -w - writes output to a file located in the directory where you launched airodump-ng
+  -b - specify the band 'abg'
+  -U - AP uptime
+  --update - change the update time from the default of every 1 second
+  --wps - identify if WPS is enabled on the AP and which version
