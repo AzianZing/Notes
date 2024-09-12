@@ -55,7 +55,7 @@ File -> Open -> /home/user/.rover/database/Imagery
 You can add custom imagery servers to Rover via the WMS server function
 File - WMS-servers
 
-
+rns files in rover compresses the file more than almost any other compression method
 
 
 
