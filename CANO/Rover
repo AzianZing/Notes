@@ -44,7 +44,19 @@ rover
 If you get a 'Qt platform plugin error' run the following command
 sudo apt install libxcb-cursor0
 
-to generate new access keys, use the access key request strings into the access key generator on rover.maxar.com to gain access for 1096 days
+* to generate new access keys, use the access key request strings into the access key generator on rover.maxar.com to gain access for 1096 days *
+
+To add clean imagery to your Rover, add images into your /home/user/.rover/database/Imagery folder
+
+Rover Imagery
+---------------
+File -> Open -> /home/user/.rover/database/Imagery
+
+You can add custom imagery servers to Rover via the WMS server function
+File - WMS-servers
+
+
+
 
 
 
