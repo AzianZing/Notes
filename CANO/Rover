@@ -10,3 +10,19 @@ screen -list            List out your active names
 screen -R kismet        Reattach to your "kismet" screen
 ctrl+a  k               Terminates screen, only while attached
 
+If unsure of what screen youre in (screen -list) (whichever screen says that you're attached to is the screen you are currently in)
+
+Installing Rover
+##########
+Download linux installation file for rover
+cd /opt
+sudo mkdir rover
+cd rover
+
+copy the linux file into /opt/rover
+sudo cp ~/Downloads/linux-64-x86_64-ROVER-4.24.1-gcc1050-hf1-25jun2024.tar.bz2.gpg (ROVER DOWNLOAD) /opt/rover
+
+Decrypt the file
+sudo gpg -o linux-64-x86_64-ROVER-4.24.1-gcc1050-hf1-25jun2024.tar.bz2 linux-64-x86_64-ROVER-4.24.1-gcc1050-hf1-25jun2024.tar.bz2.gpg
+
+
