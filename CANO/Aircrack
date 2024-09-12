@@ -42,3 +42,14 @@ Important Options for Airodump
   -U - AP uptime
   --update - change the update time from the default of every 1 second
   --wps - identify if WPS is enabled on the AP and which version
+
+To survey
+  sudo airodump-ng --band a.b -U --wps -w ~/Desktop/airodump/survey_location --gpsd wlan1
+
+Targeted collection
+  sudo airodump-ng --bssid <MAC> --channel 6 -U --wps -w ~/Desktop/airodump/target_network --gpsd wlan1
+
+
+
+
+
