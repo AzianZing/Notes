@@ -1,3 +1,13 @@
 Install Wireshark
 ---------
 sudo apt install wireshark
+
+Wireshark basics
+WLAN Addresses:
+  Source Address         Who first sent the packet?
+  Transmitter Address    Who (wifi) sent the packet?
+  Receiver address       who (wifi) received it?
+  Destination address    where it needs to end up
+
+Look in tagged parameters
+Look in RSN information (encryption, AES (CCM) = WPA2, SAE (GCM) = WPA3) 
