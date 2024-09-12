@@ -1,0 +1,9 @@
+Aircrack-ng
+######################
+
+Installing Aircrack-ng on laptop and pi
+  sudo apt install aircrack-ng
+
+Adding GPS functionality to laptop
+  sudo apt install gpsd gpsd-clients
+
