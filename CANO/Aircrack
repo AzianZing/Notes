@@ -59,6 +59,10 @@ Fixing Broken PCAP Files
     sudo apt install pcapfix -y
     pcapfix -d <filename>.pcap
 
+Converting kismet to csv
+  sudo kismetdb_to_wiglecsv -i <filename>.kismet -o <filename>.csv
+  File can now be searched for information
+
 Converting airodump to .rns
 -----
 place the kismet_xml_to_rns_
