@@ -49,6 +49,20 @@ To survey
 Targeted collection
   sudo airodump-ng --bssid <MAC> --channel 6 -U --wps -w ~/Desktop/airodump/target_network --gpsd wlan1
 
+Merging pcaps
+  mergecap -w <outputname>.pcapng <input1> <input2>
+  Useful for merging together multiple surveys of an AO, etc
+
+Fixing Broken PCAP Files
+  If your collection system crashes (Airodump/kismet) while writing to file, you may lose some data as 'unreadable'
+  Fix this via the pcapfix tool
+    sudo apt install pcapfix -y
+    pcapfix -d <filename>.pcap
+
+Converting airodump to .rns
+-----
+place the kismet_xml_to_rns_
+
 
 
 
