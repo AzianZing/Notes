@@ -59,3 +59,5 @@ Your tshark query will usualy look something like the following
   tshark -r <inputfile> -Y '<display filters' -T fields -e <column>
   The tshark.pcapppi file is over 88 MB and contains extraneous data that we do not care about
   Our goal is to strip out the network using the SSID "Three Rivers Hotel WIFI" and determine how many AP were collected
+tshark -r tshark.pcapppi -Y 'wlan.ssid=="Three Rivers Hotel WIFI" && (wlan.fc.type_subtype==8 || wlan.fc.type_subtype==5)' -T fields -e wlan.ta -e wlan.ssid -E separator=, -E header=y > 3_rivers.csv
+sort -u 3_rivers.csv | tee 3_rivers_uniq.csv
