@@ -11,3 +11,11 @@ WLAN Addresses:
 
 Look in tagged parameters
 Look in RSN information (encryption, AES (CCM) = WPA2, SAE (GCM) = WPA3) 
+
+PE Beacons:
+File: Survey&Analysis.pcapng
+
+Identify the access points that use the SSID of IMGUEST
+  What are their BSSIDs?
+  WHat Channels are used by esach?
+  What standards are supported?
