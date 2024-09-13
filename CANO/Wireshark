@@ -64,7 +64,7 @@ sort -u 3_rivers.csv | tee 3_rivers_uniq.csv
 
 tshark -r tshark.pcapppi -Y 'wlan.ssid=="Three Rivers Hotel WIFI" && (wlan.fc.type_subtype==8 || wlan.fc.type_subtype==5 || wlan.tag.number == 45 || wlan.tag.number == 221)' -T fields -e wlan.bssid -e wlan.ssid -e wps.wifi_protected_setup_state -e wps.manufacturer -e wps.model_name -e wps.model_number -e wps.serial_number -e wps.device_name -e wlan_radio.channel -e wlan.tag.number -e wlan.vht.capabilities -e wlan.ht.capabilities -E separator=, -E header=y > 3_rivers.csv
 
-tshark -r tshark.pcapppi -Y 'wlan.ssid=="Three Rivers Hotel WIFI" && (wlan.fc.type_subtype==8 || wlan.fc.type_subtype==5)' -T fields -e wlan.ssid -e wlan.bssid -e wlan.channel_frequency -e wlan.rsn.gcs -e wps.wifi_protected_setup_state -e wps.manufacturer -e wps.model_name -e wps.model_number -e wps.serial_number -e wps.rf_bands -E separator=, -E header=y > 3_rivers.csv
+tshark -r tshark.pcapppi -Y 'wlan.ssid=="Three Rivers Hotel WIFI" && (wlan.fc.type_subtype==8 || wlan.fc.type_subtype==5)' -T fields -e wlan.ssid -e wlan.bssid -e wlan.ds.channel_current -e wlan.rsn.gcs -e wps.wifi_protected_setup_state -e wps.manufacturer -e wps.model_name -e wps.model_number -e wps.serial_number -e wps.rf_bands -E separator=, -E header=y > 3_rivers.csv
 
 
 
