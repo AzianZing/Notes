@@ -45,3 +45,17 @@ wireshark <newfile>.dec.pcap
 Wireshark can receive the real-time input from either airodump or kismet and disply the frames captures
 In one terminal, run airodump-ng
 In a second terminal, birng up wireshark (as sudo), attach it to wlan
+
+TShark
+----------------
+TShark Basics
+----
+Tshark is the command line version of wireshark
+Tshark can process filters much faster than wireshark
+Tshark can be combined with bash scripting to automate processes
+Locate the tshark.pcapppi file within CLI
+
+Your tshark query will usualy look something like the following
+  tshark -r <inputfile> -Y '<display filters' -T fields -e <column>
+  The tshark.pcapppi file is over 88 MB and contains extraneous data that we do not care about
+  Our goal is to strip out the network using the SSID "Three Rivers Hotel WIFI" and determine how many AP were collected
