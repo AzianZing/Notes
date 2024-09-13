@@ -66,7 +66,17 @@ tshark -r tshark.pcapppi -Y 'wlan.ssid=="Three Rivers Hotel WIFI" && (wlan.fc.ty
 
 tshark -r tshark.pcapppi -Y 'wlan.ssid=="Three Rivers Hotel WIFI" && (wlan.fc.type_subtype==8 || wlan.fc.type_subtype==5)' -T fields -e wlan.ssid -e wlan.bssid -e wlan.ds.current_channel -e wlan.rsn.gcs -e wps.wifi_protected_setup_state -e wps.device_name -e wps.manufacturer -e wps.model_name -e wps.model_number -e wps.serial_number -e wps.rf_bands -E separator=, -E header=y > 3_rivers.csv
 
+To filter out the clients on the network
 
+Yed
+----
+navigate to https://www.yworks.com/products/yed/download
+
+make the installer executable:
+  sudo chmod u+x yEd-3.22_with-JRE15_64-bit_setup.sh
+
+Run the program:
+  ./yEd-3.22_with-JRE15_64-bit_setup.sh
 
 
 
