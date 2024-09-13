@@ -19,3 +19,12 @@ Identify the access points that use the SSID of IMGUEST
   What are their BSSIDs?
   WHat Channels are used by esach?
   What standards are supported?
+
+PE Probes:
+  File Surbey&Analysis.pcapng
+
+  What devices have the network 'IMGUEST' in their preferred networks list?
+  What standards do these clients support?
+  Do any of these devices probe for any other networks?
+
+
