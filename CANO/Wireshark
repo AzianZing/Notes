@@ -41,3 +41,7 @@ Another way to decrypt traffic is using airdecap
 Usage:
 airdecap-ng -e <SSID> -p <password> <inputfile>
 wireshark <newfile>.dec.pcap
+
+Wireshark can receive the real-time input from either airodump or kismet and disply the frames captures
+In one terminal, run airodump-ng
+In a second terminal, birng up wireshark (as sudo), attach it to wlan
