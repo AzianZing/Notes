@@ -27,4 +27,17 @@ PE Probes:
   What standards do these clients support?
   Do any of these devices probe for any other networks?
 
+Useful Wireshark filters:
+  wlan.ssid
+  wlan.fc.type_subtype
+  wlan.addr
 
+Decrypting Traffic
+Wireshark allows for decyrting traffic, provided you have the network credentials and collected the session encryption (eapol).
+To add a network ket, Edit -> Preferences -> Protocols -> IEEE802.11
+key type - password:SSID
+
+Another way to decrypt traffic is using airdecap
+Usage:
+airdecap-ng -e <SSID> -p <password> <inputfile>
+wireshark <newfile>.dec.pcap
