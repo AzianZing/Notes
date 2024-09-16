@@ -7,6 +7,8 @@ Randomize wireless interface MACs as a baseline pre-mission activity. Or to a sp
 
 Don't associate to a target access point with an Alfa card MAC address...
 
+Alfa Card MACs are 00:0C:0A
+
 ON PI AND LAPTOP
 -----------
 sudo apt install macchanger
@@ -22,3 +24,11 @@ sudo macchanger -r wlan1
 
 macchanger --list (shows OUI dictionary)
 
+Proper order of mission checklist
+----------------------------------------------
+
+turn off wifi
+rfkill (checks status of devices)
+rfkill block/unblock wlan
+
+Run macchanger.sh script to automatically change all of the MACs of devices
