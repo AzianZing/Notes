@@ -20,3 +20,5 @@ sudo macchanger -m <MAC> wlan1
 Change to random MAC
 sudo macchanger -r wlan1
 
+macchanger --list (shows OUI dictionary)
+
