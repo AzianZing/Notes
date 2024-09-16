@@ -1,0 +1,22 @@
+MAC Address Changing
+-----------
+When not in "monitor mode", external wi-fi interfaces behave as a normal wireless device (probe requests)
+The MAC addresses of your wireless cards are a unique identified to you and your operations
+They can be used to target you in the same manner as you target others
+Randomize wireless interface MACs as a baseline pre-mission activity. Or to a specific MAC as approppriate for network reconnaissance tasks.
+
+Don't associate to a target access point with an Alfa card MAC address...
+
+ON PI AND LAPTOP
+-----------
+sudo apt install macchanger
+
+Bring interface down first:
+sudo ifconfig wlan1 down
+
+Change to a specified MAC
+sudo macchanger -m <MAC> wlan1
+
+Change to random MAC
+sudo macchanger -r wlan1
+
