@@ -87,5 +87,32 @@ sudo airmon-ng start wlan2 6
 
 Clientless Attacks
 ------------------
+PMKID Attacks have been pretty much patched in the United States
+
+PMKID
+--
+Once a client and an Access Point have successfully completed a 4-way handshake (EAPOL), they maintain a PMKSA (Pairwise Master Key Security Association).
+Some networks employ Access Point Roaming, in which a client moves outside the range of an AP and connects to another AP within the network (hotels, business, etc)
+To avoid the toll on connectivity (requiring a 4-way handshake each time the client connects), networks may employ PMK Caching.
+
+(TP-Link is not typically vulnerable to PMKID attacks)
+
+Many routers cache the PMKID of the exchange process in a collection of PMKSA, so that the next time the client reauthenticates, the AP will ask for the PMKSA instead of requiring a full 4-way authentication.
+PMKSA = PMKID + Lifetime of PMK + MAC Addresses + other variables
+The PMKID is a hashed value of the PMK, along with two MACs and a fixed string.
+
+PMK
+--
+Key components:
+PMK - Pairwise Master Key
+  Generated from the PSK
+PMKID - Pairwise Master Key Identity
+  PMKID = HMAC-SHA1-128(PMK, "PMK Name", MAC(AP), MAC(Client))
+
+
+
+
+
+
 
 
