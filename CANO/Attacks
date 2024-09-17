@@ -110,6 +110,23 @@ PMKID - Pairwise Master Key Identity
   PMKID = HMAC-SHA1-128(PMK, "PMK Name", MAC(AP), MAC(Client))
 
 
+The PMKID is a field in the RSN IE Frame (Robust Security Network Information Element) and is an optional frame in routers.
+
+PMKID Attack
+--
+To successfully brute-force the PMKID, we need the following parameters
+  WiFi password (guess)
+  WiFi SSID - Knwon
+  Length of SSID - Known
+  MAC of authenticator and supplicant - Known
+  PMK Name - Known
+
+
+On Laptop Only
+--
+sudo apt install hcxdumptool
+
+
 
 
 
