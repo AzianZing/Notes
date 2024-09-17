@@ -127,6 +127,14 @@ On Laptop Only
 sudo apt install hcxdumptool
 
 
+On pi
+--
+sudo apt-get install libcurl4-openssl-dev libssl-dev zlib1g-dev libpcap-dev
+git clone https://github.com/ZerBea/hcxdumptool.git
+cd hcxdumptool
+git checkout 6.2.5
+make
+sudo make install
 
 
 
