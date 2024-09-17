@@ -137,6 +137,18 @@ make
 sudo make install
 
 
+hcxdumptool - filtering
+--
+Create a text filel in the directory where you will run hcxdumptool and enter the MAC of the AP
+sudo nano filterlist
+
+Tun hcxdumptool with the following switches:
+sudo hcxdumptool -i wlan1 -o <FILENAME> --filterlist_ap=<filterlist> --filtermode=2 --enable_status=3 -c 6
+
+
+
+
+
 
 
 
