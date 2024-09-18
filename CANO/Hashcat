@@ -38,6 +38,14 @@ We need to extract the necessary variables from an EAPOL handshake or PMKID to a
 hcxpcapngtool will automatically extract those variables to a 22000 format file
 hcxpcapngtool -o hash.22000 <inputfile>.pcap
 
+# Modes
+_______________
+0 Straight
+1 Combination
+3 Brute-Force (Mask)
+6 Hybrid Word List + Mask
+7 Hybrid Mask + Word list
+
 Dictionary Attacks
 -----------------
 
