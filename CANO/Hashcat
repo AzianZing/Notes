@@ -1,6 +1,49 @@
 Hashcat Basics
 --------------
-cxx
+Hashcat is a popular and effective hash cracking utility used by penetration testers and other security professionals as well as criminals.
+(aircrack is the "backup" for hashcat)
+*https://hashcat.net*
+
+PSK = PBKDF2(HMAC-SHA1, Passphrase + SSID, 4096, 256)
+
+There are numerous hash cracjing strategies: 
+Dictionary attacks
+Combination attacks
+Mask attacks
+Rules-based attacks
+
+Hashcat:
+sudo apt install hashcat
+
+hcstools: (A suite of tools to convert packets to hashcat WPA2 file formats)
+sudo apt install hcxtools
+
+Download seclists:
+git clone https://github.com/danielmiessler/SecLists
+
+should have a directory of ~/.hashcat
+if not:
+mkdir ~/.hashcat
+
+Hashcat supports almost 500 hash types
+
+For WPA2 we will use 22000
+
+Dictionary Attacks
+-----------------
+
+
+Combination Attacks
+-----------------
+
+
+Mask Attacks
+-----------------
+
+
+Rules-based Attacks
+-----------------
+
 
 
 
