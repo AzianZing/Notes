@@ -95,9 +95,24 @@ H | 0-9A-F
 
 hashcat -a 3 -m 22000 mask.22000 ?a4?aT?a6?aM
 
+Hybrid Word Lists+Mask / Mask+Wordlists
+-----------------
+Attack mode 6 is Wordlist + Mask
+Attack mode 7 is Mask + Wordlist
+
+Example:
+hashcat -a 6 -m 22000 hybrid.22000 /path/to/rockyou.txt.tar.gz '?d?d'
+
 Rules-based Attacks
 -----------------
+Rules Sets:
+cd /usr/share/hashcat/rules
 
+Usage example:
+hashcat -a 0 -m 22000 -r best64.rule dict.22000 /path/to/rockyou.txt.tar.gz
+
+# of random rules:
+hashcat -a 0 -m 22000 dict.22000 -g 100 /path/to/rockyou.txt.tar.gz
 
 
 
