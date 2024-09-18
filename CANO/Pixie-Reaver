@@ -110,7 +110,14 @@ sudo systemctl stop NetworkManager.service
 not necessary and not on slides but could be useful
 (rfkill unblock wlan)
 
+Now we will check on any running wpa_supplicant processes and kill them EXCEPT the process with --color=auto
+ps -ef | grep wpa_supplicant
+sudo kill ####
+sudo wpa_supplicant -Dwext -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf -B
+sudo wpa_cli
 
+In the interactive terminal
+wps_reg <BSSID> <PIN>
 
 
 
