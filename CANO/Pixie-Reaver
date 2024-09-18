@@ -119,6 +119,13 @@ sudo wpa_cli
 In the interactive terminal
 wps_reg <BSSID> <PIN>
 
+Go to wpa_supplicant.conf
+Will give SSID, Password, and more details from the network
+
+dhclient -4 will give ipv4 address
+
+check for IP address using ipconfig
+
 
 
 
