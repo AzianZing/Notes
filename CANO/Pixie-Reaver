@@ -1,0 +1,28 @@
+Pixie-Reaver / Pixie Dust / Bully
+----------------
+WPS Brute force attack
+
+
+On Laptop and Pi
+----------------------------
+sudo apt install pixiewps
+
+Pixiewps is a tool that attacks a flaw in the randomization of WPS hashes
+
+sudo apt install reaver
+
+Reaver is an old school way to defeat WPS hashes, the noraml attack has since been patched on most wireless access points
+Reaver can be combined with pixiewps for attacks that still work on WPS today!
+
+WPS PIN Breakdown
+----
+Total of 10,000,000 unique WPS pin possibilities
+You used to be able to brute force this with Reaver in a few minutes, since patched (2013)
+Now you get locked out after a few attempts
+It is rare to find a router that is vulnerable to brute force the WPS pin
+
+
+
+
+
+
