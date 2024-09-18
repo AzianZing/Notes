@@ -21,6 +21,25 @@ You used to be able to brute force this with Reaver in a few minutes, since patc
 Now you get locked out after a few attempts
 It is rare to find a router that is vulnerable to brute force the WPS pin
 
+WPS Defeat
+----
+https://tacticalware.com/list-of-wireless-ap-router-invulnerable-to-pixie-dust-attack/
+
+Pixiedust attacks works against a good amount of TP-Link and other routers
+It is nearly impossible to tel exactly what percentage of routers are vulnerable to this, since those stats are not commonly kept
+The only way to know for sure, is to test every other router you can get your hands on
+Above is a hacking forum that maintauns a list of SUPPOSEDLY vulnerable devices
+
+Six Variables Required
+--------
+PKE - Public key enrollee (Message 1)
+E-Nonce - Messages 1 and 2 (used to match M1/M2)
+PKR - (public key registrar) Message 2
+R-Nonce - Message 2 and 3 (used to match M2/M3) --Not needed for pixiewps, optional
+E-Hash 1 - Message 3
+E-hash 2 - Message 3
+Authkey - only seen in the terminal that you ran Reaver on
+
 
 
 
