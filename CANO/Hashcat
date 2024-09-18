@@ -33,7 +33,10 @@ hashcat -b -m 22000
 
 If hashcat fails check the graphics in the settings, make sure to be using the dedicated graphics card and not the CPU.
 
+We need to extract the necessary variables from an EAPOL handshake or PMKID to a format Hashcat uses.
 
+hcxpcapngtool will automatically extract those variables to a 22000 format file
+hcxpcapngtool -o hash.22000 <inputfile>.pcap
 
 Dictionary Attacks
 -----------------
