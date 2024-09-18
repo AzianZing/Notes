@@ -46,9 +46,16 @@ _______________
 6 Hybrid Word List + Mask
 7 Hybrid Mask + Word list
 
-Dictionary Attacks
+Dictionary Attacks - 0
 -----------------
+Since humans tend to use bad password, dictionary attacks can be an effective strategy.
+The "rockyou.txt" word list contains over 14 million leaked passwords.
 
+Pre-process:
+hcxpcapngtool -o dict.22000 dictionary.pcap
+
+Usage example:
+hashcat -a 0 -m 22000 dict.22000 /path/to/rockyou.txt.tar.gz
 
 Combination Attacks
 -----------------
