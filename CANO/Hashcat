@@ -28,6 +28,12 @@ mkdir ~/.hashcat
 Hashcat supports almost 500 hash types
 
 For WPA2 we will use 22000
+To baseline your hardware setup for a certain hash type:
+hashcat -b -m 22000
+
+If hashcat fails check the graphics in the settings, make sure to be using the dedicated graphics card and not the CPU.
+
+
 
 Dictionary Attacks
 -----------------
