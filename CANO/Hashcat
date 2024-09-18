@@ -61,13 +61,39 @@ If given a hex SSID:
 Convert using
 echo "<HEX> | xxd -r -p
 
-Combination Attacks
+Extract hashes from oconus_sample.cap
+hcxpcapngtool -o oconus.22000 oconus_sample.cap
+
+Run a dictionary attack
+hashcat -a 0 -m 22000 oconus.22000 /path/to/rockyou.txt.tar.gz
+
+Combination Attacks - 1
 -----------------
+Concatenates words from multiple word lists
+wordlist1wordlist2
 
+pre-process:
+hcxpcapngtool -o combo.22000 combination.pcap
 
-Mask Attacks
+example:
+hashcat -a 1 -m 22000 combo.22000 wordlist1 wordlist2
+
+Brute-Force / Mask Attacks
 -----------------
+Tries all characters from given character set, per position
 
+Example:
+Lots of users tend to use passwords in a certain format (word1234) or vendors tend to use default passwords in a predictable format
+
+? | Character Sets
+--
+l | a-z
+u | A-Z
+d | 0-9
+h | 0-9a-f
+H | 0-9A-F
+
+hashcat -a 3 -m 22000 mask.22000 ?a4?aT?a6?aM
 
 Rules-based Attacks
 -----------------
