@@ -48,13 +48,20 @@ sudo kismet
 Run Hostapd to create the Rogue AP
 sudo hostapd <filename.conf>
 
+
+Create_AP
+--------
 cd /opt
 sudo apt install haveged hostapd git util-linux procps iproute2 iw dnsmasq iptables
 sudo git clone https://github.com/oblique/create_ap.git
 cd create_ap
 sudo make install
 
+step 1: capture traffic
+sudo airodump-ng -c <CHANNEL> --bssid <ROGUE_AP_MAC> -w <FILENAME> <interface>
 
+step 2: start your rogue AP
+sudo create_ap -w 2 -c <CHANNEL> --mac <ROGUE_AP_MAC> --freq-band <2.4/5> <interface> <interface> <SSID> <PASSWORD>
 
 
 
