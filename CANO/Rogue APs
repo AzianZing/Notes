@@ -48,7 +48,11 @@ sudo kismet
 Run Hostapd to create the Rogue AP
 sudo hostapd <filename.conf>
 
-
+cd /opt
+sudo apt install havegd hostapd git util-linux procps iproute2 iw dnsmasq iptables
+sudo git clone https://github.com/oblique/create_ap.git
+cd create_ap
+sudo make install
 
 
 
