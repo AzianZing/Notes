@@ -55,7 +55,7 @@ Pre-process:
 hcxpcapngtool -o dict.22000 dictionary.pcap
 
 Usage example:
-hashcat -a 0 -m 22000 dict.22000 /path/to/rockyou.txt.tar.gz
+hashcat -a 0 -m 22000 dict.22000 /path/to/rockyou.txt.tar.gz > <FILENAME>
 
 If given a hex SSID:
 Convert using
