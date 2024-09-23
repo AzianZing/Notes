@@ -202,6 +202,16 @@ set target <IP>
 set defaults file: /opt/rockyou.txt
 run
 
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+network={
+  ssid="TARGET_SSID"
+  psk="THIS_IS_A_LONG_PASSWORD"
+  key_mgmt=WPA-PSK
+}
+
 
 
 
