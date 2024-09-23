@@ -32,6 +32,43 @@ Assign WPA supplicant to your Alfa card:
 --
 sudo wpa_supplicant -c /etc/wpa_supplicant/<wpa_supplicant.conf> -i <interface> -B
 
+Who conducts Network Recon?
+--
+Depending on your partner, it might be you!
+
+Some partners will request your support to e remote bridged onto a network
+This will require you to get close accesss and have them tunnel through your network.
+
+NMAP
+----
+"Network Mapper" is a free and open-source utility for network discovery and security auditing.
+
+Traceroute
+--
+sudo apt install traceroute
+
+traceroute -i <interface> <IP/domain>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
