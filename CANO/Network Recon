@@ -61,6 +61,40 @@ F will scan the 100 most popular ports. This is a good port scan when you need t
 
 nmap <IP/24> -F -vv | tee <FILENAME>
 
+Enable OS Detection and version detection
+If you run -A on a whole IP range, it can take awhile
+
+nmap <IP> -A -vv -oA <SSID> | tee <FILENAME>
+
+nmap script engine:
+nmap comes with various scripts that expand the enumeration of networks
+Located:
+  /usr/share/nmap/scripts
+
+You can learn more about these scripts by running the --script-help command
+
+You can also add third-party engines to nmap.
+
+cd /usr/share/nmap/scripts
+git clone https://github.com/scipag/vulscan.git
+
+nmap -sV --script=vulscan/vulscan.nse 192.168.0.1
+
+nmap -sV --script=vul* <IP> (takes forever, runs every vul script)
+nmap -sV --script=http* <IP> (takes forever, runs every http script)
+
+Enumerating http
+
+go to webpage, right-click and show source code. Look for any version information, credentials, etc
+nmap <IP> -sV --script=http*
+
+Nikto
+Nikto is an open-source web server and web application scanner
+nikto can perform comprehensive tests against web server for security threats
+
+sudo apt install nikto
+nikto -h <IP>
+
 Traceroute
 --
 sudo apt install traceroute
