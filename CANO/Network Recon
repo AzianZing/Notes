@@ -43,6 +43,16 @@ NMAP
 ----
 "Network Mapper" is a free and open-source utility for network discovery and security auditing.
 
+sudo apt install nmap
+
+This is probably the fastest nmap when you don't have any time on target, but it doesn't give us much info. It will give us what hosts are up only
+nmap <IP/24> -sn -V | tee <FILENAME>
+
+This nmap is a siple host scan to identify what hosts are up and talking and also what common ports are open
+nmap <IP/24> -T4 -vv | tee <FILENAME>
+
+T4 is telling nmap to run faster and assumes you have a good connection to the network, default nmap is T3
+
 Traceroute
 --
 sudo apt install traceroute
