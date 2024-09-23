@@ -95,6 +95,27 @@ nikto can perform comprehensive tests against web server for security threats
 sudo apt install nikto
 nikto -h <IP>
 
+Enum4linux-ng is a tool for enumerating information from windows and samba systems
+installation:
+  cd /opt
+  sudo apt install smbclient python3-ldap3 python3-yaml python3-impacket
+  sudo git clone https://github.com/cddmp/enum4linux-ng.git
+  cd enum4linux-ng
+  pip3 install -r requirements.txt
+
+Avoiding IDS
+--
+Firewalls and Intrusion Detection Systems seek to avoid malicious traffic from entering the network, but certain techniques can be used to evade IDS/firewalls
+
+Fragmenting Packets
+Source Port Manipulation
+IP Address Spoofing
+Custom Packets
+
+nmap -f (fragments) --mtu (max transmissable units) --source-port (uses specified port) -D RND:12 (random IP Address spoofing) -S (specified IP address spoofing) --data 0xdeadbeef (custom packets through firewall)
+
+
+
 Traceroute
 --
 sudo apt install traceroute
