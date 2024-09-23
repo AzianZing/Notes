@@ -49,6 +49,8 @@ sudo apt install traceroute
 
 traceroute -i <interface> <IP/domain>
 
+First non-private IP is most likely the public facing IP
+
 
 
 
