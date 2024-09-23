@@ -112,9 +112,7 @@ Source Port Manipulation
 IP Address Spoofing
 Custom Packets
 
-nmap -f (fragments) --mtu (max transmissable units) --source-port (uses specified port) -D RND:12 (random IP Address spoofing) -S (specified IP address spoofing) --data 0xdeadbeef (custom packets through firewall)
-
-
+nmap -f (fragments) --mtu (max transmissable units) --source-port (uses specified port) -D RND:12 (random IP Address spoofing) -S (specified IP address spoofing) --data 0xdeadbeef (custom packets through firewall) --data-length (additional data to the scan)
 
 Traceroute
 --
@@ -124,7 +122,8 @@ traceroute -i <interface> <IP/domain>
 
 First non-private IP is most likely the public facing IP
 
-
+Install the SimpleScreenRecorder program and record your entire session
+install the Screenshot program to take 'snips' of info
 
 
 
