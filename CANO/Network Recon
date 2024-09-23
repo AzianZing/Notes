@@ -1,5 +1,44 @@
 Network Reconnaissance
 ----------------------
+Cyber Kill Chain
+  (We live in this area with what we do)
+  Recon - Harvesting emails, confererence information
+  Weaponization - Coupling exploit with backdoor into deliverable payload
+  Delivery
+  Exploitation
+  Installation 
+  Command and Control
+  Actions on Objectives
+
+Before we attempt to exploit a network, we need to know as much as we can about it.
+  Open ports
+  Services/Versions
+  ISP
+  Hops
+  IP Addresses
+  Operating systems
+  Router Configuration / Browser Accessibility
+
+Remote Authentication
+--------
+We will use wpa_supplicant to connect to our target network
+--
+ps -ef | grep wpa_supplicant (find and kill unwanted process)
+sudo ifconfig <interface> down
+sudo macchanger -r <interface>
+sudo ifconfig <interface> up
+
+Assign WPA supplicant to your Alfa card:
+--
+sudo wpa_supplicant -c /etc/wpa_supplicant/<wpa_supplicant.conf> -i <interface> -B
+
+
+
+
+
+
+
+
 
 
 
