@@ -53,6 +53,14 @@ nmap <IP/24> -T4 -vv | tee <FILENAME>
 
 T4 is telling nmap to run faster and assumes you have a good connection to the network, default nmap is T3
 
+OS detection and TCP/IP fingerprinting
+Notice this exmpla is for a specifci IP
+sudo nmap <IP/24> -O -vv | tee <FILENAME>
+
+F will scan the 100 most popular ports. This is a good port scan when you need to scan the whole range but only have a small amount of time.
+
+nmap <IP/24> -F -vv | tee <FILENAME>
+
 Traceroute
 --
 sudo apt install traceroute
