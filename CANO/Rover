@@ -57,6 +57,41 @@ File - WMS-servers
 
 rns files in rover compresses the file more than almost any other compression method
 
+Team Connections
+--------------
+Create Wireguard configs for clients that will be connecting
+--
+ssh vpn
+./wireguard-manager
+Option 5
+Name it something memorable/identifiable
+
+move config file from /etc/wireguard/clients to /home/ubuntu
+
+sudo su
+cp /etc/wireguard/clients/<filename> /home/ubuntu
+
+sudo scp -i ~/.ssh/aws_pem ubuntu@10.0.0.1:~/<filename>.conf
+
+From the client device
+----
+put the files into /etc/wireguard
+sudo scp /etc/wireguard/<filename-wg0>.conf
+sudo vim /etc/bashrc
+change to whatever the wg0 is now
+sudo wg_quick up and sudo wg_quick down to new config file without the .conf at the end
+
+source ~/.bashrc
+
+go to rover
+connections
+team connection
+host goes to the +
+puts the IP of the client in the hostname box to reach the client
+settings --> auto reconnect
+
+
+
 
 
 
